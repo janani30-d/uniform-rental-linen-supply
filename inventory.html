@@ -1,0 +1,745 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Uniform Inventory | Uniwear</title>
+    <!-- Favicon -->
+
+  <link rel="icon" type="image/png" href="images/logo.png">
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Shared Dashboard Styles -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/dash-res.css">
+
+   
+</head>
+
+<body>
+
+<div class="uw-dashboard-layout" id="uwDashboardLayout">
+
+    <!-- SIDEBAR OVERLAY -->
+    <div class="uw-sidebar-overlay" id="uwSidebarOverlay"></div>
+
+    <!-- =====================================
+         SIDEBAR
+    ====================================== -->
+
+    <aside class="uw-sidebar" id="uwSidebar">
+
+        <div class="uw-sidebar-brand">
+
+            <a href="index.html"
+               class="uw-brand-logo"
+               aria-label="Go to Uniwear home">
+
+                <img src="images/logo.png"
+                     alt="Uniwear Logo"
+                     class="uw-brand-image">
+
+            </a>
+
+            <button class="uw-sidebar-close"
+                    id="uwSidebarClose"
+                    type="button"
+                    aria-label="Close sidebar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        <nav class="uw-sidebar-nav" aria-label="Dashboard navigation">
+
+            <a href="dashboard.html" class="uw-sidebar-link">
+                <i class="fa-solid fa-table-columns"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="inventory.html"
+               class="uw-sidebar-link active"
+               aria-current="page">
+                <i class="fa-solid fa-boxes-stacked"></i>
+                <span>Uniform Inventory</span>
+            </a>
+
+            <a href="sizing.html" class="uw-sidebar-link">
+                <i class="fa-solid fa-ruler-combined"></i>
+                <span>Sizing Management</span>
+            </a>
+
+            <a href="deliveries.html" class="uw-sidebar-link">
+                <i class="fa-solid fa-truck-fast"></i>
+                <span>Delivery Schedules</span>
+            </a>
+
+            <a href="replacements.html" class="uw-sidebar-link">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                <span>Replacement Requests</span>
+            </a>
+
+            <a href="billing.html" class="uw-sidebar-link">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <span>Billing &amp; Invoices</span>
+            </a>
+
+        </nav>
+
+        <div class="uw-sidebar-bottom">
+
+            <a href="login.html" class="uw-sidebar-link uw-logout-link">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================
+         MAIN AREA
+    ====================================== -->
+
+    <div class="uw-main-area">
+
+        <!-- FIXED TOPBAR -->
+
+        <header class="uw-topbar">
+
+            <div class="uw-topbar-left">
+
+                <button class="uw-menu-toggle"
+                        id="uwMenuToggle"
+                        type="button"
+                        aria-label="Open navigation menu"
+                        aria-controls="uwSidebar"
+                        aria-expanded="false">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+                <div class="uw-page-heading">
+                    <p class="uw-topbar-greeting">Business Client Portal</p>
+                    <h1>Uniform Inventory</h1>
+                </div>
+
+            </div>
+
+
+            <div class="uw-topbar-actions">
+
+                <button class="uw-topbar-icon-btn uw-notification-btn"
+                        id="uwNotificationsBtn"
+                        type="button"
+                        aria-label="Notifications">
+
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="uw-notification-count">3</span>
+
+                </button>
+
+                <button class="uw-topbar-icon-btn"
+                        id="uwSettingsBtn"
+                        type="button"
+                        aria-label="Settings">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                </button>
+
+                <button class="uw-topbar-icon-btn"
+                        id="uwDarkModeToggle"
+                        type="button"
+                        aria-label="Toggle dark mode"
+                        aria-pressed="false">
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </button>
+
+                <button class="uw-topbar-icon-btn"
+                        id="uwRtlToggle"
+                        type="button"
+                        aria-label="Toggle RTL layout"
+                        aria-pressed="false">
+
+                    <i class="fa-solid fa-right-left"></i>
+
+                </button>
+
+                <button class="uw-profile-btn"
+                        id="uwProfileBtn"
+                        type="button"
+                        aria-label="Business profile">
+
+                    <span class="uw-profile-avatar">
+                        <i class="fa-solid fa-building"></i>
+                    </span>
+
+                    <span class="uw-profile-info">
+                        <strong>Business Client</strong>
+                        <small>Company Account</small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down uw-profile-chevron"></i>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================
+             INVENTORY PAGE CONTENT
+        ====================================== -->
+
+        <main class="uw-dashboard-content inv-page"
+              id="uwDashboardContent">
+
+
+            <!-- SECTION 1: PAGE HEADER -->
+
+            <section class="inv-heading-section">
+
+                <div class="inv-breadcrumb">
+                    <a href="dashboard.html">Dashboard</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Uniform Inventory</span>
+                </div>
+
+                <div class="inv-page-heading-row">
+
+                    <div class="inv-page-intro">
+
+                        <span class="inv-eyebrow">
+                            INVENTORY MANAGEMENT
+                        </span>
+
+                        <h2>Uniform Inventory</h2>
+
+                        <p>
+                            Manage rental garments, check available sizes,
+                            and monitor your uniform stock in one place.
+                        </p>
+
+                    </div>
+
+                    <button class="inv-primary-btn"
+                            id="invAddButton"
+                            type="button">
+
+                        <i class="fa-solid fa-plus"></i>
+                        Add Inventory
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- SECTION 2: INVENTORY OVERVIEW -->
+
+            <section class="inv-overview-section">
+
+                <div class="inv-section-heading">
+                    <div>
+                        <h2>Inventory Overview</h2>
+                        <p>A quick summary of your garment stock.</p>
+                    </div>
+                </div>
+
+                <div class="inv-stats-grid">
+
+                    <!-- Total Garments -->
+
+                    <article class="inv-stat-card">
+
+                        <div class="inv-stat-top">
+                            <span class="inv-stat-icon inv-blue">
+                                <i class="fa-solid fa-boxes-stacked"></i>
+                            </span>
+
+                            <span class="inv-stat-caption">
+                                All categories
+                            </span>
+                        </div>
+
+                        <p class="inv-stat-label">Total Garments</p>
+
+                        <h3 id="invTotalCount">500</h3>
+
+                        <span class="inv-stat-foot">
+                            Total inventory units
+                        </span>
+
+                    </article>
+
+
+                    <!-- Available Stock -->
+
+                    <article class="inv-stat-card">
+
+                        <div class="inv-stat-top">
+                            <span class="inv-stat-icon inv-green">
+                                <i class="fa-solid fa-circle-check"></i>
+                            </span>
+
+                            <span class="inv-stat-caption">
+                                Ready to issue
+                            </span>
+                        </div>
+
+                        <p class="inv-stat-label">Available Stock</p>
+
+                        <h3 id="invAvailableCount">150</h3>
+
+                        <span class="inv-stat-foot">
+                            Available inventory units
+                        </span>
+
+                    </article>
+
+
+                    <!-- Issued Uniforms -->
+
+                    <article class="inv-stat-card">
+
+                        <div class="inv-stat-top">
+                            <span class="inv-stat-icon inv-purple">
+                                <i class="fa-solid fa-shirt"></i>
+                            </span>
+
+                            <span class="inv-stat-caption">
+                                In circulation
+                            </span>
+                        </div>
+
+                        <p class="inv-stat-label">Issued Uniforms</p>
+
+                        <h3 id="invIssuedCount">350</h3>
+
+                        <span class="inv-stat-foot">
+                            Currently issued units
+                        </span>
+
+                    </article>
+
+
+                    <!-- Low Stock -->
+
+                    <article class="inv-stat-card">
+
+                        <div class="inv-stat-top">
+                            <span class="inv-stat-icon inv-orange">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            </span>
+
+                            <span class="inv-stat-caption">
+                                Needs attention
+                            </span>
+                        </div>
+
+                        <p class="inv-stat-label">Low Stock Items</p>
+
+                        <h3 id="invLowStockCount">2</h3>
+
+                        <span class="inv-stat-foot">
+                            Items below stock threshold
+                        </span>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- SECTION 3: CATEGORIES -->
+
+            <section class="inv-categories-section">
+
+                <div class="inv-section-heading">
+                    <div>
+                        <h2>Browse Categories</h2>
+                        <p>Select a category to explore your inventory.</p>
+                    </div>
+                </div>
+
+                <div class="inv-category-grid">
+
+                    <button class="inv-category-card active"
+                            type="button"
+                            data-category="all"
+                            aria-pressed="true">
+
+                        <span class="inv-category-icon">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </span>
+
+                        <span class="inv-category-info">
+                            <strong>All Inventory</strong>
+                            <small>View all type items</small>
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right inv-category-arrow"></i>
+
+                    </button>
+
+
+                    <button class="inv-category-card"
+                            type="button"
+                            data-category="uniforms"
+                            aria-pressed="false">
+
+                        <span class="inv-category-icon">
+                            <i class="fa-solid fa-shirt"></i>
+                        </span>
+
+                        <span class="inv-category-info">
+                            <strong>Work Uniforms</strong>
+                            <small>Shirts and trousers</small>
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right inv-category-arrow"></i>
+
+                    </button>
+
+
+                    <button class="inv-category-card"
+                            type="button"
+                            data-category="safety"
+                            aria-pressed="false">
+
+                        <span class="inv-category-icon">
+                            <i class="fa-solid fa-vest"></i>
+                        </span>
+
+                        <span class="inv-category-info">
+                            <strong>Safety Apparel</strong>
+                            <small>Protective workwear</small>
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right inv-category-arrow"></i>
+
+                    </button>
+
+
+                    <button class="inv-category-card"
+                            type="button"
+                            data-category="linens"
+                            aria-pressed="false">
+
+                        <span class="inv-category-icon">
+                            <i class="fa-solid fa-bed"></i>
+                        </span>
+
+                        <span class="inv-category-info">
+                            <strong>Linen Supplies</strong>
+                            <small>Sheets and towels</small>
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right inv-category-arrow"></i>
+
+                    </button>
+
+
+                    <button class="inv-category-card"
+                            type="button"
+                            data-category="mats"
+                            aria-pressed="false">
+
+                        <span class="inv-category-icon">
+                            <i class="fa-solid fa-rug"></i>
+                        </span>
+
+                        <span class="inv-category-info">
+                            <strong>Floor matess</strong>
+                            <small>Commercial mats</small>
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right inv-category-arrow"></i>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- SECTION 4: INVENTORY TABLE -->
+
+            <section class="inv-list-section">
+
+                <div class="inv-section-heading inv-list-heading">
+
+                    <div>
+                        <h2>Inventory Items</h2>
+                        <p>
+                            Search, filter, and review your uniform stock.
+                        </p>
+                    </div>
+
+                    <button class="inv-export-btn"
+                            id="invExportButton"
+                            type="button">
+
+                        <i class="fa-solid fa-download"></i>
+                        Export CSV
+
+                    </button>
+
+                </div>
+
+
+                <!-- SEARCH AND FILTERS -->
+
+                <div class="inv-toolbar">
+
+                    <label class="inv-search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input type="search"
+                               id="invSearchInput"
+                               placeholder="Search by item name or SKU..."
+                               aria-label="Search inventory">
+
+                    </label>
+
+
+                    <label class="inv-filter-box">
+
+                        <span>Category</span>
+
+                        <select id="invCategoryFilter">
+                            <option value="all">All Categories</option>
+                            <option value="uniforms">Work Uniforms</option>
+                            <option value="safety">Safety Apparel</option>
+                            <option value="linens">Linen Supplies</option>
+                            <option value="mats">Floor Mats</option>
+                        </select>
+
+                    </label>
+
+
+                    <label class="inv-filter-box">
+
+                        <span>Stock Status</span>
+
+                        <select id="invStatusFilter">
+                            <option value="all">All Statuses</option>
+                            <option value="available">Available</option>
+                            <option value="low">Low Stock</option>
+                            <option value="out">Out of Stock</option>
+                        </select>
+
+                    </label>
+
+                </div>
+
+
+                <!-- TABLE -->
+
+                <div class="inv-table-card">
+
+                    <div class="inv-table-scroll">
+
+                        <table class="inv-table">
+
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>SKU</th>
+                                    <th>Category</th>
+                                    <th>Size</th>
+                                    <th>Total Qty.</th>
+                                    <th>Available</th>
+                                    <th>Issued</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="invTableBody">
+
+                                <tr data-category="uniforms"
+                                    data-status="available">
+
+                                    <td>
+                                        <div class="inv-item-name">
+                                            <span class="inv-item-icon">
+                                                <i class="fa-solid fa-shirt"></i>
+                                            </span>
+                                            <strong>Work Shirt</strong>
+                                        </div>
+                                    </td>
+
+                                    <td>UNI-001</td>
+                                    <td>Work Uniforms</td>
+                                    <td>M</td>
+                                    <td>120</td>
+                                    <td>45</td>
+                                    <td>75</td>
+
+                                    <td>
+                                        <span class="inv-status inv-status-available">
+                                            Available
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr data-category="uniforms"
+                                    data-status="low">
+
+                                    <td>
+                                        <div class="inv-item-name">
+                                            <span class="inv-item-icon">
+                                                <i class="fa-solid fa-shirt"></i>
+                                            </span>
+                                            <strong>Work Trousers</strong>
+                                        </div>
+                                    </td>
+
+                                    <td>UNI-002</td>
+                                    <td>Work Uniforms</td>
+                                    <td>L</td>
+                                    <td>80</td>
+                                    <td>12</td>
+                                    <td>68</td>
+
+                                    <td>
+                                        <span class="inv-status inv-status-low">
+                                            Low Stock
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr data-category="safety"
+                                    data-status="out">
+
+                                    <td>
+                                        <div class="inv-item-name">
+                                            <span class="inv-item-icon">
+                                                <i class="fa-solid fa-vest"></i>
+                                            </span>
+                                            <strong>Safety Vest</strong>
+                                        </div>
+                                    </td>
+
+                                    <td>SAF-001</td>
+                                    <td>Safety Apparel</td>
+                                    <td>XL</td>
+                                    <td>60</td>
+                                    <td>0</td>
+                                    <td>60</td>
+
+                                    <td>
+                                        <span class="inv-status inv-status-out">
+                                            Out of Stock
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr data-category="linens"
+                                    data-status="available">
+
+                                    <td>
+                                        <div class="inv-item-name">
+                                            <span class="inv-item-icon">
+                                                <i class="fa-solid fa-bed"></i>
+                                            </span>
+                                            <strong>Bed Sheets</strong>
+                                        </div>
+                                    </td>
+
+                                    <td>LIN-001</td>
+                                    <td>Linen Supplies</td>
+                                    <td>Standard</td>
+                                    <td>200</td>
+                                    <td>85</td>
+                                    <td>115</td>
+
+                                    <td>
+                                        <span class="inv-status inv-status-available">
+                                            Available
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr data-category="mats"
+                                    data-status="low">
+
+                                    <td>
+                                        <div class="inv-item-name">
+                                            <span class="inv-item-icon">
+                                                <i class="fa-solid fa-rug"></i>
+                                            </span>
+                                            <strong>Entrance Floor Mat</strong>
+                                        </div>
+                                    </td>
+
+                                    <td>MAT-001</td>
+                                    <td>Floor Mats</td>
+                                    <td>Large</td>
+                                    <td>40</td>
+                                    <td>8</td>
+                                    <td>32</td>
+
+                                    <td>
+                                        <span class="inv-status inv-status-low">
+                                            Low Stock
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                    <div class="inv-table-footer">
+                        <span id="invResultsCount">
+                            Showing 5 sample records
+                        </span>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+<!-- SHARED DASHBOARD JAVASCRIPT -->
+<script src="js/dashboard.js"></script>
+<script src="js/theme-controls.js"></script>
+
+
+
+</body>
+</html>

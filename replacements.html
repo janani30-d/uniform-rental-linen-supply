@@ -1,0 +1,852 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Replacement Requests | Uniwear</title>
+    <!-- Favicon -->
+
+  <link rel="icon" type="image/png" href="images/logo.png">
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Shared Dashboard CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/dash-res.css">
+
+    <!-- Replacement Page CSS -->
+    <link rel="stylesheet" href="css/replacements.css">
+    <link rel="stylesheet" href="css/replacements-res.css">
+</head>
+
+<body>
+
+<div class="uw-dashboard-layout" id="uwDashboardLayout">
+
+    <!-- Sidebar Overlay -->
+    <div class="uw-sidebar-overlay" id="uwSidebarOverlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="uw-sidebar" id="uwSidebar">
+
+        <div class="uw-sidebar-brand">
+            <a href="index.html" class="uw-brand-logo"
+               aria-label="Uniwear Home">
+                <img src="images/logo.png"
+                     alt="Uniwear Logo"
+                     class="uw-brand-image">
+            </a>
+
+            <button class="uw-sidebar-close"
+                    id="uwSidebarClose"
+                    type="button"
+                    aria-label="Close sidebar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <nav class="uw-sidebar-nav">
+
+            <a href="dashboard.html" class="uw-sidebar-link">
+                <i class="fa-solid fa-table-columns"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="inventory.html" class="uw-sidebar-link">
+                <i class="fa-solid fa-boxes-stacked"></i>
+                <span>Uniform Inventory</span>
+            </a>
+
+            <a href="sizing.html" class="uw-sidebar-link">
+                <i class="fa-solid fa-ruler-combined"></i>
+                <span>Sizing Management</span>
+            </a>
+
+            <a href="deliveries.html" class="uw-sidebar-link">
+                <i class="fa-solid fa-truck-fast"></i>
+                <span>Delivery Schedules</span>
+            </a>
+
+            <a href="replacements.html"
+               class="uw-sidebar-link active"
+               aria-current="page">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                <span>Replacement Requests</span>
+            </a>
+
+            <a href="billing.html" class="uw-sidebar-link">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <span>Billing &amp; Invoices</span>
+            </a>
+
+        </nav>
+
+        <div class="uw-sidebar-bottom">
+            <a href="login.html"
+               class="uw-sidebar-link uw-logout-link">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+
+    </aside>
+
+
+    <!-- Main Area -->
+    <div class="uw-main-area">
+
+        <!-- Topbar -->
+        <header class="uw-topbar">
+
+            <div class="uw-topbar-left">
+
+                <button class="uw-menu-toggle"
+                        id="uwMenuToggle"
+                        type="button"
+                        aria-label="Open navigation menu"
+                        aria-controls="uwSidebar"
+                        aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="uw-page-heading">
+                    <p class="uw-topbar-greeting">
+                        Business Client Portal
+                    </p>
+                    <h1>Replacement Req</h1>
+                </div>
+
+            </div>
+
+            <div class="uw-topbar-actions">
+
+                <button class="uw-topbar-icon-btn"
+                        id="uwNotificationsBtn"
+                        type="button"
+                        aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="uw-notification-count">3</span>
+                </button>
+
+                <button class="uw-topbar-icon-btn"
+                        id="uwSettingsBtn"
+                        type="button"
+                        aria-label="Settings">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+
+                <button class="uw-topbar-icon-btn"
+                        id="uwDarkModeToggle"
+                        type="button"
+                        aria-label="Toggle dark mode"
+                        aria-pressed="false">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <button class="uw-topbar-icon-btn"
+                        id="uwRtlToggle"
+                        type="button"
+                        aria-label="Toggle right-to-left layout"
+                        aria-pressed="false">
+                    <i class="fa-solid fa-right-left"></i>
+                </button>
+
+                <button class="uw-profile-btn"
+                        id="uwProfileBtn"
+                        type="button"
+                        aria-label="Business profile">
+
+                    <span class="uw-profile-avatar">
+                        <i class="fa-solid fa-building"></i>
+                    </span>
+
+                    <span class="uw-profile-info">
+                        <strong>Business Client</strong>
+                        <small>Company Account</small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down uw-profile-chevron"></i>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- Replacement Page Content -->
+        <main class="uw-dashboard-content replacements-page">
+
+            <!-- ================================================
+                 SECTION 1: PAGE HEADING
+            ================================================= -->
+
+            <section class="replacement-heading-section">
+
+                <div class="replacement-breadcrumb">
+                    <a href="dashboard.html">Dashboard</a>
+                    <i class="fa-solid fa-chevron-right"
+                       aria-hidden="true"></i>
+                    <span>Replacement Requests</span>
+                </div>
+
+                <div class="replacement-page-heading-row">
+
+                    <div class="replacement-page-intro">
+
+                        <span class="replacement-eyebrow">
+                            <i class="fa-solid fa-arrows-rotate"></i>
+                            UNIFORM SERVICE MANAGEMENT
+                        </span>
+
+                        <h2>Replacement Management</h2>
+
+                        <p>
+                            Review replacement requests, track approval
+                            progress, and manage uniform exchanges for your
+                            business.
+                        </p>
+
+                    </div>
+
+                    <button class="replacement-primary-btn"
+                            id="replacementAddButton"
+                            type="button">
+                        <i class="fa-solid fa-plus"></i>
+                        New Request
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================================================
+                 SECTION 2: REQUEST OVERVIEW
+            ================================================= -->
+
+            <section class="replacement-overview-section">
+
+                <div class="replacement-section-heading">
+                    <div>
+                        <h2>Request Overview</h2>
+                        <p>Summary of your replacement requests.</p>
+                    </div>
+                </div>
+
+                <div class="replacement-stats-grid">
+
+                    <article class="replacement-stat-card">
+                        <div class="replacement-stat-icon blue">
+                            <i class="fa-solid fa-clipboard-list"></i>
+                        </div>
+
+                        <div class="replacement-stat-info">
+                            <span>Total Requests</span>
+                            <h3 id="replacementTotalCount">6</h3>
+                            <small>All recorded requests</small>
+                        </div>
+                    </article>
+
+                    <article class="replacement-stat-card">
+                        <div class="replacement-stat-icon orange">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+
+                        <div class="replacement-stat-info">
+                            <span>Pending Review</span>
+                            <h3 id="replacementPendingCount">2</h3>
+                            <small>Awaiting a decision</small>
+                        </div>
+                    </article>
+
+                    <article class="replacement-stat-card">
+                        <div class="replacement-stat-icon purple">
+                            <i class="fa-solid fa-check-double"></i>
+                        </div>
+
+                        <div class="replacement-stat-info">
+                            <span>Approved</span>
+                            <h3 id="replacementApprovedCount">2</h3>
+                            <small>Ready for processing</small>
+                        </div>
+                    </article>
+
+                    <article class="replacement-stat-card">
+                        <div class="replacement-stat-icon green">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+
+                        <div class="replacement-stat-info">
+                            <span>Completed</span>
+                            <h3 id="replacementCompletedCount">2</h3>
+                            <small>Successfully replaced</small>
+                        </div>
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================================================
+                 SECTION 3: REQUEST STATUS CARDS
+            ================================================= -->
+
+            <section class="replacement-status-section">
+
+                <div class="replacement-section-heading">
+                    <div>
+                        <h2>Request Status</h2>
+                        <p>Filter requests by their current status.</p>
+                    </div>
+                </div>
+
+                <div class="replacement-status-grid">
+
+                    <button class="replacement-status-card active"
+                            type="button"
+                            data-status="all"
+                            aria-pressed="true">
+
+                        <span class="replacement-status-label">
+                            All Requests
+                        </span>
+
+                        <strong id="replacementAllCount">6</strong>
+
+                        <small>Every request</small>
+                    </button>
+
+                    <button class="replacement-status-card"
+                            type="button"
+                            data-status="pending"
+                            aria-pressed="false">
+
+                        <span class="replacement-status-label">
+                            Pending
+                        </span>
+
+                        <strong>2</strong>
+
+                        <small>Awaiting review</small>
+                    </button>
+
+                    <button class="replacement-status-card"
+                            type="button"
+                            data-status="approved"
+                            aria-pressed="false">
+
+                        <span class="replacement-status-label">
+                            Approved
+                        </span>
+
+                        <strong>2</strong>
+
+                        <small>Approved for exchange</small>
+                    </button>
+
+                    <button class="replacement-status-card"
+                            type="button"
+                            data-status="completed"
+                            aria-pressed="false">
+
+                        <span class="replacement-status-label">
+                            Completed
+                        </span>
+
+                        <strong>2</strong>
+
+                        <small>Replacement finished</small>
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================================================
+                 SECTION 4: REPLACEMENT REQUEST TABLE
+            ================================================= -->
+
+            <section class="replacement-records-section">
+
+                <div class="replacement-section-heading replacement-records-heading">
+
+                    <div>
+                        <h2>Replacement Requests</h2>
+                        <p>
+                            Search and review uniform replacement records.
+                        </p>
+                    </div>
+
+                    <button class="replacement-export-btn"
+                            id="replacementExportButton"
+                            type="button">
+                        <i class="fa-solid fa-download"></i>
+                        Export CSV
+                    </button>
+
+                </div>
+
+
+                <!-- Search and Filters -->
+
+                <div class="replacement-toolbar">
+
+                    <label class="replacement-search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"
+                           aria-hidden="true"></i>
+
+                        <input type="search"
+                               id="replacementSearchInput"
+                               placeholder="Search request, employee, or ID..."
+                               aria-label="Search replacement requests">
+
+                    </label>
+
+                    <label class="replacement-filter-box">
+                        <span>Request Status</span>
+
+                        <select id="replacementStatusFilter">
+                            <option value="all">All Statuses</option>
+                            <option value="pending">Pending</option>
+                            <option value="approved">Approved</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </label>
+
+                    <label class="replacement-filter-box">
+                        <span>Replacement Reason</span>
+
+                        <select id="replacementReasonFilter">
+                            <option value="all">All Reasons</option>
+                            <option value="size">Size Issue</option>
+                            <option value="damage">Damaged Item</option>
+                            <option value="wear">Normal Wear</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </label>
+
+                </div>
+
+
+                <!-- Request Table -->
+
+                <div class="replacement-table-card">
+
+                    <div class="replacement-table-scroll">
+
+                        <table class="replacement-table">
+
+                            <thead>
+                                <tr>
+                                    <th>Request ID</th>
+                                    <th>Employee</th>
+                                    <th>Uniform Item</th>
+                                    <th>Reason</th>
+                                    <th>Requested Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="replacementTableBody">
+
+                                <tr data-status="pending"
+                                    data-reason="size">
+
+                                    <td>
+                                        <strong class="replacement-id">
+                                            REP-3001
+                                        </strong>
+                                    </td>
+
+                                    <td>
+                                        <div class="replacement-employee-cell">
+                                            <span class="replacement-avatar">
+                                                AR
+                                            </span>
+                                            <div>
+                                                <strong>Arun Raj</strong>
+                                                <small>EMP-101</small>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>Office Shirt</td>
+                                    <td>Size Issue</td>
+                                    <td>10 Oct 2026</td>
+
+                                    <td>
+                                        <span class="replacement-badge pending">
+                                            Pending
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <div class="replacement-actions">
+                                            <button class="replacement-action-btn"
+                                                    type="button"
+                                                    aria-label="View REP-3001">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </button>
+
+                                            <button class="replacement-action-btn"
+                                                    type="button"
+                                                    aria-label="Edit REP-3001">
+                                                <i class="fa-solid fa-pen"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr data-status="approved"
+                                    data-reason="damage">
+
+                                    <td>
+                                        <strong class="replacement-id">
+                                            REP-3002
+                                        </strong>
+                                    </td>
+
+                                    <td>
+                                        <div class="replacement-employee-cell">
+                                            <span class="replacement-avatar">
+                                                PK
+                                            </span>
+                                            <div>
+                                                <strong>Priya Kumar</strong>
+                                                <small>EMP-102</small>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>Lab Coat</td>
+                                    <td>Damaged Item</td>
+                                    <td>09 Oct 2026</td>
+
+                                    <td>
+                                        <span class="replacement-badge approved">
+                                            Approved
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <div class="replacement-actions">
+                                            <button class="replacement-action-btn"
+                                                    type="button"
+                                                    aria-label="View REP-3002">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </button>
+
+                                            <button class="replacement-action-btn"
+                                                    type="button"
+                                                    aria-label="Edit REP-3002">
+                                                <i class="fa-solid fa-pen"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr data-status="completed"
+                                    data-reason="wear">
+
+                                    <td>
+                                        <strong class="replacement-id">
+                                            REP-3003
+                                        </strong>
+                                    </td>
+
+                                    <td>
+                                        <div class="replacement-employee-cell">
+                                            <span class="replacement-avatar">
+                                                VK
+                                            </span>
+                                            <div>
+                                                <strong>Vijay Kumar</strong>
+                                                <small>EMP-103</small>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>Work Trousers</td>
+                                    <td>Normal Wear</td>
+                                    <td>07 Oct 2026</td>
+
+                                    <td>
+                                        <span class="replacement-badge completed">
+                                            Completed
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <div class="replacement-actions">
+                                            <button class="replacement-action-btn"
+                                                    type="button"
+                                                    aria-label="View REP-3003">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </button>
+
+                                            <button class="replacement-action-btn"
+                                                    type="button"
+                                                    aria-label="Edit REP-3003">
+                                                <i class="fa-solid fa-pen"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr data-status="pending"
+                                    data-reason="damage">
+
+                                    <td>
+                                        <strong class="replacement-id">
+                                            REP-3004
+                                        </strong>
+                                    </td>
+
+                                    <td>
+                                        <div class="replacement-employee-cell">
+                                            <span class="replacement-avatar">
+                                                SM
+                                            </span>
+                                            <div>
+                                                <strong>Sneha Mani</strong>
+                                                <small>EMP-104</small>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>Reception Uniform</td>
+                                    <td>Damaged Item</td>
+                                    <td>11 Oct 2026</td>
+
+                                    <td>
+                                        <span class="replacement-badge pending">
+                                            Pending
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <div class="replacement-actions">
+                                            <button class="replacement-action-btn"
+                                                    type="button"
+                                                    aria-label="View REP-3004">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </button>
+
+                                            <button class="replacement-action-btn"
+                                                    type="button"
+                                                    aria-label="Edit REP-3004">
+                                                <i class="fa-solid fa-pen"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr data-status="approved"
+                                    data-reason="size">
+
+                                    <td>
+                                        <strong class="replacement-id">
+                                            REP-3005
+                                        </strong>
+                                    </td>
+
+                                    <td>
+                                        <div class="replacement-employee-cell">
+                                            <span class="replacement-avatar">
+                                                RS
+                                            </span>
+                                            <div>
+                                                <strong>Ravi Shankar</strong>
+                                                <small>EMP-105</small>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>Security Uniform</td>
+                                    <td>Size Issue</td>
+                                    <td>08 Oct 2026</td>
+
+                                    <td>
+                                        <span class="replacement-badge approved">
+                                            Approved
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <div class="replacement-actions">
+                                            <button class="replacement-action-btn"
+                                                    type="button"
+                                                    aria-label="View REP-3005">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </button>
+
+                                            <button class="replacement-action-btn"
+                                                    type="button"
+                                                    aria-label="Edit REP-3005">
+                                                <i class="fa-solid fa-pen"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr data-status="completed"
+                                    data-reason="other">
+
+                                    <td>
+                                        <strong class="replacement-id">
+                                            REP-3006
+                                        </strong>
+                                    </td>
+
+                                    <td>
+                                        <div class="replacement-employee-cell">
+                                            <span class="replacement-avatar">
+                                                NK
+                                            </span>
+                                            <div>
+                                                <strong>Nisha Kumar</strong>
+                                                <small>EMP-106</small>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>Kitchen Apron</td>
+                                    <td>Other</td>
+                                    <td>06 Oct 2026</td>
+
+                                    <td>
+                                        <span class="replacement-badge completed">
+                                            Completed
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <div class="replacement-actions">
+                                            <button class="replacement-action-btn"
+                                                    type="button"
+                                                    aria-label="View REP-3006">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </button>
+
+                                            <button class="replacement-action-btn"
+                                                    type="button"
+                                                    aria-label="Edit REP-3006">
+                                                <i class="fa-solid fa-pen"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                    <div class="replacement-table-footer">
+                        <span id="replacementResultsCount">
+                            Showing 6 sample requests
+                        </span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================================================
+                 SECTION 5: REPLACEMENT REMINDER
+            ================================================= -->
+
+            <section class="replacement-reminder-section">
+
+                <div class="replacement-reminder-icon">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                </div>
+
+                <div class="replacement-reminder-content">
+                    <h3>Keep Replacement Requests Moving</h3>
+
+                    <p>
+                        Review pending requests regularly and coordinate
+                        approved exchanges to help employees receive the
+                        correct uniforms on time.
+                    </p>
+                </div>
+
+                <button class="replacement-secondary-btn"
+                        id="replacementPendingButton"
+                        type="button">
+                    Review Pending
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+
+<!-- Logout Confirmation Modal -->
+<div class="logout-modal-overlay" id="logoutModal" aria-hidden="true">
+    <div
+        class="logout-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="logoutModalTitle"
+    >
+        <div class="logout-modal-icon">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+
+        <h2 id="logoutModalTitle">
+            Are you sure you want to logout?
+        </h2>
+
+        <p class="logout-modal-description">
+            You will be redirected to the login page.
+        </p>
+
+        <div class="logout-modal-actions">
+            <button type="button" class="logout-btn-yes" id="confirmLogout">
+                Yes
+            </button>
+
+            <button type="button" class="logout-btn-no" id="cancelLogout">
+                No
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Shared Dashboard JavaScript -->
+<script src="js/dashboard.js"></script>
+
+<script src="js/theme-controls.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173A50">
+
+  <title>Uniwear | Uniform Rental &amp; Linen Supply</title>
+  <!-- Favicon -->
+
+  <link rel="icon" type="image/png" href="images/logo.png">
+
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Font Awesome for RTL and Dark Mode Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" id="siteHeader">
+
+    <div class="header-container">
+
+      <!-- LOGO -->
+      <a href="index.html" class="site-logo" aria-label="Uniwear Home">
+
+        <img
+          src="images/logo.png"
+          alt="Uniwear Uniform Rental and Linen Supply Company"
+          class="logo-image logo-light"
+        >
+
+        <img
+          src="images/logo.png"
+          alt=""
+          aria-hidden="true"
+          class="logo-image logo-dark"
+        >
+
+      </a>
+
+
+      <!-- HAMBURGER MENU -->
+      <button
+        type="button"
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation menu"
+        aria-controls="mainNavigation"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+
+      <!-- MAIN NAVIGATION -->
+      <nav
+        class="main-navigation"
+        id="mainNavigation"
+        aria-label="Main navigation"
+      >
+
+        <!-- CENTER NAVIGATION LINKS -->
+        <ul class="nav-list">
+
+          <!-- HOME DROPDOWN -->
+          <li class="nav-item home-item">
+
+            <button
+              type="button"
+              class="home-dropdown-toggle"
+              id="homeDropdownToggle"
+              aria-expanded="false"
+              aria-controls="homeDropdown"
+            >
+              <span>Home</span>
+
+              <i
+                class="fa-solid fa-chevron-down dropdown-arrow"
+                aria-hidden="true"
+              ></i>
+            </button>
+
+            <ul class="home-dropdown" id="homeDropdown">
+
+              <li>
+                <a href="index.html">Home 1</a>
+              </li>
+
+              <li>
+                <a href="home-2.html">Home 2</a>
+              </li>
+
+            </ul>
+
+          </li>
+
+
+          <!-- OTHER NAVIGATION LINKS -->
+          <li class="nav-item">
+            <a href="about.html">About Us</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="services.html">Services</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="industries.html">Industries Served</a>
+          </li>
+
+          
+
+          <li class="nav-item">
+            <a href="contact.html">Contact Us</a>
+          </li>
+
+        </ul>
+
+
+        <!-- RIGHT-SIDE ACTIONS -->
+        <div class="nav-actions">
+
+          <!-- RTL BUTTON -->
+          <button
+            type="button"
+            class="header-control-btn rtl-toggle"
+            id="rtlToggle"
+            aria-label="Switch to RTL mode"
+            aria-pressed="false"
+            title="RTL Mode"
+          >
+            <i
+              class="fa-solid fa-right-left"
+              aria-hidden="true"
+            ></i>
+          </button>
+
+
+          <!-- DARK MODE BUTTON -->
+          <button
+            type="button"
+            class="header-control-btn dark-mode-toggle"
+            id="darkModeToggle"
+            aria-label="Enable dark mode"
+            aria-pressed="false"
+            title="Dark Mode"
+          >
+            <i
+              class="fa-solid fa-moon"
+              aria-hidden="true"
+            ></i>
+          </button>
+
+
+          <!-- CLIENT LOGIN -->
+          <a href="login.html" class="login-btn">
+            Client Login
+          </a>
+
+
+          <!-- DASHBOARD -->
+          <a href="dashboard.html" class="dashboard-btn">
+            Dashboard
+          </a>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+  </header>
+  <!-- ================= END HEADER ================= -->
+
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main id="mainContent">
+<!-- =====================================================
+     INDUSTRIES PAGE: HERO SECTION
+====================================================== -->
+
+<section class="industries-hero">
+
+    <!-- BACKGROUND IMAGE -->
+    <div class="industries-hero-background">
+        <img
+            src="images/industries-hero-workplace.jpg"
+            alt="Professional uniforms and textile solutions for different industries"
+        >
+    </div>
+
+    <!-- OVERLAY -->
+    <div class="industries-hero-overlay"></div>
+
+    <!-- DECORATIVE ELEMENTS -->
+    <div class="industries-hero-decoration industries-hero-decoration-one"
+         aria-hidden="true"></div>
+
+    <div class="industries-hero-decoration industries-hero-decoration-two"
+         aria-hidden="true"></div>
+
+    <!-- HERO CONTENT -->
+    <div class="industries-hero-container">
+
+        <div class="industries-hero-content">
+
+            <!-- EYEBROW -->
+            <div class="industries-hero-eyebrow">
+                <span class="industries-hero-eyebrow-line"></span>
+                INDUSTRIES WE SERVE
+            </div>
+
+            <!-- TITLE -->
+            <h1 class="industries-hero-title">
+                Textile Solutions for
+                <span>Every Industry.</span>
+            </h1>
+
+            <!-- DESCRIPTION -->
+            <p class="industries-hero-description">
+                From healthcare and hospitality to manufacturing and
+                corporate workplaces, Uniwear provides dependable uniform
+                rental, linen supply, and textile care solutions designed
+                around the needs of your business.
+            </p>
+
+            <!-- BREADCRUMB -->
+            <nav class="industries-hero-breadcrumb"
+                 aria-label="Breadcrumb">
+
+                <a href="index.html">Home</a>
+
+                <i class="fa-solid fa-chevron-right"
+                   aria-hidden="true"></i>
+
+                <span aria-current="page">Industries Served</span>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =====================================================
+     INDUSTRIES SECTION 2: INDUSTRIES OVERVIEW
+====================================================== -->
+
+<section class="industries-overview" id="industriesOverview">
+
+    <div class="industries-overview-container">
+
+        <!-- SECTION HEADER -->
+        <div class="industries-overview-header">
+
+            <div class="industries-overview-eyebrow">
+                <span class="industries-overview-eyebrow-line"></span>
+                INDUSTRY-FOCUSED SOLUTIONS
+                <span class="industries-overview-eyebrow-line"></span>
+            </div>
+
+            <h2 class="industries-overview-title">
+                Supporting the Industries
+                <span>That Keep Business Moving</span>
+            </h2>
+
+            <p class="industries-overview-description">
+                Every industry has its own standards, routines, and service
+                requirements. Uniwear provides practical uniform rental,
+                linen supply, and textile care solutions to help businesses
+                maintain a professional and consistent workplace.
+            </p>
+
+        </div>
+
+
+        <!-- SERVICE HIGHLIGHTS -->
+        <div class="industries-overview-highlights">
+
+            <!-- HIGHLIGHT 1 -->
+            <article class="industries-overview-highlight">
+
+                <div class="industries-overview-icon">
+                    <i class="fa-solid fa-shirt"></i>
+                </div>
+
+                <div class="industries-overview-highlight-content">
+                    <h3>Professional Uniforms</h3>
+
+                    <p>
+                        Uniform solutions designed around workplace roles,
+                        team requirements, and professional presentation.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <!-- HIGHLIGHT 2 -->
+            <article class="industries-overview-highlight">
+
+                <div class="industries-overview-icon">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                </div>
+
+                <div class="industries-overview-highlight-content">
+                    <h3>Dependable Linen Supply</h3>
+
+                    <p>
+                        Linen supply options that support the everyday
+                        operational needs of your business.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <!-- HIGHLIGHT 3 -->
+            <article class="industries-overview-highlight">
+
+                <div class="industries-overview-icon">
+                    <i class="fa-solid fa-soap"></i>
+                </div>
+
+                <div class="industries-overview-highlight-content">
+                    <h3>Professional Textile Care</h3>
+
+                    <p>
+                        Structured textile care to help maintain cleanliness,
+                        presentation, and consistent service standards.
+                    </p>
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- BOTTOM STATEMENT -->
+        <div class="industries-overview-bottom">
+
+            <div class="industries-overview-bottom-line"></div>
+
+            <p>
+                <strong>One trusted partner.</strong>
+                Solutions shaped around your industry's needs.
+            </p>
+
+            <div class="industries-overview-bottom-line"></div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =====================================================
+     INDUSTRIES SECTION 3: INDUSTRIES WE SERVE
+====================================================== -->
+
+<section class="industries-served" id="industriesServed">
+
+    <div class="industries-served-container">
+
+        <!-- SECTION HEADER -->
+        <div class="industries-served-header">
+
+            <div class="industries-served-eyebrow">
+                <span class="industries-served-eyebrow-line"></span>
+                WHO WE SUPPORT
+                <span class="industries-served-eyebrow-line"></span>
+            </div>
+
+            <h2 class="industries-served-title">
+                Solutions for
+                <span>Every Industry</span>
+            </h2>
+
+            <p class="industries-served-description">
+                Different workplaces have different textile needs.
+                We provide uniform rental, linen supply, and textile
+                care solutions tailored to the demands of your industry.
+            </p>
+
+        </div>
+
+
+        <!-- INDUSTRY CARDS -->
+        <div class="industries-served-grid">
+
+            <!-- HEALTHCARE -->
+            <article class="industries-served-card">
+
+                <a href="contact.html"
+                   class="industries-served-image-link"
+                   aria-label="Enquire about healthcare uniform and linen solutions">
+
+                    <div class="industries-served-image-wrap">
+
+                        <img
+                            src="images/industries-served-healthcare.jpg"
+                            alt="Healthcare professionals wearing clean medical uniforms"
+                            class="industries-served-image"
+                            loading="lazy"
+                        >
+
+                        <span class="industries-served-number">01</span>
+
+                        <div class="industries-served-image-overlay"></div>
+
+                        <div class="industries-served-image-icon">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+
+                    </div>
+
+                </a>
+
+                <div class="industries-served-card-content">
+
+                    <span class="industries-served-category">
+                        HEALTHCARE
+                    </span>
+
+                    <h3>
+                        Healthcare & Medical
+                    </h3>
+
+                    <p>
+                        Professional medical uniforms, scrubs, and linen
+                        solutions to support the daily requirements of
+                        healthcare environments.
+                    </p>
+
+                    <a href="contact.html"
+                       class="industries-served-link">
+                        Discuss Your Requirements
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- HOSPITALITY -->
+            <article class="industries-served-card">
+
+                <a href="contact.html"
+                   class="industries-served-image-link"
+                   aria-label="Enquire about hospitality uniform and linen solutions">
+
+                    <div class="industries-served-image-wrap">
+
+                        <img
+                            src="images/industries-served-hospitality.jpg"
+                            alt="Hospitality staff and neatly prepared hotel linen"
+                            class="industries-served-image"
+                            loading="lazy"
+                        >
+
+                        <span class="industries-served-number">02</span>
+
+                        <div class="industries-served-image-overlay"></div>
+
+                        <div class="industries-served-image-icon">
+                            <i class="fa-solid fa-hotel"></i>
+                        </div>
+
+                    </div>
+
+                </a>
+
+                <div class="industries-served-card-content">
+
+                    <span class="industries-served-category">
+                        HOSPITALITY
+                    </span>
+
+                    <h3>
+                        Hotels & Hospitality
+                    </h3>
+
+                    <p>
+                        Coordinated staff uniforms, guest linens, and
+                        textile care options that help hospitality teams
+                        maintain a polished presentation.
+                    </p>
+
+                    <a href="contact.html"
+                       class="industries-served-link">
+                        Discuss Your Requirements
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- MANUFACTURING -->
+            <article class="industries-served-card">
+
+                <a href="contact.html"
+                   class="industries-served-image-link"
+                   aria-label="Enquire about manufacturing workwear solutions">
+
+                    <div class="industries-served-image-wrap">
+
+                        <img
+                            src="images/industries-served-manufacturing.jpg"
+                            alt="Manufacturing employees wearing professional industrial workwear"
+                            class="industries-served-image"
+                            loading="lazy"
+                        >
+
+                        <span class="industries-served-number">03</span>
+
+                        <div class="industries-served-image-overlay"></div>
+
+                        <div class="industries-served-image-icon">
+                            <i class="fa-solid fa-industry"></i>
+                        </div>
+
+                    </div>
+
+                </a>
+
+                <div class="industries-served-card-content">
+
+                    <span class="industries-served-category">
+                        MANUFACTURING
+                    </span>
+
+                    <h3>
+                        Manufacturing & Industry
+                    </h3>
+
+                    <p>
+                        Practical workwear and uniform service options
+                        suited to production facilities, workshops,
+                        and industrial workplaces safety.
+                    </p>
+
+                    <a href="contact.html"
+                       class="industries-served-link">
+                        Discuss Your Requirements
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- CORPORATE -->
+            <article class="industries-served-card">
+
+                <a href="contact.html"
+                   class="industries-served-image-link"
+                   aria-label="Enquire about corporate uniform solutions">
+
+                    <div class="industries-served-image-wrap">
+
+                        <img
+                            src="images/industries-served-corporate.jpg"
+                            alt="Corporate employees in coordinated professional business attire"
+                            class="industries-served-image"
+                            loading="lazy"
+                        >
+
+                        <span class="industries-served-number">04</span>
+
+                        <div class="industries-served-image-overlay"></div>
+
+                        <div class="industries-served-image-icon">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+
+                    </div>
+
+                </a>
+
+                <div class="industries-served-card-content">
+
+                    <span class="industries-served-category">
+                        CORPORATE
+                    </span>
+
+                    <h3>
+                        Corporate Workplaces
+                    </h3>
+
+                    <p>
+                        Professional uniform options that help teams
+                        present a consistent, organized, and
+                        business-ready appearance look good.
+                    </p>
+
+                    <a href="contact.html"
+                       class="industries-served-link">
+                        Discuss Your Requirements
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- BOTTOM CTA -->
+        <div class="industries-served-bottom">
+
+            <div class="industries-served-bottom-content">
+
+                <div class="industries-served-bottom-icon">
+                    <i class="fa-solid fa-people-group"></i>
+                </div>
+
+                <div>
+                    <h3>Your Industry. Your Requirements.</h3>
+
+                    <p>
+                        Tell us about your workplace and explore a
+                        solution designed around your team's needs.
+                    </p>
+                </div>
+
+            </div>
+
+            <a href="contact.html" class="industries-served-btn">
+                Talk to Our Team
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =====================================================
+     INDUSTRIES SECTION 4: SOLUTIONS FOR EVERY WORKPLACE
+====================================================== -->
+
+<section class="industries-solutions" id="industrySolutions">
+
+    <div class="industries-solutions-container">
+
+        <!-- SECTION HEADER -->
+        <div class="industries-solutions-header">
+
+            <div class="industries-solutions-eyebrow">
+                <span class="industries-solutions-eyebrow-line"></span>
+                OUR SERVICE APPROACH
+            </div>
+
+            <h2 class="industries-solutions-title">
+                The Right Support for
+                <span>Every Workplace</span>
+            </h2>
+
+            <p class="industries-solutions-description">
+                From daily workwear to essential workplace linens, our
+                services are designed to support your operations, simplify
+                textile management, and maintain a professional standard
+                across your business.
+            </p>
+
+            <a href="contact.html" class="industries-solutions-main-link">
+                Find the Right Solution
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <!-- SERVICE SOLUTIONS -->
+        <div class="industries-solutions-grid">
+
+            <!-- UNIFORM RENTAL -->
+            <article class="industries-solutions-card">
+
+                <div class="industries-solutions-card-top">
+
+                    <div class="industries-solutions-icon">
+                        <i class="fa-solid fa-shirt"></i>
+                    </div>
+
+                    <span class="industries-solutions-number">01</span>
+
+                </div>
+
+                <span class="industries-solutions-label">
+                    WORKWEAR MANAGEMENT
+                </span>
+
+                <h3>Uniform Rental</h3>
+
+                <p>
+                    Support your team with a consistent supply of
+                    professional uniforms suited to different roles
+                    and workplace environments.
+                </p>
+
+                <ul class="industries-solutions-list">
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Role-appropriate uniform options
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Professional appearance
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Convenient service planning
+                    </li>
+                </ul>
+
+                <a href="services.html#uniformRental"
+                   class="industries-solutions-card-link">
+                    Explore Uniform Rental
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </article>
+
+
+            <!-- LINEN SUPPLY -->
+            <article class="industries-solutions-card">
+
+                <div class="industries-solutions-card-top">
+
+                    <div class="industries-solutions-icon">
+                        <i class="fa-solid fa-boxes-stacked"></i>
+                    </div>
+
+                    <span class="industries-solutions-number">02</span>
+
+                </div>
+
+                <span class="industries-solutions-label">
+                    EVERYDAY ESSENTIALS
+                </span>
+
+                <h3>Linen Supply</h3>
+
+                <p>
+                    Help meet your workplace's linen requirements with
+                    practical supply arrangements for hospitality,
+                    healthcare, and other environments.
+                </p>
+
+                <ul class="industries-solutions-list">
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Workplace linen options
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Organized supply planning
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Support for daily operations
+                    </li>
+                </ul>
+
+                <a href="services.html#linenSupply"
+                   class="industries-solutions-card-link">
+                    Explore Linen Supply
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </article>
+
+
+            <!-- TEXTILE CARE -->
+            <article class="industries-solutions-card">
+
+                <div class="industries-solutions-card-top">
+
+                    <div class="industries-solutions-icon">
+                        <i class="fa-solid fa-soap"></i>
+                    </div>
+
+                    <span class="industries-solutions-number">03</span>
+
+                </div>
+
+                <span class="industries-solutions-label">
+                    PROFESSIONAL TEXTILE CARE
+                </span>
+
+                <h3>Textile Care</h3>
+
+                <p>
+                    Keep uniforms and textiles looking professional
+                    with structured care and quality checks suited
+                    to your service requirements.
+                </p>
+
+                <ul class="industries-solutions-list">
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Professional laundering
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Textile quality inspection
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Consistent presentation
+                    </li>
+                </ul>
+
+                <a href="services.html#textileCare"
+                   class="industries-solutions-card-link">
+                    Explore Textile Care
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </article>
+
+        </div>
+
+
+        <!-- BOTTOM NOTE -->
+        <div class="industries-solutions-bottom">
+
+            <div class="industries-solutions-bottom-icon">
+                <i class="fa-solid fa-handshake"></i>
+            </div>
+
+            <p>
+                <strong>One workplace, many needs.</strong>
+                Let's discuss the service combination that works for your business.
+            </p>
+
+            <a href="contact.html" class="industries-solutions-bottom-link">
+                Contact Our Team
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =====================================================
+     INDUSTRIES SECTION 5: QUALITY & RELIABILITY
+====================================================== -->
+
+<section class="industries-quality" id="industryQuality">
+
+    <div class="industries-quality-container">
+
+        <!-- LEFT: CONTENT -->
+        <div class="industries-quality-content">
+
+            <div class="industries-quality-eyebrow">
+                <span class="industries-quality-eyebrow-line"></span>
+                OUR QUALITY COMMITMENT
+            </div>
+
+            <h2 class="industries-quality-title">
+                Quality You Can Trust.
+                <span>Service You Can Rely On.</span>
+            </h2>
+
+            <p class="industries-quality-description">
+                Every workplace has its own standards and textile
+                requirements. At Uniwear, we focus on dependable service,
+                careful textile handling, and consistent quality to help
+                your team maintain a professional working environment.
+            </p>
+
+            <!-- QUALITY FEATURES -->
+            <div class="industries-quality-features">
+
+                <div class="industries-quality-feature">
+
+                    <div class="industries-quality-feature-icon">
+                        <i class="fa-solid fa-check-double"></i>
+                    </div>
+
+                    <div class="industries-quality-feature-text">
+                        <h3>Consistent Quality Checks</h3>
+                        <p>
+                            Attention to textile condition and presentation
+                            helps maintain professional standards.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="industries-quality-feature">
+
+                    <div class="industries-quality-feature-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                    <div class="industries-quality-feature-text">
+                        <h3>Careful Textile Handling</h3>
+                        <p>
+                            Appropriate handling and care support the
+                            condition and usability of workplace textiles.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="industries-quality-feature">
+
+                    <div class="industries-quality-feature-icon">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+
+                    <div class="industries-quality-feature-text">
+                        <h3>Dependable Service Planning</h3>
+                        <p>
+                            Organized service coordination helps your
+                            workplace manage its ongoing textile needs.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CTA -->
+            <a href="contact.html" class="industries-quality-button">
+                Discuss Your Requirements
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <!-- RIGHT: IMAGE -->
+        <div class="industries-quality-visual">
+
+            <div class="industries-quality-image-wrap">
+
+                <img
+                    src="images/industries-quality-reliability.jpg"
+                    alt="Professional inspection and care of clean workplace uniforms and textiles"
+                    class="industries-quality-image"
+                    loading="lazy"
+                >
+
+                <div class="industries-quality-image-overlay"></div>
+
+                <!-- IMAGE BADGE -->
+                <div class="industries-quality-image-badge">
+
+                    <div class="industries-quality-badge-icon">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+
+                    <div class="industries-quality-badge-text">
+                        <strong>Quality First</strong>
+                        <span>Care in Every Detail</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- DECORATIVE ELEMENT -->
+            <div
+                class="industries-quality-decoration"
+                aria-hidden="true">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =====================================================
+     INDUSTRIES SECTION 6: FINAL CTA
+====================================================== -->
+
+<section class="industries-final-cta" id="industriesFinalCta">
+
+    <!-- BACKGROUND IMAGE -->
+    <div class="industries-final-cta-background">
+        <img
+            src="images/industries-final-cta.jpg"
+            alt="Professionally prepared workplace uniforms and linen"
+            class="industries-final-cta-image"
+            loading="lazy"
+        >
+    </div>
+
+    <!-- NAVY OVERLAY -->
+    <div class="industries-final-cta-overlay"></div>
+
+    <!-- DECORATIVE ELEMENTS -->
+    <div
+        class="industries-final-cta-decoration industries-final-cta-decoration-left"
+        aria-hidden="true">
+    </div>
+
+    <div
+        class="industries-final-cta-decoration industries-final-cta-decoration-right"
+        aria-hidden="true">
+    </div>
+
+    <!-- CONTENT -->
+    <div class="industries-final-cta-container">
+
+        <div class="industries-final-cta-content">
+
+            <div class="industries-final-cta-eyebrow">
+                <span class="industries-final-cta-eyebrow-line"></span>
+                LET'S WORK TOGETHER
+                <span class="industries-final-cta-eyebrow-line"></span>
+            </div>
+
+            <h2 class="industries-final-cta-title">
+                Ready to Find the Right
+                <span>Textile Solution?</span>
+            </h2>
+
+            <p class="industries-final-cta-description">
+                Every industry has unique requirements. Let Uniwear help
+                you explore uniform rental, linen supply, and professional
+                textile care solutions tailored to your workplace.
+            </p>
+
+            <!-- CTA BUTTONS -->
+            <div class="industries-final-cta-actions">
+
+                <a
+                    href="contact.html"
+                    class="industries-final-cta-button industries-final-cta-button-primary"
+                >
+                    Contact Our Team
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <a
+                    href="services.html"
+                    class="industries-final-cta-button industries-final-cta-button-secondary"
+                >
+                    Explore Our Services
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+            <!-- SUPPORTING NOTE -->
+            <div class="industries-final-cta-note">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Solutions designed around your workplace needs</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+     </main>
+<!-- ================= END MAIN CONTENT ================= -->
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer" id="siteFooter">
+
+  <div class="footer-container">
+
+    <!-- Company Information -->
+    <div class="footer-column footer-about">
+
+      <a href="index.html" class="footer-logo">
+        <img
+          src="images/logo.png"
+          alt="Uniwear Uniform Rental and Linen Supply"
+          class="footer-logo-image"
+        >
+      </a>
+
+      <p>
+        Reliable uniform rental and linen supply solutions
+        designed to keep your business professional,
+        comfortable, and ready for every working day.
+      </p>
+
+      <div class="footer-contact">
+        <p>
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          <a href="tel:+10000000000">Contact Our Team</a>
+        </p>
+
+        <p>
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          <a href="mailto:info@yourcompany.com">
+            Email Us
+          </a>
+        </p>
+      </div>
+
+    </div>
+
+
+    <!-- Quick Links -->
+    <div class="footer-column">
+
+      <h3>Quick Links</h3>
+
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+
+    </div>
+
+
+    <!-- Our Services -->
+    <div class="footer-column">
+
+      <h3>Our Services</h3>
+
+      <ul class="footer-links">
+        <li><a href="services.html">Uniform Rental</a></li>
+        <li><a href="services.html">Linen Supply</a></li>
+        <li><a href="services.html">Mat Rental</a></li>
+        <li><a href="services.html">Garment Replacement</a></li>
+      </ul>
+
+    </div>
+
+
+    <!-- Industries -->
+    <div class="footer-column">
+
+      <h3>Industries Served</h3>
+
+      <ul class="footer-links">
+        <li><a href="industries.html">Healthcare</a></li>
+        <li><a href="industries.html">Hospitality</a></li>
+        <li><a href="industries.html">Manufacturing</a></li>
+        <li><a href="industries.html">Food Service</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+
+    <div class="footer-bottom-container">
+
+      <p>
+        &copy; <span id="currentYear"></span>
+        Uniwear. All rights reserved.
+      </p>
+
+      <div class="footer-legal-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+<!-- ================= END FOOTER ================= -->
+<!-- JAVASCRIPT -->
+  <script src="js/script.js"></script>
+  <script src="js/theme-controls.js"></script>
+</body>
+</html>

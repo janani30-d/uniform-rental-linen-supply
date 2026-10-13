@@ -1,0 +1,887 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sizing Management | Uniwear</title>
+    <!-- Favicon -->
+
+  <link rel="icon" type="image/png" href="images/logo.png">
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Shared Dashboard CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/dash-res.css">
+
+    
+</head>
+
+<body>
+
+
+<!-- Main layout -->
+<div class="uw-dashboard-layout" id="uwDashboardLayout">
+
+    <!-- Sidebar overlay must be inside the layout -->
+    <div class="uw-sidebar-overlay" id="uwSidebarOverlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="uw-sidebar" id="uwSidebar">
+
+        <div class="uw-sidebar-brand">
+            <a href="index.html"
+               class="uw-brand-logo"
+               aria-label="Uniwear Home">
+                <img src="images/logo.png"
+                     alt="Uniwear Logo"
+                     class="uw-brand-image">
+            </a>
+
+            <button class="uw-sidebar-close"
+                    id="uwSidebarClose"
+                    type="button"
+                    aria-label="Close sidebar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <nav class="uw-sidebar-nav">
+            <a href="dashboard.html" class="uw-sidebar-link">
+                <i class="fa-solid fa-table-columns"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="inventory.html" class="uw-sidebar-link">
+                <i class="fa-solid fa-boxes-stacked"></i>
+                <span>Uniform Inventory</span>
+            </a>
+
+            <a href="sizing.html"
+               class="uw-sidebar-link active"
+               aria-current="page">
+                <i class="fa-solid fa-ruler-combined"></i>
+                <span>Sizing Management</span>
+            </a>
+
+            <a href="deliveries.html" class="uw-sidebar-link">
+                <i class="fa-solid fa-truck-fast"></i>
+                <span>Delivery Schedules</span>
+            </a>
+
+            <a href="replacements.html" class="uw-sidebar-link">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                <span>Replacement Requests</span>
+            </a>
+
+            <a href="billing.html" class="uw-sidebar-link">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <span>Billing &amp; Invoices</span>
+            </a>
+        </nav>
+
+        <div class="uw-sidebar-bottom">
+            <a href="login.html"
+               class="uw-sidebar-link uw-logout-link">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+
+    </aside>
+
+    <!-- Main area -->
+    <div class="uw-main-area">
+
+        <!-- Topbar -->
+        <header class="uw-topbar">
+
+            <div class="uw-topbar-left">
+                <button class="uw-menu-toggle"
+                        id="uwMenuToggle"
+                        type="button"
+                        aria-label="Open navigation menu"
+                        aria-controls="uwSidebar"
+                        aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="uw-page-heading">
+                    <p class="uw-topbar-greeting">
+                        Business Client Portal
+                    </p>
+                    <h1>Sizing Management</h1>
+                </div>
+            </div>
+
+            <div class="uw-topbar-actions">
+
+                <button class="uw-topbar-icon-btn"
+                        id="uwNotificationsBtn"
+                        type="button"
+                        aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="uw-notification-count">3</span>
+                </button>
+
+                <button class="uw-topbar-icon-btn"
+                        id="uwSettingsBtn"
+                        type="button"
+                        aria-label="Settings">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+
+                <button class="uw-topbar-icon-btn"
+                        id="uwDarkModeToggle"
+                        type="button"
+                        aria-label="Toggle dark mode"
+                        aria-pressed="false">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <button class="uw-topbar-icon-btn"
+                        id="uwRtlToggle"
+                        type="button"
+                        aria-label="Toggle right-to-left layout"
+                        aria-pressed="false">
+                    <i class="fa-solid fa-right-left"></i>
+                </button>
+
+                <button class="uw-profile-btn"
+                        id="uwProfileBtn"
+                        type="button"
+                        aria-label="Business profile">
+                    <span class="uw-profile-avatar">
+                        <i class="fa-solid fa-building"></i>
+                    </span>
+                    <span class="uw-profile-info">
+                        <strong>Business Client</strong>
+                        <small>Company Account</small>
+                    </span>
+                    <i class="fa-solid fa-chevron-down uw-profile-chevron"></i>
+                </button>
+
+            </div>
+        </header>
+
+        <!-- Keep your existing sizing sections inside this main -->
+        <main class="uw-dashboard-content sizing-page">
+
+           
+
+
+        <!-- =================================================
+             SIZING PAGE CONTENT
+        ================================================== -->
+
+        <main class="uw-dashboard-content sizing-page">
+
+
+            <!-- =================================================
+                 SECTION 1: PAGE HEADING
+            ================================================== -->
+
+            <section class="sizing-heading-section">
+
+                <div class="sizing-breadcrumb">
+
+                    <a href="dashboard.html">Dashboard</a>
+
+                    <i class="fa-solid fa-chevron-right"
+                       aria-hidden="true"></i>
+
+                    <span>Sizing Management</span>
+
+                </div>
+
+
+                <div class="sizing-page-heading-row">
+
+                    <div class="sizing-page-intro">
+
+                        <span class="sizing-eyebrow">
+                            SIZE &amp; FIT MANAGEMENT
+                        </span>
+
+                        <h1>Uniform Sizing</h1>
+
+                        <p>
+                            Manage employee measurements, maintain size
+                            profiles, and help ensure every uniform fits
+                            correctly.
+                        </p>
+
+                    </div>
+
+
+                    <button class="sizing-primary-btn"
+                            id="sizingAddButton"
+                            type="button">
+
+                        <i class="fa-solid fa-plus"
+                           aria-hidden="true"></i>
+
+                        Add Size Profile
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SECTION 2: SIZING OVERVIEW
+            ================================================== -->
+
+            <section class="sizing-overview-section">
+
+                <div class="sizing-section-heading">
+
+                    <div>
+                        <h2>Sizing Overview</h2>
+                        <p>
+                            Review employee sizing records at a glance.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="sizing-stats-grid">
+
+
+                    <!-- Total Profiles -->
+
+                    <article class="sizing-stat-card">
+
+                        <div class="sizing-stat-icon blue">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+
+                        <div class="sizing-stat-info">
+
+                            <span>Total Profiles</span>
+
+                            <h3 id="sizingTotalCount">5</h3>
+
+                            <small>Sample employee records</small>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Completed Measurements -->
+
+                    <article class="sizing-stat-card">
+
+                        <div class="sizing-stat-icon green">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+
+                        <div class="sizing-stat-info">
+
+                            <span>Measurements Complete</span>
+
+                            <h3 id="sizingCompleteCount">3</h3>
+
+                            <small>Completed profiles</small>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Pending Measurements -->
+
+                    <article class="sizing-stat-card">
+
+                        <div class="sizing-stat-icon orange">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+
+                        <div class="sizing-stat-info">
+
+                            <span>Pending Measurements</span>
+
+                            <h3 id="sizingPendingCount">2</h3>
+
+                            <small>Awaiting measurements</small>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Common Size -->
+
+                    <article class="sizing-stat-card">
+
+                        <div class="sizing-stat-icon purple">
+                            <i class="fa-solid fa-shirt"></i>
+                        </div>
+
+                        <div class="sizing-stat-info">
+
+                            <span>Common Size</span>
+
+                            <h3 id="sizingCommonSize">M</h3>
+
+                            <small>Based on sample records</small>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SECTION 3: SIZE DISTRIBUTION
+            ================================================== -->
+
+            <section class="sizing-distribution-section">
+
+                <div class="sizing-section-heading">
+
+                    <div>
+                        <h2>Browse Sizes</h2>
+
+                        <p>
+                            Select a uniform size to filter employee records.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="sizing-distribution-grid">
+
+
+                    <button class="sizing-distribution-card active"
+                            type="button"
+                            data-size="all"
+                            aria-pressed="true">
+
+                        <span class="sizing-distribution-label">
+                            All Sizes
+                        </span>
+
+                        <strong id="sizingAllSizes">5</strong>
+
+                        <small>All profiles</small>
+
+                    </button>
+
+
+                    <button class="sizing-distribution-card"
+                            type="button"
+                            data-size="S"
+                            aria-pressed="false">
+
+                        <span class="sizing-distribution-label">
+                            Small
+                        </span>
+
+                        <strong>1</strong>
+
+                        <small>Size S</small>
+
+                    </button>
+
+
+                    <button class="sizing-distribution-card"
+                            type="button"
+                            data-size="M"
+                            aria-pressed="false">
+
+                        <span class="sizing-distribution-label">
+                            Medium
+                        </span>
+
+                        <strong>1</strong>
+
+                        <small>Size M</small>
+
+                    </button>
+
+
+                    <button class="sizing-distribution-card"
+                            type="button"
+                            data-size="L"
+                            aria-pressed="false">
+
+                        <span class="sizing-distribution-label">
+                            Large
+                        </span>
+
+                        <strong>1</strong>
+
+                        <small>Size L</small>
+
+                    </button>
+
+
+                    <button class="sizing-distribution-card"
+                            type="button"
+                            data-size="XL"
+                            aria-pressed="false">
+
+                        <span class="sizing-distribution-label">
+                            Extra Large
+                        </span>
+
+                        <strong>1</strong>
+
+                        <small>Size XL</small>
+
+                    </button>
+
+
+                    <button class="sizing-distribution-card"
+                            type="button"
+                            data-size="XXL"
+                            aria-pressed="false">
+
+                        <span class="sizing-distribution-label">
+                            XXL
+                        </span>
+
+                        <strong>1</strong>
+
+                        <small>Size XXL</small>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SECTION 4: EMPLOYEE SIZE RECORDS
+            ================================================== -->
+
+            <section class="sizing-records-section">
+
+
+                <!-- Records Heading -->
+
+                <div class="sizing-section-heading sizing-records-heading">
+
+                    <div>
+
+                        <h2>Employee Size Records</h2>
+
+                        <p>
+                            Search, filter, and review uniform measurements.
+                        </p>
+
+                    </div>
+
+
+                    <button class="sizing-export-btn"
+                            id="sizingExportButton"
+                            type="button">
+
+                        <i class="fa-solid fa-download"
+                           aria-hidden="true"></i>
+
+                        Export CSV
+
+                    </button>
+
+                </div>
+
+
+                <!-- Search and Filters -->
+
+                <div class="sizing-toolbar">
+
+
+                    <label class="sizing-search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"
+                           aria-hidden="true"></i>
+
+                        <input type="search"
+                               id="sizingSearchInput"
+                               placeholder="Search employee name or ID..."
+                               aria-label="Search employee size records">
+
+                    </label>
+
+
+                    <label class="sizing-filter-box">
+
+                        <span>Uniform Size</span>
+
+                        <select id="sizingSizeFilter">
+
+                            <option value="all">All Sizes</option>
+                            <option value="S">Small (S)</option>
+                            <option value="M">Medium (M)</option>
+                            <option value="L">Large (L)</option>
+                            <option value="XL">Extra Large (XL)</option>
+                            <option value="XXL">XXL</option>
+
+                        </select>
+
+                    </label>
+
+
+                    <label class="sizing-filter-box">
+
+                        <span>Measurement Status</span>
+
+                        <select id="sizingStatusFilter">
+
+                            <option value="all">All Statuses</option>
+                            <option value="complete">Complete</option>
+                            <option value="pending">Pending</option>
+
+                        </select>
+
+                    </label>
+
+                </div>
+
+
+                <!-- Employee Measurements Table -->
+
+                <div class="sizing-table-card">
+
+                    <div class="sizing-table-scroll">
+
+                        <table class="sizing-table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Employee</th>
+                                    <th>Employee ID</th>
+                                    <th>Department</th>
+                                    <th>Uniform Size</th>
+                                    <th>Chest (cm)</th>
+                                    <th>Waist (cm)</th>
+                                    <th>Inseam (cm)</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="sizingTableBody">
+
+
+                                <!-- Employee 1 -->
+
+                                <tr data-size="M"
+                                    data-status="complete">
+
+                                    <td>
+                                        <div class="sizing-employee-cell">
+                                            <span class="sizing-avatar">AR</span>
+                                            <strong>Arun Raj</strong>
+                                        </div>
+                                    </td>
+
+                                    <td>EMP-1001</td>
+                                    <td>Operations</td>
+
+                                    <td>
+                                        <span class="sizing-size-badge">M</span>
+                                    </td>
+
+                                    <td>96</td>
+                                    <td>82</td>
+                                    <td>78</td>
+
+                                    <td>
+                                        <span class="sizing-status complete">
+                                            Complete
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button class="sizing-action-btn"
+                                                type="button"
+                                                aria-label="Edit Arun Raj profile">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- Employee 2 -->
+
+                                <tr data-size="L"
+                                    data-status="complete">
+
+                                    <td>
+                                        <div class="sizing-employee-cell">
+                                            <span class="sizing-avatar">PK</span>
+                                            <strong>Priya Kumar</strong>
+                                        </div>
+                                    </td>
+
+                                    <td>EMP-1002</td>
+                                    <td>Warehouse</td>
+
+                                    <td>
+                                        <span class="sizing-size-badge">L</span>
+                                    </td>
+
+                                    <td>102</td>
+                                    <td>88</td>
+                                    <td>80</td>
+
+                                    <td>
+                                        <span class="sizing-status complete">
+                                            Complete
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button class="sizing-action-btn"
+                                                type="button"
+                                                aria-label="Edit Priya Kumar profile">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- Employee 3 -->
+
+                                <tr data-size="XL"
+                                    data-status="pending">
+
+                                    <td>
+                                        <div class="sizing-employee-cell">
+                                            <span class="sizing-avatar">VK</span>
+                                            <strong>Vijay Kumar</strong>
+                                        </div>
+                                    </td>
+
+                                    <td>EMP-1003</td>
+                                    <td>Maintenance</td>
+
+                                    <td>
+                                        <span class="sizing-size-badge">XL</span>
+                                    </td>
+
+                                    <td>—</td>
+                                    <td>—</td>
+                                    <td>—</td>
+
+                                    <td>
+                                        <span class="sizing-status pending">
+                                            Pending
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button class="sizing-action-btn"
+                                                type="button"
+                                                aria-label="Edit Vijay Kumar profile">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- Employee 4 -->
+
+                                <tr data-size="S"
+                                    data-status="complete">
+
+                                    <td>
+                                        <div class="sizing-employee-cell">
+                                            <span class="sizing-avatar">SM</span>
+                                            <strong>Sneha Mani</strong>
+                                        </div>
+                                    </td>
+
+                                    <td>EMP-1004</td>
+                                    <td>Administration</td>
+
+                                    <td>
+                                        <span class="sizing-size-badge">S</span>
+                                    </td>
+
+                                    <td>86</td>
+                                    <td>70</td>
+                                    <td>74</td>
+
+                                    <td>
+                                        <span class="sizing-status complete">
+                                            Complete
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button class="sizing-action-btn"
+                                                type="button"
+                                                aria-label="Edit Sneha Mani profile">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- Employee 5 -->
+
+                                <tr data-size="XXL"
+                                    data-status="pending">
+
+                                    <td>
+                                        <div class="sizing-employee-cell">
+                                            <span class="sizing-avatar">RS</span>
+                                            <strong>Ravi Shankar</strong>
+                                        </div>
+                                    </td>
+
+                                    <td>EMP-1005</td>
+                                    <td>Logistics</td>
+
+                                    <td>
+                                        <span class="sizing-size-badge">XXL</span>
+                                    </td>
+
+                                    <td>—</td>
+                                    <td>—</td>
+                                    <td>—</td>
+
+                                    <td>
+                                        <span class="sizing-status pending">
+                                            Pending
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button class="sizing-action-btn"
+                                                type="button"
+                                                aria-label="Edit Ravi Shankar profile">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <div class="sizing-table-footer">
+                        <span id="sizingResultsCount">
+                            Showing 5 sample records
+                        </span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SECTION 5: FITTING REMINDER
+            ================================================== -->
+
+            <section class="sizing-reminder-section">
+
+                <div class="sizing-reminder-icon">
+                    <i class="fa-solid fa-ruler"
+                       aria-hidden="true"></i>
+                </div>
+
+                <div class="sizing-reminder-content">
+
+                    <h3>Keep Measurements Up to Date</h3>
+
+                    <p>
+                        Review employee measurements regularly to help
+                        maintain accurate sizing and comfortable uniform
+                        fittings.
+                    </p>
+
+                </div>
+
+                <button class="sizing-secondary-btn"
+                        id="sizingReviewButton"
+                        type="button">
+
+                    Review Pending
+
+                    <i class="fa-solid fa-arrow-right"
+                       aria-hidden="true"></i>
+
+                </button>
+
+            </section>
+
+
+        
+
+        </main>
+
+    </div>
+</div>
+
+<!-- Logout Confirmation Modal -->
+<div class="logout-modal-overlay" id="logoutModal" aria-hidden="true">
+    <div
+        class="logout-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="logoutModalTitle"
+    >
+        <div class="logout-modal-icon">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+
+        <h2 id="logoutModalTitle">
+            Are you sure you want to logout?
+        </h2>
+
+        <p class="logout-modal-description">
+            You will be redirected to the login page.
+        </p>
+
+        <div class="logout-modal-actions">
+            <button type="button" class="logout-btn-yes" id="confirmLogout">
+                Yes
+            </button>
+
+            <button type="button" class="logout-btn-no" id="cancelLogout">
+                No
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="js/dashboard.js"></script>
+<script src="js/theme-controls.js"></script>
+
+
+   
+
+</body>
+</html>

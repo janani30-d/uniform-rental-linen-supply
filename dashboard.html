@@ -1,0 +1,781 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Uniwear | Business Dashboard</title>
+    <!-- Favicon -->
+
+  <link rel="icon" type="image/png" href="images/logo.png">
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Dashboard Stylesheets -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/dash-res.css">
+</head>
+
+<body>
+
+<div class="uw-dashboard-layout" id="uwDashboardLayout">
+
+    <!-- Sidebar Overlay -->
+    <div class="uw-sidebar-overlay" id="uwSidebarOverlay"></div>
+
+    <!-- =====================================
+         SIDEBAR
+    ====================================== -->
+    <aside class="uw-sidebar" id="uwSidebar">
+
+        <!-- Sidebar Brand -->
+<div class="uw-sidebar-brand">
+
+    <a href="index.html"
+       class="uw-brand-logo"
+       aria-label="Uniwear Home">
+
+        <img src="images/logo.png"
+             alt="Uniwear Logo"
+             class="uw-brand-image">
+
+    </a>
+
+    <!-- Mobile / Tablet Close Button -->
+    <button class="uw-sidebar-close"
+            id="uwSidebarClose"
+            type="button"
+            aria-label="Close sidebar">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+</div>
+
+        <!-- Sidebar Navigation -->
+        <nav class="uw-sidebar-nav" aria-label="Dashboard navigation">
+
+            <a href="dashboard.html"
+               class="uw-sidebar-link active"
+               aria-current="page">
+
+                <i class="fa-solid fa-table-columns"></i>
+                <span>Dashboard</span>
+
+            </a>
+
+            <a href="inventory.html" class="uw-sidebar-link">
+                <i class="fa-solid fa-boxes-stacked"></i>
+                <span>Uniform Inventory</span>
+            </a>
+
+            <a href="sizing.html" class="uw-sidebar-link">
+                <i class="fa-solid fa-ruler-combined"></i>
+                <span>Sizing Management</span>
+            </a>
+
+            <a href="deliveries.html" class="uw-sidebar-link">
+                <i class="fa-solid fa-truck-fast"></i>
+                <span>Delivery Schedules</span>
+            </a>
+
+            <a href="replacements.html" class="uw-sidebar-link">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                <span>Replacement Requests</span>
+            </a>
+
+            <a href="billing.html" class="uw-sidebar-link">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <span>Billing &amp; Invoices</span>
+            </a>
+
+        </nav>
+
+
+        <!-- Sidebar Bottom -->
+        <div class="uw-sidebar-bottom">
+
+            <a href="login.html" class="uw-sidebar-link uw-logout-link">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================
+         MAIN AREA
+    ====================================== -->
+    <div class="uw-main-area">
+
+        <!-- =================================
+             TOPBAR
+        ================================== -->
+        <header class="uw-topbar">
+
+            <!-- Left: Hamburger and Page Heading -->
+            <div class="uw-topbar-left">
+
+                <button class="uw-menu-toggle"
+                        id="uwMenuToggle"
+                        type="button"
+                        aria-label="Open navigation menu"
+                        aria-controls="uwSidebar"
+                        aria-expanded="false">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+                <div class="uw-page-heading">
+
+                    <p class="uw-topbar-greeting">
+                        Business Client Portal
+                    </p>
+
+                    <h1>Dashboard</h1>
+
+                </div>
+
+            </div>
+
+
+            <!-- Right: Topbar Actions -->
+            <div class="uw-topbar-actions">
+
+                <!-- Notifications -->
+                <button class="uw-topbar-icon-btn uw-notification-btn"
+                        id="uwNotificationsBtn"
+                        type="button"
+                        aria-label="Notifications">
+
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="uw-notification-count">3</span>
+
+                </button>
+
+
+                <!-- Settings -->
+                <button class="uw-topbar-icon-btn"
+                        id="uwSettingsBtn"
+                        type="button"
+                        aria-label="Settings">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                </button>
+
+
+                <!-- Dark Mode -->
+                <button class="uw-topbar-icon-btn"
+                        id="uwDarkModeToggle"
+                        type="button"
+                        aria-label="Toggle dark mode"
+                        aria-pressed="false">
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </button>
+
+
+                <!-- RTL Toggle -->
+                <button class="uw-topbar-icon-btn"
+                        id="uwRtlToggle"
+                        type="button"
+                        aria-label="Toggle right-to-left layout"
+                        aria-pressed="false">
+
+                    <i class="fa-solid fa-right-left"></i>
+
+                </button>
+
+
+                <!-- Business Profile -->
+                <button class="uw-profile-btn"
+                        id="uwProfileBtn"
+                        type="button"
+                        aria-label="Business profile">
+
+                    <span class="uw-profile-avatar">
+                        <i class="fa-solid fa-building"></i>
+                    </span>
+
+                    <span class="uw-profile-info">
+                        <strong>Business Client</strong>
+                        <small>Company Account</small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down uw-profile-chevron"></i>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================
+             DASHBOARD CONTENT
+        ====================================== -->
+        
+<main class="uw-dashboard-content" id="uwDashboardContent">
+
+    <!-- =====================================
+         SECTION 1: WELCOME HERO
+    ====================================== -->
+    <section class="db-welcome">
+
+        <div class="db-welcome-content">
+
+            <span class="db-eyebrow">
+                <i class="fa-solid fa-building"></i>
+                UN IWEAR BUSINESS PORTAL
+            </span>
+
+            <h2>
+                Manage your uniform rentals
+                <span>in one simple dashboard.</span>
+            </h2>
+
+            <p>
+                Track garment inventory, upcoming deliveries, replacement
+                requests, and invoices from one convenient place.
+            </p>
+
+            <div class="db-welcome-actions">
+                <a href="deliveries.html" class="db-btn db-btn-primary">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    View Deliveries
+                </a>
+
+                <a href="replacements.html" class="db-btn db-btn-secondary">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                    Request Replacement
+                </a>
+            </div>
+
+        </div>
+
+        <div class="db-welcome-visual">
+
+            <img
+                src="images/dashboard-uniforms.jpg"
+                alt="Clean work uniforms prepared for rental delivery"
+                class="db-welcome-image">
+
+            <div class="db-floating-card">
+                <span class="db-floating-icon">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </span>
+
+                <div>
+                    <small>Next Delivery</small>
+                    <strong>October 14, 2026</strong>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SECTION 2: DASHBOARD OVERVIEW
+    ====================================== -->
+    <section class="db-overview">
+
+        <div class="db-section-heading">
+            <div>
+                <span class="db-section-eyebrow">ACCOUNT SUMMARY</span>
+                <h2>Dashboard Overview</h2>
+                <p>Your uniform rental activity at a glance.</p>
+            </div>
+
+            <a href="inventory.html" class="db-text-link">
+                View Inventory
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="db-stats-grid">
+
+            <article class="db-stat-card">
+                <div class="db-stat-top">
+                    <span class="db-stat-icon db-icon-blue">
+                        <i class="fa-solid fa-shirt"></i>
+                    </span>
+                    <span class="db-stat-label">Rental Program</span>
+                </div>
+
+                <h3>Active Rentals</h3>
+                <p class="db-stat-value">500</p>
+
+                <span class="db-stat-note">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                    Garments currently rented
+                </span>
+            </article>
+
+
+            <article class="db-stat-card">
+                <div class="db-stat-top">
+                    <span class="db-stat-icon db-icon-cyan">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </span>
+                    <span class="db-stat-label">Delivery</span>
+                </div>
+
+                <h3>Upcoming Deliveries</h3>
+                <p class="db-stat-value">3</p>
+
+                <span class="db-stat-note">
+                    <i class="fa-regular fa-calendar"></i>
+                    Scheduled deliveries
+                </span>
+            </article>
+
+
+            <article class="db-stat-card">
+                <div class="db-stat-top">
+                    <span class="db-stat-icon db-icon-orange">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </span>
+                    <span class="db-stat-label">Requests</span>
+                </div>
+
+                <h3>Pending Replacements</h3>
+                <p class="db-stat-value">5</p>
+
+                <span class="db-stat-note">
+                    <i class="fa-regular fa-clock"></i>
+                    Awaiting processing
+                </span>
+            </article>
+
+
+            <article class="db-stat-card">
+                <div class="db-stat-top">
+                    <span class="db-stat-icon db-icon-purple">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                    </span>
+                    <span class="db-stat-label">Billing</span>
+                </div>
+
+                <h3>Outstanding Invoices</h3>
+                <p class="db-stat-value">2</p>
+
+                <span class="db-stat-note">
+                    <i class="fa-solid fa-receipt"></i>
+                    Payment summary
+                </span>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SECTION 3: UPCOMING DELIVERIES
+    ====================================== -->
+    <section class="db-deliveries">
+
+        <div class="db-section-heading">
+            <div>
+                <span class="db-section-eyebrow">DELIVERY MANAGEMENT</span>
+                <h2>Upcoming Deliveries</h2>
+                <p>Review your next scheduled uniform and linen deliveries.</p>
+            </div>
+
+            <a href="deliveries.html" class="db-text-link">
+                View All
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="db-table-card">
+            <div class="db-table-scroll">
+
+                <table class="db-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Delivery Date</th>
+                            <th>Items</th>
+                            <th>Delivery Location</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td><strong>ORD-1024</strong></td>
+                            <td>Oct 14, 2026</td>
+                            <td>120 Uniforms</td>
+                            <td>Main Office</td>
+                            <td>
+                                <span class="db-demo-status db-status-scheduled">
+                                    Scheduled
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>ORD-1025</strong></td>
+                            <td>Oct 16, 2026</td>
+                            <td>80 Linen Items</td>
+                            <td>Branch Office</td>
+                            <td>
+                                <span class="db-demo-status db-status-processing">
+                                    Processing
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>ORD-1026</strong></td>
+                            <td>Oct 19, 2026</td>
+                            <td>60 Safety Garments</td>
+                            <td>Warehouse</td>
+                            <td>
+                                <span class="db-demo-status db-status-scheduled">
+                                    Scheduled
+                                </span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SECTION 4: UNIFORM INVENTORY
+    ====================================== -->
+    <section class="db-inventory">
+
+        <div class="db-section-heading">
+            <div>
+                <span class="db-section-eyebrow">STOCK MANAGEMENT</span>
+                <h2>Uniform Inventory</h2>
+                <p>Explore your rental garment categories.</p>
+            </div>
+
+            <a href="inventory.html" class="db-text-link">
+                Manage Inventory
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="db-inventory-grid">
+
+            <a href="inventory.html" class="db-inventory-card">
+                <span class="db-inventory-icon">
+                    <i class="fa-solid fa-shirt"></i>
+                </span>
+
+                <span class="db-inventory-info">
+                    <h3>Work Uniforms</h3>
+                    <p>Shirts, trousers and workwear</p>
+                </span>
+
+                <i class="fa-solid fa-arrow-right db-inventory-arrow"></i>
+            </a>
+
+
+            <a href="inventory.html" class="db-inventory-card">
+                <span class="db-inventory-icon">
+                    <i class="fa-solid fa-vest"></i>
+                </span>
+
+                <span class="db-inventory-info">
+                    <h3>Safety Apparel</h3>
+                    <p>Protective work garments</p>
+                </span>
+
+                <i class="fa-solid fa-arrow-right db-inventory-arrow"></i>
+            </a>
+
+
+            <a href="inventory.html" class="db-inventory-card">
+                <span class="db-inventory-icon">
+                    <i class="fa-solid fa-bed"></i>
+                </span>
+
+                <span class="db-inventory-info">
+                    <h3>Linen Supplies</h3>
+                    <p>Sheets, towels and linens</p>
+                </span>
+
+                <i class="fa-solid fa-arrow-right db-inventory-arrow"></i>
+            </a>
+
+
+            <a href="inventory.html" class="db-inventory-card">
+                <span class="db-inventory-icon">
+                    <i class="fa-solid fa-rug"></i>
+                </span>
+
+                <span class="db-inventory-info">
+                    <h3>Floor Mats</h3>
+                    <p>Commercial entrance mats</p>
+                </span>
+
+                <i class="fa-solid fa-arrow-right db-inventory-arrow"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SECTION 5: BILLING SUMMARY
+    ====================================== -->
+    <section class="db-billing">
+
+        <div class="db-section-heading">
+            <div>
+                <span class="db-section-eyebrow">ACCOUNT FINANCE</span>
+                <h2>Billing Summary</h2>
+                <p>Review outstanding invoices and payment deadlines.</p>
+            </div>
+
+            <a href="billing.html" class="db-text-link">
+                View All Invoices
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="db-billing-card">
+
+            <span class="db-billing-icon">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+            </span>
+
+            <div class="db-billing-details">
+                <h3>Outstanding Balance</h3>
+                <p>Two invoices require payment review.</p>
+                <strong class="db-billing-amount">₹24,500.00</strong>
+            </div>
+
+            <a href="billing.html" class="db-btn db-btn-primary">
+                Review Invoices
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SECTION 6: REPLACEMENT REQUESTS
+    ====================================== -->
+    <section class="db-replacements">
+
+        <div class="db-section-heading">
+            <div>
+                <span class="db-section-eyebrow">GARMENT CARE</span>
+                <h2>Replacement Requests</h2>
+                <p>Track worn, damaged and missing garment requests.</p>
+            </div>
+
+            <a href="replacements.html" class="db-text-link">
+                View Requests
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="db-table-card">
+            <div class="db-table-scroll">
+
+                <table class="db-table">
+                    <thead>
+                        <tr>
+                            <th>Request ID</th>
+                            <th>Garment</th>
+                            <th>Quantity</th>
+                            <th>Request Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td><strong>REP-201</strong></td>
+                            <td>Work Shirts</td>
+                            <td>3</td>
+                            <td>Oct 10, 2026</td>
+                            <td>
+                                <span class="db-demo-status db-status-processing">
+                                    Under Review
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>REP-202</strong></td>
+                            <td>Safety Vests</td>
+                            <td>2</td>
+                            <td>Oct 11, 2026</td>
+                            <td>
+                                <span class="db-demo-status db-status-scheduled">
+                                    Approved
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>REP-203</strong></td>
+                            <td>Work Trousers</td>
+                            <td>4</td>
+                            <td>Oct 12, 2026</td>
+                            <td>
+                                <span class="db-demo-status db-status-processing">
+                                    Pending
+                                </span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SECTION 7: RECENT ACTIVITY
+    ====================================== -->
+    <section class="db-activity">
+
+        <div class="db-section-heading">
+            <div>
+                <span class="db-section-eyebrow">LATEST UPDATES</span>
+                <h2>Recent Activity</h2>
+                <p>Recent changes and updates to your business account.</p>
+            </div>
+        </div>
+
+        <div class="db-activity-card">
+
+            <div class="db-activity-list">
+
+                <article class="db-activity-item">
+                    <span class="db-activity-icon db-icon-blue">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </span>
+
+                    <div class="db-activity-details">
+                        <h3>Delivery scheduled</h3>
+                        <p>Order ORD-1024 is scheduled for October 14.</p>
+                        <small>October 12, 2026 · 10:30 AM</small>
+                    </div>
+                </article>
+
+
+                <article class="db-activity-item">
+                    <span class="db-activity-icon db-icon-orange">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </span>
+
+                    <div class="db-activity-details">
+                        <h3>Replacement request submitted</h3>
+                        <p>Request REP-203 is awaiting review.</p>
+                        <small>October 12, 2026 · 9:15 AM</small>
+                    </div>
+                </article>
+
+
+                <article class="db-activity-item">
+                    <span class="db-activity-icon db-icon-purple">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                    </span>
+
+                    <div class="db-activity-details">
+                        <h3>Invoice awaiting payment</h3>
+                        <p>Invoice INV-508 is available in billing.</p>
+                        <small>October 11, 2026 · 3:45 PM</small>
+                    </div>
+                </article>
+
+
+                <article class="db-activity-item">
+                    <span class="db-activity-icon db-icon-cyan">
+                        <i class="fa-solid fa-boxes-stacked"></i>
+                    </span>
+
+                    <div class="db-activity-details">
+                        <h3>Inventory updated</h3>
+                        <p>Work uniform stock records were updated.</p>
+                        <small>October 10, 2026 · 11:00 AM</small>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+    </div>
+
+</div>
+
+<!-- Logout Confirmation Modal -->
+<div class="logout-modal-overlay" id="logoutModal" aria-hidden="true">
+    <div
+        class="logout-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="logoutModalTitle"
+    >
+        <div class="logout-modal-icon">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+
+        <h2 id="logoutModalTitle">
+            Are you sure you want to logout?
+        </h2>
+
+        <p class="logout-modal-description">
+            You will be redirected to the login page.
+        </p>
+
+        <div class="logout-modal-actions">
+            <button type="button" class="logout-btn-yes" id="confirmLogout">
+                Yes
+            </button>
+
+            <button type="button" class="logout-btn-no" id="cancelLogout">
+                No
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Dashboard JavaScript -->
+<script src="js/dashboard.js"></script>
+<script src="js/theme-controls.js"></script>
+
+</body>
+</html>

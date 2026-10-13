@@ -1,0 +1,827 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Delivery Schedules | Uniwear</title>
+    <!-- Favicon -->
+
+  <link rel="icon" type="image/png" href="images/logo.png">
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Shared Dashboard Styles -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/dash-res.css">
+
+    <!-- Delivery Page Styles -->
+    <link rel="stylesheet" href="css/deliveries.css">
+    <link rel="stylesheet" href="css/deliveries-res.css">
+</head>
+
+<body>
+
+<div class="uw-dashboard-layout" id="uwDashboardLayout">
+
+    <!-- Sidebar Overlay -->
+    <div class="uw-sidebar-overlay" id="uwSidebarOverlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="uw-sidebar" id="uwSidebar">
+
+        <div class="uw-sidebar-brand">
+            <a href="index.html" class="uw-brand-logo"
+               aria-label="Uniwear Home">
+                <img src="images/logo.png"
+                     alt="Uniwear Logo"
+                     class="uw-brand-image">
+            </a>
+
+            <button class="uw-sidebar-close"
+                    id="uwSidebarClose"
+                    type="button"
+                    aria-label="Close sidebar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <nav class="uw-sidebar-nav">
+
+            <a href="dashboard.html" class="uw-sidebar-link">
+                <i class="fa-solid fa-table-columns"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="inventory.html" class="uw-sidebar-link">
+                <i class="fa-solid fa-boxes-stacked"></i>
+                <span>Uniform Inventory</span>
+            </a>
+
+            <a href="sizing.html" class="uw-sidebar-link">
+                <i class="fa-solid fa-ruler-combined"></i>
+                <span>Sizing Management</span>
+            </a>
+
+            <a href="deliveries.html"
+               class="uw-sidebar-link active"
+               aria-current="page">
+                <i class="fa-solid fa-truck-fast"></i>
+                <span>Delivery Schedules</span>
+            </a>
+
+            <a href="replacements.html" class="uw-sidebar-link">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                <span>Replacement Requests</span>
+            </a>
+
+            <a href="billing.html" class="uw-sidebar-link">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <span>Billing &amp; Invoices</span>
+            </a>
+
+        </nav>
+
+        <div class="uw-sidebar-bottom">
+            <a href="login.html"
+               class="uw-sidebar-link uw-logout-link">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+
+    </aside>
+
+    <!-- Main Area -->
+    <div class="uw-main-area">
+
+        <!-- Topbar -->
+        <header class="uw-topbar">
+
+            <div class="uw-topbar-left">
+
+                <button class="uw-menu-toggle"
+                        id="uwMenuToggle"
+                        type="button"
+                        aria-label="Open navigation menu"
+                        aria-controls="uwSidebar"
+                        aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="uw-page-heading">
+                    <p class="uw-topbar-greeting">
+                        Business Client Portal
+                    </p>
+                    <h1>Delivery Schedules</h1>
+                </div>
+
+            </div>
+
+            <div class="uw-topbar-actions">
+
+                <button class="uw-topbar-icon-btn"
+                        id="uwNotificationsBtn"
+                        type="button"
+                        aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="uw-notification-count">3</span>
+                </button>
+
+                <button class="uw-topbar-icon-btn"
+                        id="uwSettingsBtn"
+                        type="button"
+                        aria-label="Settings">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+
+                <button class="uw-topbar-icon-btn"
+                        id="uwDarkModeToggle"
+                        type="button"
+                        aria-label="Toggle dark mode"
+                        aria-pressed="false">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <button class="uw-topbar-icon-btn"
+                        id="uwRtlToggle"
+                        type="button"
+                        aria-label="Toggle right-to-left layout"
+                        aria-pressed="false">
+                    <i class="fa-solid fa-right-left"></i>
+                </button>
+
+                <button class="uw-profile-btn"
+                        id="uwProfileBtn"
+                        type="button"
+                        aria-label="Business profile">
+
+                    <span class="uw-profile-avatar">
+                        <i class="fa-solid fa-building"></i>
+                    </span>
+
+                    <span class="uw-profile-info">
+                        <strong>Business Client</strong>
+                        <small>Company Account</small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down uw-profile-chevron"></i>
+                </button>
+
+            </div>
+
+        </header>
+
+        <!-- Delivery Page Content -->
+        <main class="uw-dashboard-content deliveries-page">
+
+            <!-- ================================================
+                 SECTION 1: PAGE HEADING
+            ================================================= -->
+
+            <section class="delivery-heading-section">
+
+                <div class="delivery-breadcrumb">
+                    <a href="dashboard.html">Dashboard</a>
+                    <i class="fa-solid fa-chevron-right"
+                       aria-hidden="true"></i>
+                    <span>Delivery Schedules</span>
+                </div>
+
+                <div class="delivery-page-heading-row">
+
+                    <div class="delivery-page-intro">
+
+                        <span class="delivery-eyebrow">
+                            <i class="fa-solid fa-truck-fast"></i>
+                            DELIVERY OPERATIONS
+                        </span>
+
+                        <h2>Delivery Management</h2>
+
+                        <p>
+                            Track uniform and linen deliveries, review
+                            upcoming schedules, and monitor delivery status.
+                        </p>
+
+                    </div>
+
+                    <button class="delivery-primary-btn"
+                            id="deliveryAddButton"
+                            type="button">
+                        <i class="fa-solid fa-plus"></i>
+                        Schedule Delivery
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================================================
+                 SECTION 2: DELIVERY OVERVIEW
+            ================================================= -->
+
+            <section class="delivery-overview-section">
+
+                <div class="delivery-section-heading">
+                    <div>
+                        <h2>Delivery Overview</h2>
+                        <p>Review your delivery operations at a glance.</p>
+                    </div>
+                </div>
+
+                <div class="delivery-stats-grid">
+
+                    <article class="delivery-stat-card">
+                        <div class="delivery-stat-icon blue">
+                            <i class="fa-solid fa-truck"></i>
+                        </div>
+
+                        <div class="delivery-stat-info">
+                            <span>Total Deliveries</span>
+                            <h3 id="deliveryTotalCount">6</h3>
+                            <small>All scheduled deliveries</small>
+                        </div>
+                    </article>
+
+                    <article class="delivery-stat-card">
+                        <div class="delivery-stat-icon purple">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+
+                        <div class="delivery-stat-info">
+                            <span>Scheduled</span>
+                            <h3 id="deliveryScheduledCount">2</h3>
+                            <small>Awaiting dispatch</small>
+                        </div>
+                    </article>
+
+                    <article class="delivery-stat-card">
+                        <div class="delivery-stat-icon orange">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+
+                        <div class="delivery-stat-info">
+                            <span>In Transit</span>
+                            <h3 id="deliveryTransitCount">2</h3>
+                            <small>Currently on the way</small>
+                        </div>
+                    </article>
+
+                    <article class="delivery-stat-card">
+                        <div class="delivery-stat-icon green">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+
+                        <div class="delivery-stat-info">
+                            <span>Delivered</span>
+                            <h3 id="deliveryCompletedCount">2</h3>
+                            <small>Successfully completed</small>
+                        </div>
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================================================
+                 SECTION 3: DELIVERY STATUS FILTERS
+            ================================================= -->
+
+            <section class="delivery-status-section">
+
+                <div class="delivery-section-heading">
+                    <div>
+                        <h2>Delivery Status</h2>
+                        <p>Select a status to review matching deliveries.</p>
+                    </div>
+                </div>
+
+                <div class="delivery-status-grid">
+
+                    <button class="delivery-status-card active"
+                            type="button"
+                            data-status="all"
+                            aria-pressed="true">
+                        <span class="delivery-status-label">All Deliveries</span>
+                        <strong id="deliveryAllCount">6</strong>
+                        <small>All delivery records</small>
+                    </button>
+
+                    <button class="delivery-status-card"
+                            type="button"
+                            data-status="scheduled"
+                            aria-pressed="false">
+                        <span class="delivery-status-label">Scheduled</span>
+                        <strong>2</strong>
+                        <small>Awaiting dispatch</small>
+                    </button>
+
+                    <button class="delivery-status-card"
+                            type="button"
+                            data-status="in-transit"
+                            aria-pressed="false">
+                        <span class="delivery-status-label">In Transit</span>
+                        <strong>2</strong>
+                        <small>On the way</small>
+                    </button>
+
+                    <button class="delivery-status-card"
+                            type="button"
+                            data-status="delivered"
+                            aria-pressed="false">
+                        <span class="delivery-status-label">Delivered</span>
+                        <strong>2</strong>
+                        <small>Completed deliveries</small>
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================================================
+                 SECTION 4: DELIVERY SCHEDULE TABLE
+            ================================================= -->
+
+            <section class="delivery-records-section">
+
+                <div class="delivery-section-heading delivery-records-heading">
+
+                    <div>
+                        <h2>Delivery Schedule</h2>
+                        <p>
+                            Search and manage your uniform and linen deliveries.
+                        </p>
+                    </div>
+
+                    <button class="delivery-export-btn"
+                            id="deliveryExportButton"
+                            type="button">
+                        <i class="fa-solid fa-download"></i>
+                        Export CSV
+                    </button>
+
+                </div>
+
+
+                <!-- Search and Filters -->
+
+                <div class="delivery-toolbar">
+
+                    <label class="delivery-search-box">
+                        <i class="fa-solid fa-magnifying-glass"
+                           aria-hidden="true"></i>
+
+                        <input type="search"
+                               id="deliverySearchInput"
+                               placeholder="Search delivery, client, or ID..."
+                               aria-label="Search delivery schedules">
+                    </label>
+
+                    <label class="delivery-filter-box">
+                        <span>Delivery Status</span>
+
+                        <select id="deliveryStatusFilter">
+                            <option value="all">All Statuses</option>
+                            <option value="scheduled">Scheduled</option>
+                            <option value="in-transit">In Transit</option>
+                            <option value="delivered">Delivered</option>
+                        </select>
+                    </label>
+
+                    <label class="delivery-filter-box">
+                        <span>Delivery Type</span>
+
+                        <select id="deliveryTypeFilter">
+                            <option value="all">All Types</option>
+                            <option value="uniforms">Uniforms</option>
+                            <option value="linen">Linen Supply</option>
+                        </select>
+                    </label>
+
+                </div>
+
+
+                <!-- Table -->
+
+                <div class="delivery-table-card">
+
+                    <div class="delivery-table-scroll">
+
+                        <table class="delivery-table">
+
+                            <thead>
+                                <tr>
+                                    <th>Delivery ID</th>
+                                    <th>Client / Location</th>
+                                    <th>Delivery Type</th>
+                                    <th>Items</th>
+                                    <th>Scheduled Date</th>
+                                    <th>Time Slot</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="deliveryTableBody">
+
+                                <tr data-status="scheduled"
+                                    data-type="uniforms">
+
+                                    <td>
+                                        <strong class="delivery-id">
+                                            DEL-2001
+                                        </strong>
+                                    </td>
+
+                                    <td>
+                                        <div class="delivery-client-cell">
+                                            <span class="delivery-client-avatar">
+                                                AC
+                                            </span>
+                                            <div>
+                                                <strong>Acme Corporation</strong>
+                                                <small>Chennai</small>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>Uniforms</td>
+                                    <td>120 items</td>
+                                    <td>15 Oct 2026</td>
+                                    <td>09:00–11:00</td>
+
+                                    <td>
+                                        <span class="delivery-badge scheduled">
+                                            Scheduled
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <div class="delivery-actions">
+                                            <button class="delivery-action-btn"
+                                                    type="button"
+                                                    aria-label="View DEL-2001">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </button>
+
+                                            <button class="delivery-action-btn"
+                                                    type="button"
+                                                    aria-label="Edit DEL-2001">
+                                                <i class="fa-solid fa-pen"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr data-status="in-transit"
+                                    data-type="linen">
+
+                                    <td>
+                                        <strong class="delivery-id">
+                                            DEL-2002
+                                        </strong>
+                                    </td>
+
+                                    <td>
+                                        <div class="delivery-client-cell">
+                                            <span class="delivery-client-avatar">
+                                                GH
+                                            </span>
+                                            <div>
+                                                <strong>Greenfield Hotel</strong>
+                                                <small>Coimbatore</small>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>Linen Supply</td>
+                                    <td>85 items</td>
+                                    <td>13 Oct 2026</td>
+                                    <td>10:00–12:00</td>
+
+                                    <td>
+                                        <span class="delivery-badge in-transit">
+                                            In Transit
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <div class="delivery-actions">
+                                            <button class="delivery-action-btn"
+                                                    type="button"
+                                                    aria-label="View DEL-2002">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </button>
+
+                                            <button class="delivery-action-btn"
+                                                    type="button"
+                                                    aria-label="Edit DEL-2002">
+                                                <i class="fa-solid fa-pen"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr data-status="delivered"
+                                    data-type="uniforms">
+
+                                    <td>
+                                        <strong class="delivery-id">
+                                            DEL-2003
+                                        </strong>
+                                    </td>
+
+                                    <td>
+                                        <div class="delivery-client-cell">
+                                            <span class="delivery-client-avatar">
+                                                MC
+                                            </span>
+                                            <div>
+                                                <strong>Metro Clinic</strong>
+                                                <small>Madurai</small>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>Uniforms</td>
+                                    <td>64 items</td>
+                                    <td>12 Oct 2026</td>
+                                    <td>08:00–10:00</td>
+
+                                    <td>
+                                        <span class="delivery-badge delivered">
+                                            Delivered
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <div class="delivery-actions">
+                                            <button class="delivery-action-btn"
+                                                    type="button"
+                                                    aria-label="View DEL-2003">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </button>
+
+                                            <button class="delivery-action-btn"
+                                                    type="button"
+                                                    aria-label="Edit DEL-2003">
+                                                <i class="fa-solid fa-pen"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr data-status="scheduled"
+                                    data-type="linen">
+
+                                    <td>
+                                        <strong class="delivery-id">
+                                            DEL-2004
+                                        </strong>
+                                    </td>
+
+                                    <td>
+                                        <div class="delivery-client-cell">
+                                            <span class="delivery-client-avatar">
+                                                SR
+                                            </span>
+                                            <div>
+                                                <strong>Sunrise Resort</strong>
+                                                <small>Ooty</small>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>Linen Supply</td>
+                                    <td>150 items</td>
+                                    <td>16 Oct 2026</td>
+                                    <td>11:00–13:00</td>
+
+                                    <td>
+                                        <span class="delivery-badge scheduled">
+                                            Scheduled
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <div class="delivery-actions">
+                                            <button class="delivery-action-btn"
+                                                    type="button"
+                                                    aria-label="View DEL-2004">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </button>
+
+                                            <button class="delivery-action-btn"
+                                                    type="button"
+                                                    aria-label="Edit DEL-2004">
+                                                <i class="fa-solid fa-pen"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr data-status="in-transit"
+                                    data-type="uniforms">
+
+                                    <td>
+                                        <strong class="delivery-id">
+                                            DEL-2005
+                                        </strong>
+                                    </td>
+
+                                    <td>
+                                        <div class="delivery-client-cell">
+                                            <span class="delivery-client-avatar">
+                                                TP
+                                            </span>
+                                            <div>
+                                                <strong>TechPro Industries</strong>
+                                                <small>Tiruppur</small>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>Uniforms</td>
+                                    <td>95 items</td>
+                                    <td>14 Oct 2026</td>
+                                    <td>14:00–16:00</td>
+
+                                    <td>
+                                        <span class="delivery-badge in-transit">
+                                            In Transit
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <div class="delivery-actions">
+                                            <button class="delivery-action-btn"
+                                                    type="button"
+                                                    aria-label="View DEL-2005">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </button>
+
+                                            <button class="delivery-action-btn"
+                                                    type="button"
+                                                    aria-label="Edit DEL-2005">
+                                                <i class="fa-solid fa-pen"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr data-status="delivered"
+                                    data-type="linen">
+
+                                    <td>
+                                        <strong class="delivery-id">
+                                            DEL-2006
+                                        </strong>
+                                    </td>
+
+                                    <td>
+                                        <div class="delivery-client-cell">
+                                            <span class="delivery-client-avatar">
+                                                BL
+                                            </span>
+                                            <div>
+                                                <strong>Bluebell Lodge</strong>
+                                                <small>Kodaikanal</small>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>Linen Supply</td>
+                                    <td>72 items</td>
+                                    <td>11 Oct 2026</td>
+                                    <td>09:00–11:00</td>
+
+                                    <td>
+                                        <span class="delivery-badge delivered">
+                                            Delivered
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <div class="delivery-actions">
+                                            <button class="delivery-action-btn"
+                                                    type="button"
+                                                    aria-label="View DEL-2006">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </button>
+
+                                            <button class="delivery-action-btn"
+                                                    type="button"
+                                                    aria-label="Edit DEL-2006">
+                                                <i class="fa-solid fa-pen"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                    <div class="delivery-table-footer">
+                        <span id="deliveryResultsCount">
+                            Showing 6 sample deliveries
+                        </span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================================================
+                 SECTION 5: DELIVERY REMINDER
+            ================================================= -->
+
+            <section class="delivery-reminder-section">
+
+                <div class="delivery-reminder-icon">
+                    <i class="fa-solid fa-calendar-day"></i>
+                </div>
+
+                <div class="delivery-reminder-content">
+                    <h3>Keep Deliveries on Schedule</h3>
+                    <p>
+                        Review upcoming dispatches, confirm delivery
+                        details, and keep clients informed of schedule changes.
+                    </p>
+                </div>
+
+                <button class="delivery-secondary-btn"
+                        id="deliveryUpcomingButton"
+                        type="button">
+                    View Upcoming
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+
+<!-- Logout Confirmation Modal -->
+<div class="logout-modal-overlay" id="logoutModal" aria-hidden="true">
+    <div
+        class="logout-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="logoutModalTitle"
+    >
+        <div class="logout-modal-icon">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+
+        <h2 id="logoutModalTitle">
+            Are you sure you want to logout?
+        </h2>
+
+        <p class="logout-modal-description">
+            You will be redirected to the login page.
+        </p>
+
+        <div class="logout-modal-actions">
+            <button type="button" class="logout-btn-yes" id="confirmLogout">
+                Yes
+            </button>
+
+            <button type="button" class="logout-btn-no" id="cancelLogout">
+                No
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="js/dashboard.js"></script>
+<script src="js/theme-controls.js"></script>
+
+</body>
+</html>

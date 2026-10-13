@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Uniwear</title>
+    <!-- Favicon -->
+
+  <link rel="icon" type="image/png" href="images/logo.png">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="login-page">
+
+    <main class="login-page-shell">
+
+        <!-- TOP BAR: INSIDE LOGIN PAGE -->
+        <div class="login-topbar">
+
+            <a href="index.html" class="login-logo" aria-label="Uniwear Home">
+
+                <img src="images/logo.png"
+                     alt="Uniwear Uniform Rental and Linen Supply">
+
+            </a>
+
+            <div class="login-header-actions">
+
+                <!-- RTL BUTTON -->
+                <button type="button"
+                        class="login-header-toggle"
+                        id="loginRtlToggle"
+                        aria-label="Toggle right-to-left layout"
+                        aria-pressed="false">
+
+                    <svg viewBox="0 0 24 24"
+                         width="21"
+                         height="21"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.8"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         aria-hidden="true">
+                        <path d="M17 3l4 4-4 4"/>
+                        <path d="M3 7h18"/>
+                        <path d="M7 21l-4-4 4-4"/>
+                        <path d="M21 17H3"/>
+                    </svg>
+
+                </button>
+
+                <!-- DARK MODE BUTTON -->
+                <button type="button"
+                        class="login-header-toggle"
+                        id="loginThemeToggle"
+                        aria-label="Toggle dark mode"
+                        aria-pressed="false">
+
+                    <svg viewBox="0 0 24 24"
+                         width="21"
+                         height="21"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.8"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         aria-hidden="true">
+                        <path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5
+                                 8.7 8.7 0 1 0 20.5 14.2Z"/>
+                    </svg>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOGIN CARD -->
+        <section class="login-card" aria-label="Member login">
+
+            <!-- LEFT IMAGE PANEL -->
+            <div class="login-visual">
+
+                <div class="login-visual-overlay"></div>
+
+                <div class="login-visual-content">
+
+                    <span class="login-visual-eyebrow">
+                        WELCOME TO UN IWEAR
+                    </span>
+
+                    <h1 class="login-visual-title">
+                        Your Workplace.
+                        <span>Our Commitment.</span>
+                    </h1>
+
+                    <p class="login-visual-description">
+                        Dependable uniform rental, linen supply,
+                        and professional textile care designed
+                        around your workplace requirements.
+                    </p>
+
+                    <div class="login-visual-footer">
+                        <span>QUALITY</span>
+                        <span class="login-visual-dot"></span>
+                        <span>RELIABILITY</span>
+                        <span class="login-visual-dot"></span>
+                        <span>SERVICE</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT LOGIN PANEL -->
+            <div class="login-form-panel">
+
+                <div class="login-form-inner">
+
+                    <div class="login-form-step">
+                        <span class="login-step-number">01</span>
+                        <span class="login-step-line"></span>
+                        <span class="login-step-label">MEMBER LOGIN</span>
+                    </div>
+
+
+                    <div class="login-form-heading">
+
+                        <span class="login-form-eyebrow">
+                            WELCOME BACK
+                        </span>
+
+                        <h2 class="login-form-title">
+                            Good to See
+                            <span>You Again.</span>
+                        </h2>
+
+                        <p class="login-form-description">
+                            Sign in to continue to your Uniwear
+                            account and manage your services.
+                        </p>
+
+                    </div>
+
+
+                    <!-- LOGIN FORM -->
+                    <form class="login-form"
+                          id="loginForm"
+                          action="#"
+                          method="post">
+
+                        <!-- EMAIL FIELD -->
+                        <div class="login-field">
+
+                            <label for="loginEmail">Email Address</label>
+
+                            <div class="login-input-wrapper">
+
+                                <span class="login-input-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"
+                                         width="19"
+                                         height="19"
+                                         fill="none"
+                                         stroke="currentColor"
+                                         stroke-width="1.8"
+                                         stroke-linecap="round"
+                                         stroke-linejoin="round">
+                                        <rect x="3" y="5" width="18" height="14" rx="2"/>
+                                        <path d="m4 7 8 6 8-6"/>
+                                    </svg>
+                                </span>
+
+                                <input type="email"
+                                       id="loginEmail"
+                                       name="email"
+                                       placeholder="Enter your email address"
+                                       autocomplete="username"
+                                       required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PASSWORD FIELD -->
+                        <div class="login-field">
+
+                            <label for="loginPassword">Password</label>
+
+                            <div class="login-input-wrapper">
+
+                                <span class="login-input-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"
+                                         width="19"
+                                         height="19"
+                                         fill="none"
+                                         stroke="currentColor"
+                                         stroke-width="1.8"
+                                         stroke-linecap="round"
+                                         stroke-linejoin="round">
+                                        <rect x="5" y="10" width="14" height="11" rx="2"/>
+                                        <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+                                        <path d="M12 14v3"/>
+                                    </svg>
+                                </span>
+
+                                <input type="password"
+                                       id="loginPassword"
+                                       name="password"
+                                       placeholder="Enter your password"
+                                       autocomplete="current-password"
+                                       required>
+
+                                <button type="button"
+                                        class="login-password-toggle"
+                                        id="loginPasswordToggle"
+                                        aria-label="Show password"
+                                        aria-pressed="false">
+
+                                    <svg viewBox="0 0 24 24"
+                                         width="20"
+                                         height="20"
+                                         fill="none"
+                                         stroke="currentColor"
+                                         stroke-width="1.8"
+                                         stroke-linecap="round"
+                                         stroke-linejoin="round"
+                                         aria-hidden="true">
+                                        <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/>
+                                        <circle cx="12" cy="12" r="3"/>
+                                    </svg>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- FORM OPTIONS -->
+                        <div class="login-form-options">
+
+                            <label class="login-remember">
+
+                                <input type="checkbox"
+                                       id="loginRemember"
+                                       name="remember">
+
+                                <span class="login-checkbox-custom"></span>
+
+                                <span>Remember me</span>
+
+                            </label>
+
+                            <a href="forgot-password.html"
+                               class="login-forgot-link">
+                                Forgot Password?
+                            </a>
+
+                        </div>
+
+
+                        <!-- SUBMIT -->
+                        <button type="submit" class="login-submit-button">
+
+                            <span>Login to Your Account</span>
+
+                            <svg viewBox="0 0 24 24"
+                                 width="20"
+                                 height="20"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="1.8"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                                 aria-hidden="true">
+                                <path d="M5 12h14"/>
+                                <path d="m13 6 6 6-6 6"/>
+                            </svg>
+
+                        </button>
+
+
+                        <!-- DIVIDER -->
+                        <div class="login-divider">
+                            <span></span>
+                            <p>OR CONTINUE WITH</p>
+                            <span></span>
+                        </div>
+
+
+                        <!-- SOCIAL LOGIN: INLINE SVG -->
+                        <div class="login-social-options">
+
+                            <!-- GOOGLE -->
+                            <button type="button"
+                                    class="login-social-button"
+                                    data-provider="google">
+
+                                <svg viewBox="0 0 48 48"
+                                     width="21"
+                                     height="21"
+                                     aria-hidden="true">
+                                    <path fill="#4285F4"
+                                          d="M43.6 24.5c0-1.4-.1-2.8-.4-4.1H24v7.8h11a9.4 9.4 0 0 1-4.1 6.2v5.1h6.6c3.9-3.6 6.1-8.7 6.1-15Z"/>
+                                    <path fill="#34A853"
+                                          d="M24 44c5.5 0 10.1-1.8 13.5-4.9l-6.6-5.1c-1.8 1.2-4.1 2-6.9 2-5.3 0-9.8-3.6-11.4-8.4H5.8v5.2A20 20 0 0 0 24 44Z"/>
+                                    <path fill="#FBBC05"
+                                          d="M12.6 27.6a12 12 0 0 1 0-7.2v-5.2H5.8a20 20 0 0 0 0 17.6l6.8-5.2Z"/>
+                                    <path fill="#EA4335"
+                                          d="M24 12c3 0 5.7 1 7.8 3l5.8-5.8C34.1 5.9 29.5 4 24 4A20 20 0 0 0 5.8 15.2l6.8 5.2C14.2 15.6 18.7 12 24 12Z"/>
+                                </svg>
+
+                                <span>Google</span>
+
+                            </button>
+
+
+                            <!-- FACEBOOK -->
+                            <button type="button"
+                                    class="login-social-button"
+                                    data-provider="facebook">
+
+                                <svg viewBox="0 0 24 24"
+                                     width="21"
+                                     height="21"
+                                     aria-hidden="true">
+                                    <circle cx="12" cy="12" r="11" fill="#1877F2"/>
+                                    <path fill="#FFFFFF"
+                                          d="M13.7 20v-7.3h2.5l.4-2.9h-2.9V8c0-.8.2-1.4 1.5-1.4h1.5V4.1c-.7-.1-1.5-.2-2.3-.2-2.3 0-3.9 1.4-3.9 4V9.8H8v2.9h2.5V20h3.2Z"/>
+                                </svg>
+
+                                <span>Facebook</span>
+
+                            </button>
+
+
+                            <!-- APPLE -->
+                            <button type="button"
+                                    class="login-social-button"
+                                    data-provider="apple">
+
+                                <svg viewBox="0 0 24 24"
+                                     width="21"
+                                     height="21"
+                                     fill="currentColor"
+                                     aria-hidden="true">
+                                    <path d="M16.7 12.8c0-2.4 2-3.5 2.1-3.6a4.6 4.6 0 0 0-3.6-1.9c-1.5-.2-2.9.9-3.7.9s-2-.9-3.3-.9a4.9 4.9 0 0 0-4.1 2.5c-1.8 3-.5 7.4 1.3 9.8.9 1.2 1.9 2.5 3.2 2.5 1.3-.1 1.8-.8 3.4-.8s2.1.8 3.4.8c1.4 0 2.3-1.2 3.2-2.4a10.5 10.5 0 0 0 1.5-2.9 4.3 4.3 0 0 1-3.4-4Zm-2.4-7a4.4 4.4 0 0 0 1-3.2 4.6 4.6 0 0 0-3 1.5 4.2 4.2 0 0 0-1.1 3.1 3.8 3.8 0 0 0 3.1-1.4Z"/>
+                                </svg>
+
+                                <span>Apple</span>
+
+                            </button>
+
+                        </div>
+
+
+                        <!-- REGISTER LINK -->
+                        <div class="login-register-prompt">
+
+                            <p>
+                                Don't have an account?
+                                <a href="register.html">Create an Account</a>
+                            </p>
+
+                        </div>
+
+
+                        <!-- BRAND FOOTER -->
+                        <div class="login-form-footer">
+                            <span>QUALITY</span>
+                            <span class="login-footer-dot"></span>
+                            <span>RELIABILITY</span>
+                            <span class="login-footer-dot"></span>
+                            <span>SERVICE</span>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/script.js"></script>
+    <script src="js/theme-controls.js"></script>
+</body>
+</html>
