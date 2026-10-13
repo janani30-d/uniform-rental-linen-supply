@@ -1,0 +1,5831 @@
+
+/* =====================================================
+   UNIWEAR DASHBOARD
+   RESPONSIVE SIDEBAR + TOPBAR
+   Hamburger breakpoint: 1199px
+===================================================== */
+
+/* =========================
+   1. TABLET / IPAD PRO
+   1199px and below
+========================= */
+
+@media (max-width: 1199px) {
+
+    /* Main Area */
+    .uw-main-area {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 22px;
+    }
+
+    /* Sidebar Drawer */
+    .uw-sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+
+        width: min(282px, 85vw);
+        height: 100vh;
+        height: 100dvh;
+
+        z-index: 1200;
+
+        transform: translateX(-105%);
+        visibility: hidden;
+        pointer-events: none;
+
+        transition:
+            transform 0.3s ease,
+            visibility 0.3s ease;
+    }
+
+    /* Open Sidebar */
+    .uw-dashboard-layout.uw-sidebar-open .uw-sidebar {
+        transform: translateX(0);
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* Close Button */
+    .uw-sidebar-close {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        flex: 0 0 36px;
+        width: 36px;
+        height: 36px;
+
+        border: 1px solid rgb(255 255 255 / 20%);
+        border-radius: 10px;
+
+        background: transparent;
+        color: #ffffff;
+
+        font-size: 17px;
+        cursor: pointer;
+    }
+
+    /* Keep Logo Inside Sidebar */
+    .uw-sidebar-brand {
+        gap: 8px;
+        padding-right: 8px;
+        padding-left: 8px;
+    }
+
+    .uw-brand-logo {
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .uw-brand-image {
+        width: 175px;
+        max-width: 100%;
+        height: 58px;
+        object-fit: contain;
+        object-position: left center;
+    }
+
+    /* Hamburger */
+    .uw-menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        flex: 0 0 44px;
+        width: 44px;
+        height: 44px;
+
+        border: 1px solid var(--uw-border);
+        border-radius: 12px;
+
+        background: var(--uw-card-bg);
+        color: var(--uw-text);
+
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    /* Sidebar Overlay */
+    .uw-sidebar-overlay {
+        display: block;
+
+        position: fixed;
+        inset: 0;
+        z-index: 1100;
+
+        background: rgb(8 17 31 / 58%);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+    }
+
+    .uw-dashboard-layout.uw-sidebar-open .uw-sidebar-overlay {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* Topbar */
+    .uw-topbar {
+        min-height: 88px;
+        gap: 18px;
+        padding: 18px 22px;
+        border-radius: 22px;
+    }
+
+    .uw-topbar-left {
+        gap: 13px;
+    }
+
+    .uw-page-heading h1 {
+        font-size: 27px;
+    }
+
+    .uw-topbar-actions {
+        gap: 9px;
+    }
+
+    .uw-topbar-icon-btn {
+        flex-basis: 44px;
+        width: 44px;
+        height: 44px;
+        border-radius: 13px;
+    }
+
+    .uw-profile-avatar {
+        flex-basis: 42px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .uw-profile-btn {
+        gap: 8px;
+    }
+
+    /* RTL Drawer */
+    html[dir="rtl"] .uw-sidebar {
+        left: auto;
+        right: 0;
+        transform: translateX(105%);
+    }
+
+    html[dir="rtl"] .uw-dashboard-layout.uw-sidebar-open .uw-sidebar {
+        transform: translateX(0);
+    }
+
+    html[dir="rtl"] .uw-main-area {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    html[dir="rtl"] .uw-brand-image {
+        object-position: right center;
+    }
+}
+
+
+/* =========================
+   2. IPAD / SMALL TABLET
+   768px - 1024px
+========================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .uw-main-area {
+        padding: 20px;
+    }
+
+    .uw-topbar {
+        padding: 18px 20px;
+        gap: 14px;
+    }
+
+    .uw-topbar-left {
+        gap: 12px;
+    }
+
+    .uw-page-heading h1 {
+        font-size: 25px;
+    }
+
+    .uw-topbar-greeting {
+        font-size: 12px;
+    }
+
+    .uw-topbar-actions {
+        gap: 8px;
+    }
+
+    .uw-topbar-icon-btn {
+        flex-basis: 42px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .uw-profile-info strong {
+        font-size: 12px;
+    }
+
+    .uw-profile-info small {
+        font-size: 10px;
+    }
+
+    .uw-profile-chevron {
+        display: none;
+    }
+}
+
+
+/* =========================
+   3. MOBILE
+   767px and below
+========================= */
+
+@media (max-width: 767px) {
+
+    /* Main Layout */
+    .uw-main-area {
+        width: 100%;
+        margin: 0;
+        padding: 12px;
+    }
+
+    /* Topbar Layout */
+    .uw-topbar {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        min-height: auto;
+        gap: 16px;
+
+        padding: 16px;
+        border-radius: 17px;
+    }
+
+    /* Heading Row */
+    .uw-topbar-left {
+        width: 100%;
+        min-width: 0;
+        gap: 11px;
+    }
+
+    .uw-menu-toggle {
+        flex: 0 0 40px;
+        width: 40px;
+        height: 40px;
+        border-radius: 11px;
+        font-size: 17px;
+    }
+
+    .uw-page-heading {
+        min-width: 0;
+    }
+
+    .uw-topbar-greeting {
+        margin-bottom: 4px;
+        font-size: 11px;
+    }
+
+    .uw-page-heading h1 {
+        font-size: 23px;
+        letter-spacing: -0.4px;
+    }
+
+    /* Actions Row */
+    .uw-topbar-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 100%;
+        min-width: 0;
+        gap: 7px;
+        flex-wrap: wrap;
+    }
+
+    .uw-topbar-icon-btn {
+        flex: 0 0 39px;
+        width: 39px;
+        height: 39px;
+
+        border-radius: 11px;
+        font-size: 15px;
+    }
+
+    .uw-notification-count {
+        top: -5px;
+        right: -4px;
+
+        min-width: 17px;
+        height: 17px;
+        padding: 0 3px;
+
+        font-size: 9px;
+    }
+
+    /* Business Profile */
+    .uw-profile-btn {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+
+        min-width: 0;
+        min-height: 39px;
+        padding: 0 2px;
+    }
+
+    .uw-profile-avatar {
+        flex: 0 0 35px;
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .uw-profile-info {
+        gap: 2px;
+        min-width: 0;
+    }
+
+    .uw-profile-info strong {
+        font-size: 11px;
+    }
+
+    .uw-profile-info small {
+        font-size: 9px;
+    }
+
+    .uw-profile-chevron {
+        display: none;
+    }
+
+    /* Content */
+    .uw-dashboard-content {
+        padding-top: 18px;
+    }
+
+    /* Mobile Sidebar */
+    .uw-sidebar {
+        width: min(280px, 86vw);
+        padding: 22px 15px 16px;
+    }
+
+    .uw-sidebar-brand {
+        min-height: 64px;
+        padding-bottom: 18px;
+    }
+
+    .uw-brand-image {
+        width: 155px;
+        height: 52px;
+    }
+
+    .uw-sidebar-nav {
+        gap: 6px;
+        padding-top: 22px;
+    }
+
+    .uw-sidebar-link {
+        min-height: 49px;
+        gap: 12px;
+        padding: 12px 13px;
+        font-size: 13px;
+    }
+
+    .uw-sidebar-link > i {
+        flex-basis: 21px;
+        width: 21px;
+        font-size: 16px;
+    }
+
+    .uw-sidebar-bottom {
+        padding-top: 14px;
+    }
+
+    /* RTL Mobile */
+    html[dir="rtl"] .uw-topbar-left {
+        flex-direction: row-reverse;
+    }
+
+    html[dir="rtl"] .uw-topbar-actions {
+        flex-direction: row-reverse;
+    }
+
+    html[dir="rtl"] .uw-brand-image {
+        object-position: right center;
+    }
+
+    html[dir="rtl"] .uw-notification-count {
+        right: auto;
+        left: -4px;
+    }
+}
+
+
+/* =========================
+   4. EXTRA SMALL MOBILE
+   380px and below
+========================= */
+
+@media (max-width: 380px) {
+
+    .uw-main-area {
+        padding: 9px;
+    }
+
+    .uw-topbar {
+        padding: 13px;
+        gap: 13px;
+    }
+
+    .uw-topbar-actions {
+        gap: 5px;
+    }
+
+    .uw-topbar-icon-btn {
+        flex-basis: 35px;
+        width: 35px;
+        height: 35px;
+        border-radius: 9px;
+        font-size: 14px;
+    }
+
+    .uw-menu-toggle {
+        flex-basis: 36px;
+        width: 36px;
+        height: 36px;
+        font-size: 15px;
+    }
+
+    .uw-page-heading h1 {
+        font-size: 21px;
+    }
+
+    .uw-topbar-greeting {
+        font-size: 10px;
+    }
+
+    .uw-profile-btn {
+        gap: 5px;
+    }
+
+    .uw-profile-avatar {
+        flex-basis: 30px;
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .uw-profile-info strong {
+        font-size: 10px;
+    }
+
+    .uw-profile-info small {
+        font-size: 8px;
+    }
+
+    .uw-brand-image {
+        width: 135px;
+        height: 46px;
+    }
+
+    .uw-sidebar-close {
+        flex-basis: 32px;
+        width: 32px;
+        height: 32px;
+        font-size: 15px;
+    }
+}
+
+
+/* =========================
+   5. RTL DRAWER OVERLAY
+========================= */
+
+html[dir="rtl"] .uw-sidebar-overlay {
+    direction: rtl;
+}
+
+
+/* =========================
+   6. REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .uw-sidebar,
+    .uw-sidebar-overlay,
+    .uw-main-area,
+    .uw-topbar {
+        transition: none;
+    }
+}
+
+/* =========================================
+   MOBILE TOPBAR - SINGLE ROW
+========================================= */
+
+@media (max-width: 767px) {
+
+    .uw-topbar {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        flex-wrap: nowrap !important;
+        gap: 8px !important;
+
+        min-height: 68px !important;
+        padding: 10px 12px !important;
+        border-radius: 14px !important;
+    }
+
+    /* Hamburger + Dashboard Heading */
+    .uw-topbar-left {
+        display: flex !important;
+        align-items: center !important;
+        flex: 0 1 auto !important;
+        min-width: 0 !important;
+        gap: 8px !important;
+    }
+
+    .uw-menu-toggle {
+        flex: 0 0 32px !important;
+        width: 32px !important;
+        height: 32px !important;
+        border-radius: 8px !important;
+        font-size: 14px !important;
+    }
+
+    .uw-page-heading {
+        min-width: 0 !important;
+    }
+
+    .uw-topbar-greeting {
+        display: none !important;
+    }
+
+    .uw-page-heading h1 {
+        margin: 0 !important;
+        font-size: clamp(15px, 4vw, 21px) !important;
+        line-height: 1.2 !important;
+        white-space: nowrap !important;
+        letter-spacing: -0.4px !important;
+    }
+
+    /* All Topbar Actions in the Same Row */
+    .uw-topbar-actions {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        flex: 0 0 auto !important;
+        flex-wrap: nowrap !important;
+        width: auto !important;
+        min-width: 0 !important;
+        gap: 4px !important;
+    }
+
+    .uw-topbar-icon-btn {
+        flex: 0 0 31px !important;
+        width: 31px !important;
+        height: 31px !important;
+        border-radius: 8px !important;
+        font-size: 13px !important;
+    }
+
+    .uw-notification-count {
+        top: -5px !important;
+        right: -4px !important;
+        min-width: 15px !important;
+        height: 15px !important;
+        font-size: 8px !important;
+        border-width: 1px !important;
+    }
+
+    /* Compact Business Profile */
+    .uw-profile-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex: 0 0 30px !important;
+        width: 30px !important;
+        min-width: 30px !important;
+        min-height: 30px !important;
+        padding: 0 !important;
+        margin-left: 1px !important;
+    }
+
+    .uw-profile-avatar {
+        flex: 0 0 29px !important;
+        width: 29px !important;
+        height: 29px !important;
+        font-size: 12px !important;
+    }
+
+    .uw-profile-info,
+    .uw-profile-chevron {
+        display: none !important;
+    }
+}
+
+/* Very Small Phones */
+@media (max-width: 380px) {
+
+    .uw-topbar {
+        gap: 5px !important;
+        padding: 9px 8px !important;
+    }
+
+    .uw-topbar-left {
+        gap: 5px !important;
+    }
+
+    .uw-page-heading h1 {
+        font-size: 14px !important;
+    }
+
+    .uw-topbar-actions {
+        gap: 3px !important;
+    }
+
+    .uw-topbar-icon-btn {
+        flex-basis: 27px !important;
+        width: 27px !important;
+        height: 29px !important;
+        font-size: 12px !important;
+    }
+
+    .uw-profile-btn {
+        flex-basis: 27px !important;
+        width: 27px !important;
+        min-width: 27px !important;
+    }
+
+    .uw-profile-avatar {
+        flex-basis: 26px !important;
+        width: 26px !important;
+        height: 26px !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*******DASHBOARD PAGE*******/
+
+
+/* =====================================================
+   UNIWEAR DASHBOARD
+   RESPONSIVE SECTIONS
+===================================================== */
+
+/* =========================
+   1. DESKTOP
+========================= */
+
+@media (min-width: 1200px) {
+    .uw-dashboard-content {
+        gap: 32px;
+        padding-bottom: 40px;
+    }
+
+    .db-welcome {
+        grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+    }
+
+    .db-stats-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .db-inventory-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =========================
+   2. IPAD PRO / TABLET
+   1199px AND BELOW
+========================= */
+
+@media (max-width: 1199px) {
+    .uw-dashboard-content {
+        gap: 27px;
+        padding: 118px 0 30px;
+    }
+
+    /* Welcome hero */
+
+    .db-welcome {
+        grid-template-columns: minmax(0, 1fr) minmax(240px, 0.8fr);
+        gap: 25px;
+        min-height: 320px;
+        padding: 28px;
+        border-radius: 24px;
+    }
+
+    .db-welcome-content h2 {
+        font-size: clamp(27px, 3.5vw, 36px);
+    }
+
+    .db-welcome-content > p {
+        font-size: 13px;
+    }
+
+    .db-welcome-visual {
+        height: 245px;
+    }
+
+    .db-welcome-actions {
+        gap: 9px;
+    }
+
+    .db-btn {
+        min-height: 43px;
+        padding: 11px 14px;
+        font-size: 11px;
+    }
+
+    /* Overview */
+
+    .db-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .db-stat-card {
+        padding: 19px;
+    }
+
+    .db-stat-value {
+        font-size: 27px;
+    }
+
+    /* Section headings */
+
+    .db-section-heading h2 {
+        font-size: 23px;
+    }
+
+    /* Inventory */
+
+    .db-inventory-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 13px;
+    }
+
+    .db-inventory-card {
+        gap: 12px;
+        padding: 17px;
+    }
+
+    /* Billing */
+
+    .db-billing-card {
+        gap: 16px;
+        padding: 22px;
+    }
+
+    /* Activity */
+
+    .db-activity-card {
+        padding: 22px;
+    }
+}
+
+/* =========================
+   3. IPAD MINI / TABLETS
+   768px - 1024px
+========================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .uw-dashboard-content {
+        gap: 25px;
+    }
+
+    /* Stack hero image below text */
+
+    .db-welcome {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 23px;
+        min-height: auto;
+        padding: 27px;
+    }
+
+    .db-welcome-content h2 {
+        max-width: 650px;
+        font-size: 35px;
+    }
+
+    .db-welcome-content > p {
+        max-width: 650px;
+    }
+
+    .db-welcome-visual {
+        height: 270px;
+    }
+
+    .db-floating-card {
+        right: 12px;
+        bottom: 12px;
+    }
+
+    /* Four cards become two columns */
+
+    .db-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 13px;
+    }
+
+    .db-stat-card {
+        padding: 18px;
+    }
+
+    .db-stat-top {
+        margin-bottom: 17px;
+    }
+
+    .db-stat-value {
+        font-size: 27px;
+    }
+
+    /* Inventory */
+
+    .db-inventory-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .db-inventory-card {
+        padding: 15px;
+    }
+
+    .db-inventory-icon {
+        flex-basis: 42px;
+        width: 42px;
+        height: 42px;
+        font-size: 17px;
+    }
+
+    .db-inventory-info h3 {
+        font-size: 12px;
+    }
+
+    .db-inventory-info p {
+        font-size: 10px;
+    }
+
+    /* Tables scroll horizontally */
+
+    .db-table-scroll {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .db-table {
+        min-width: 650px;
+    }
+
+    /* Billing */
+
+    .db-billing-card {
+        flex-wrap: wrap;
+    }
+
+    .db-billing-details {
+        flex: 1 1 60%;
+    }
+
+    .db-billing-card > .db-btn {
+        margin-left: auto;
+    }
+}
+
+/* =========================
+   4. MOBILE
+   767px AND BELOW
+========================= */
+
+@media (max-width: 767px) {
+    .uw-dashboard-content {
+        gap: 24px;
+        padding: 100px 0 24px;
+    }
+
+    /* Common headings */
+
+    .db-section-heading {
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .db-section-eyebrow {
+        margin-bottom: 6px;
+        font-size: 9px;
+        letter-spacing: 0.7px;
+    }
+
+    .db-section-heading h2 {
+        margin-bottom: 6px;
+        font-size: 20px;
+        line-height: 1.35;
+        letter-spacing: -0.3px;
+    }
+
+    .db-section-heading p {
+        font-size: 11px;
+        line-height: 1.7;
+    }
+
+    .db-text-link {
+        gap: 5px;
+        padding-top: 5px;
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
+    /* Welcome hero */
+
+    .db-welcome {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+        min-height: auto;
+        padding: 21px;
+        border-radius: 19px;
+    }
+
+    .db-eyebrow {
+        gap: 7px;
+        padding: 8px 11px;
+        font-size: 9px;
+    }
+
+    .db-welcome-content h2 {
+        margin: 16px 0 12px;
+        font-size: clamp(25px, 7vw, 33px);
+        line-height: 1.2;
+        letter-spacing: -0.5px;
+    }
+
+    .db-welcome-content > p {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .db-welcome-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin-top: 19px;
+    }
+
+    .db-btn {
+        min-height: 41px;
+        gap: 7px;
+        padding: 10px 12px;
+        border-radius: 10px;
+        font-size: 10px;
+    }
+
+    .db-welcome-visual {
+        height: 205px;
+    }
+
+    .db-welcome-image {
+        border-radius: 15px;
+    }
+
+    .db-floating-card {
+        right: 8px;
+        bottom: 8px;
+        gap: 8px;
+        padding: 10px 11px;
+        border-radius: 11px;
+    }
+
+    .db-floating-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 9px;
+        font-size: 13px;
+    }
+
+    .db-floating-card small {
+        font-size: 9px;
+    }
+
+    .db-floating-card strong {
+        font-size: 10px;
+    }
+
+    /* Overview cards */
+
+    .db-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .db-stat-card {
+        padding: 14px;
+        border-radius: 15px;
+    }
+
+    .db-stat-top {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 9px;
+        margin-bottom: 14px;
+    }
+
+    .db-stat-icon {
+        flex-basis: 39px;
+        width: 39px;
+        height: 39px;
+        border-radius: 11px;
+        font-size: 15px;
+    }
+
+    .db-stat-label {
+        padding: 5px 7px;
+        font-size: 9px;
+    }
+
+    .db-stat-card h3 {
+        min-height: 32px;
+        margin-bottom: 8px;
+        font-size: 10px;
+    }
+
+    .db-stat-value {
+        margin-bottom: 11px;
+        font-size: 24px;
+    }
+
+    .db-stat-note {
+        align-items: flex-start;
+        gap: 5px;
+        font-size: 9px;
+        line-height: 1.6;
+    }
+
+    /* Delivery and replacement tables */
+
+    .db-table-card {
+        border-radius: 15px;
+    }
+
+    .db-table {
+        min-width: 620px;
+    }
+
+    .db-table th,
+    .db-table td {
+        padding: 13px 14px;
+        font-size: 10px;
+    }
+
+    .db-demo-status {
+        padding: 6px 8px;
+        font-size: 9px;
+    }
+
+    /* Inventory category cards */
+
+    .db-inventory-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .db-inventory-card {
+        gap: 12px;
+        padding: 15px;
+        border-radius: 14px;
+    }
+
+    .db-inventory-icon {
+        flex-basis: 42px;
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        font-size: 17px;
+    }
+
+    .db-inventory-info h3 {
+        margin-bottom: 5px;
+        font-size: 12px;
+    }
+
+    .db-inventory-info p {
+        font-size: 10px;
+    }
+
+    /* Billing */
+
+    .db-billing-card {
+        display: grid;
+        grid-template-columns: 44px minmax(0, 1fr);
+        gap: 13px;
+        padding: 17px;
+        border-radius: 15px;
+    }
+
+    .db-billing-icon {
+        grid-row: 1;
+        grid-column: 1;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        font-size: 18px;
+    }
+
+    .db-billing-details {
+        grid-row: 1;
+        grid-column: 2;
+    }
+
+    .db-billing-details h3 {
+        font-size: 12px;
+    }
+
+    .db-billing-details p {
+        font-size: 10px;
+    }
+
+    .db-billing-amount {
+        margin-top: 8px;
+        font-size: 20px;
+    }
+
+    .db-billing-card > .db-btn {
+        grid-row: 2;
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+
+    /* Recent activity */
+
+    .db-activity-card {
+        padding: 18px 14px;
+        border-radius: 15px;
+    }
+
+    .db-activity-item {
+        gap: 11px;
+        padding: 16px 0;
+    }
+
+    .db-activity-icon {
+        flex-basis: 38px;
+        width: 38px;
+        height: 38px;
+        border-radius: 11px;
+        font-size: 14px;
+    }
+
+    .db-activity-details h3 {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .db-activity-details p {
+        font-size: 10px;
+    }
+
+    .db-activity-details small {
+        font-size: 9px;
+    }
+}
+
+/* =========================
+   5. SMALL MOBILE
+   380px AND BELOW
+========================= */
+
+@media (max-width: 380px) {
+    .uw-dashboard-content {
+        gap: 20px;
+        padding-top: 96px;
+    }
+
+    .db-welcome {
+        gap: 17px;
+        padding: 16px;
+    }
+
+    .db-welcome-content h2 {
+        font-size: 25px;
+    }
+
+    .db-welcome-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .db-welcome-actions .db-btn {
+        width: 100%;
+    }
+
+    .db-welcome-visual {
+        height: 175px;
+    }
+
+    .db-section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .db-section-heading h2 {
+        font-size: 19px;
+    }
+
+    .db-stats-grid {
+        gap: 8px;
+    }
+
+    .db-stat-card {
+        padding: 11px;
+    }
+
+    .db-stat-value {
+        font-size: 22px;
+    }
+
+    .db-stat-note {
+        font-size: 8px;
+    }
+
+    .db-inventory-card {
+        padding: 12px;
+    }
+
+    .db-billing-card {
+        padding: 14px;
+    }
+}
+
+/* =========================
+   6. RTL RESPONSIVE
+========================= */
+
+html[dir="rtl"] .db-welcome-content,
+html[dir="rtl"] .db-section-heading {
+    text-align: right;
+}
+
+html[dir="rtl"] .db-welcome-actions,
+html[dir="rtl"] .db-inventory-card,
+html[dir="rtl"] .db-billing-card,
+html[dir="rtl"] .db-activity-item {
+    direction: rtl;
+}
+
+html[dir="rtl"] .db-floating-card {
+    right: auto;
+    left: -10px;
+}
+
+html[dir="rtl"] .db-table {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .db-text-link i,
+html[dir="rtl"] .db-inventory-arrow {
+    transform: rotate(180deg);
+}
+
+html[dir="rtl"] .db-text-link:hover i {
+    transform: rotate(180deg) translateX(3px);
+}
+
+html[dir="rtl"] .db-inventory-card:hover .db-inventory-arrow {
+    transform: rotate(180deg) translateX(4px);
+}
+
+@media (max-width: 767px) {
+    html[dir="rtl"] .db-floating-card {
+        right: auto;
+        left: 8px;
+    }
+
+    html[dir="rtl"] .db-activity-item {
+        text-align: right;
+    }
+}
+
+/* =========================
+   7. DARK MODE SAFETY
+========================= */
+
+@media (max-width: 1199px) {
+    html[data-theme="dark"] .db-welcome {
+        border-color: #304b63;
+    }
+
+    html[data-theme="dark"] .db-stat-card,
+    html[data-theme="dark"] .db-table-card,
+    html[data-theme="dark"] .db-inventory-card,
+    html[data-theme="dark"] .db-billing-card,
+    html[data-theme="dark"] .db-activity-card {
+        border-color: var(--uw-border);
+    }
+}
+
+/* =========================
+   8. ACCESSIBILITY
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .db-stat-card,
+    .db-inventory-card,
+    .db-btn,
+    .db-text-link i,
+    .db-inventory-arrow {
+        transition: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/********INVENTORY PAGE*********/
+
+
+/* =========================================================
+   UNIWEAR INVENTORY PAGE
+   PART 3 — RESPONSIVE CSS
+   File: css/inventory-res.css
+
+   Supports:
+   Desktop, iPad Pro, iPad Mini, Mobile
+   RTL mode and Dark mode
+========================================================= */
+
+
+/* =========================================================
+   LARGE DESKTOP — 1400px AND ABOVE
+========================================================= */
+
+@media (min-width: 1400px) {
+
+    .inv-page {
+        max-width: 1600px;
+        margin-inline: auto;
+        padding-inline: 35px;
+    }
+
+    .inv-stats-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    .inv-category-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .inv-table-wrapper {
+        overflow-x: auto;
+    }
+
+    .inv-table {
+        min-width: 850px;
+    }
+}
+
+
+/* =========================================================
+   LAPTOP AND DESKTOP — 1200px TO 1399px
+========================================================= */
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+
+    .inv-page {
+        padding-inline: 28px;
+    }
+
+    .inv-stats-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .inv-category-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .inv-table-wrapper {
+        overflow-x: auto;
+    }
+
+    .inv-table {
+        min-width: 850px;
+    }
+}
+
+
+/* =========================================================
+   IPAD PRO / TABLET LANDSCAPE
+   Maximum width: 1199px
+========================================================= */
+
+@media (max-width: 1199px) {
+
+    .inv-page {
+        width: 100%;
+        max-width: 100%;
+        padding: 120px 24px 32px;
+        margin-inline: 0;
+        box-sizing: border-box;
+    }
+
+    .inv-page *,
+    .inv-page *::before,
+    .inv-page *::after {
+        box-sizing: border-box;
+    }
+
+    /* Page heading */
+
+    .inv-page-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .inv-page-header h1 {
+        font-size: clamp(24px, 3vw, 30px);
+        line-height: 1.3;
+    }
+
+    .inv-page-header p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    /* Overview cards */
+
+    .inv-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .inv-stat-card {
+        min-width: 0;
+        padding: 20px;
+    }
+
+    .inv-stat-card h3 {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .inv-stat-card .inv-stat-value {
+        font-size: 28px;
+    }
+
+    /* Category cards */
+
+    .inv-category-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .inv-category-card {
+        min-width: 0;
+        padding: 18px 14px;
+    }
+
+    .inv-category-card h3 {
+        font-size: 14px;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+    }
+
+    /* Search and filters */
+
+    .inv-toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .inv-search-box {
+        flex: 1 1 240px;
+        min-width: 0;
+    }
+
+    .inv-toolbar select,
+    .inv-toolbar input {
+        max-width: 100%;
+    }
+
+    .inv-toolbar button {
+        flex-shrink: 0;
+    }
+
+    /* Inventory table */
+
+    .inv-table-wrapper {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .inv-table {
+        width: 100%;
+        min-width: 850px;
+        border-collapse: collapse;
+    }
+
+    .inv-table th,
+    .inv-table td {
+        padding: 13px 12px;
+        white-space: nowrap;
+        font-size: 13px;
+    }
+
+    /* Prevent cards and sections from overflowing */
+
+    .inv-section,
+    .inv-card,
+    .inv-table-section {
+        min-width: 0;
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================================
+   IPAD MINI / TABLET PORTRAIT
+   768px TO 1024px
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .inv-page {
+        padding: 112px 20px 30px;
+    }
+
+    .inv-page-header {
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .inv-page-header h1 {
+        font-size: 26px;
+    }
+
+    .inv-page-header .inv-add-button {
+        padding: 11px 16px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    /* Two equal columns */
+
+    .inv-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .inv-stat-card {
+        padding: 18px;
+    }
+
+    .inv-stat-card .inv-stat-value {
+        font-size: 26px;
+    }
+
+    /* Three category cards per row */
+
+    .inv-category-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .inv-category-card {
+        padding: 16px 10px;
+    }
+
+    /* Filters can move onto another row */
+
+    .inv-toolbar {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .inv-search-box {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+
+    .inv-toolbar input,
+    .inv-toolbar select {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .inv-toolbar button {
+        width: 100%;
+        min-height: 42px;
+    }
+
+    /* Keep table readable with horizontal scrolling */
+
+    .inv-table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .inv-table {
+        min-width: 820px;
+    }
+
+    .inv-table th,
+    .inv-table td {
+        padding: 12px 10px;
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE — 767px AND BELOW
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .inv-page {
+        width: 100%;
+        max-width: 100%;
+        padding: 100px 15px 25px;
+        margin-inline: 0;
+        overflow-x: clip;
+    }
+
+    /* Page heading */
+
+    .inv-page-header {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+        margin-bottom: 22px;
+    }
+
+    .inv-page-header h1 {
+        margin-bottom: 6px;
+        font-size: 24px;
+        line-height: 1.3;
+        overflow-wrap: anywhere;
+    }
+
+    .inv-page-header p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .inv-page-header .inv-add-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        align-self: flex-start;
+        width: auto;
+        max-width: 100%;
+        min-height: 42px;
+        padding: 11px 16px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    /* Overview cards */
+
+    .inv-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 24px;
+    }
+
+    .inv-stat-card {
+        min-width: 0;
+        padding: 15px 12px;
+        border-radius: 12px;
+    }
+
+    .inv-stat-card h3 {
+        font-size: 12px;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+    }
+
+    .inv-stat-card .inv-stat-value {
+        font-size: 24px;
+        line-height: 1.3;
+    }
+
+    .inv-stat-card p {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    /* Category section */
+
+    .inv-category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .inv-category-card {
+        min-width: 0;
+        padding: 15px 10px;
+        border-radius: 12px;
+    }
+
+    .inv-category-card h3 {
+        font-size: 13px;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+    }
+
+    .inv-category-card p {
+        font-size: 12px;
+    }
+
+    /* Inventory table section */
+
+    .inv-table-section {
+        width: 100%;
+        min-width: 0;
+        margin-top: 22px;
+    }
+
+    .inv-table-header {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .inv-table-header h2 {
+        font-size: 19px;
+        line-height: 1.4;
+    }
+
+    /* Search and filters */
+
+    .inv-toolbar {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .inv-search-box {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .inv-toolbar input,
+    .inv-toolbar select {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        min-height: 43px;
+        font-size: 13px;
+    }
+
+    .inv-toolbar button {
+        width: 100%;
+        min-height: 43px;
+        justify-content: center;
+        font-size: 13px;
+    }
+
+    /* Table: scroll horizontally rather than squeeze columns */
+
+    .inv-table-wrapper {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        border-radius: 10px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .inv-table {
+        width: 100%;
+        min-width: 760px;
+        border-collapse: collapse;
+    }
+
+    .inv-table th,
+    .inv-table td {
+        padding: 12px 10px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    .inv-results-count {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    /* Avoid unwanted horizontal page scrolling */
+
+    .inv-page,
+    .inv-page section,
+    .inv-page .inv-card {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .inv-page img,
+    .inv-page svg {
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE — 420px AND BELOW
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .inv-page {
+        padding-inline: 12px;
+    }
+
+    .inv-page-header h1 {
+        font-size: 22px;
+    }
+
+    .inv-stats-grid {
+        gap: 10px;
+    }
+
+    .inv-stat-card {
+        padding: 13px 10px;
+    }
+
+    .inv-stat-card .inv-stat-value {
+        font-size: 22px;
+    }
+
+    .inv-category-grid {
+        gap: 10px;
+    }
+
+    .inv-category-card {
+        padding: 13px 8px;
+    }
+
+    .inv-category-card h3 {
+        font-size: 12px;
+    }
+
+    .inv-table {
+        min-width: 720px;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE — 360px AND BELOW
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .inv-page {
+        padding-inline: 10px;
+    }
+
+    .inv-page-header h1 {
+        font-size: 20px;
+    }
+
+    .inv-page-header .inv-add-button {
+        width: 100%;
+    }
+
+    .inv-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .inv-stat-card {
+        padding: 12px 8px;
+    }
+
+    .inv-stat-card h3 {
+        font-size: 11px;
+    }
+
+    .inv-stat-card .inv-stat-value {
+        font-size: 20px;
+    }
+
+    .inv-category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .inv-category-card h3 {
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================================
+   RTL SUPPORT
+========================================================= */
+
+html[dir="rtl"] .inv-page {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .inv-page-header {
+    direction: rtl;
+}
+
+html[dir="rtl"] .inv-page-header .inv-add-button {
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+html[dir="rtl"] .inv-toolbar {
+    direction: rtl;
+}
+
+html[dir="rtl"] .inv-search-box {
+    direction: rtl;
+}
+
+html[dir="rtl"] .inv-toolbar input,
+html[dir="rtl"] .inv-toolbar select {
+    text-align: right;
+}
+
+html[dir="rtl"] .inv-table-wrapper {
+    direction: rtl;
+}
+
+html[dir="rtl"] .inv-table th,
+html[dir="rtl"] .inv-table td {
+    text-align: right;
+}
+
+html[dir="rtl"] .inv-results-count {
+    text-align: right;
+}
+
+
+/* =========================================================
+   DARK MODE SUPPORT
+   Shared theme variables are defined in dashboard.css.
+========================================================= */
+
+html[data-theme="dark"] .inv-page {
+    color: var(--uw-text);
+}
+
+html[data-theme="dark"] .inv-stat-card,
+html[data-theme="dark"] .inv-category-card,
+html[data-theme="dark"] .inv-table-section {
+    background: var(--uw-card-bg);
+    color: var(--uw-text);
+    border-color: var(--uw-border);
+}
+
+html[data-theme="dark"] .inv-page input,
+html[data-theme="dark"] .inv-page select {
+    background: var(--uw-card-bg);
+    color: var(--uw-text);
+    border-color: var(--uw-border);
+}
+
+html[data-theme="dark"] .inv-page input::placeholder {
+    color: var(--uw-muted);
+}
+
+html[data-theme="dark"] .inv-table th {
+    background: var(--uw-page-bg);
+    color: var(--uw-text);
+}
+
+html[data-theme="dark"] .inv-table td {
+    color: var(--uw-text);
+    border-color: var(--uw-border);
+}
+
+
+/* =========================================================
+   ACCESSIBILITY — REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .inv-page *,
+    .inv-page *::before,
+    .inv-page *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* =====================================================
+   INVENTORY PAGE — MOBILE OVERRIDE
+   Add this at the VERY BOTTOM of inventory-res.css
+===================================================== */
+
+@media screen and (max-width: 767px) {
+
+    html body .inv-page {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 105px 14px 25px !important;
+        overflow-x: clip !important;
+        box-sizing: border-box !important;
+    }
+
+    html body .inv-page *,
+    html body .inv-page *::before,
+    html body .inv-page *::after {
+        box-sizing: border-box;
+    }
+
+    /* Page heading */
+
+    html body .inv-page .inv-page-header {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px !important;
+        width: 100% !important;
+        margin-bottom: 22px !important;
+    }
+
+    html body .inv-page .inv-page-header h1 {
+        font-size: 23px !important;
+        line-height: 1.35 !important;
+        overflow-wrap: anywhere;
+    }
+
+    html body .inv-page .inv-page-header p {
+        font-size: 13px !important;
+        line-height: 1.6 !important;
+    }
+
+    html body .inv-page .inv-page-header .inv-add-button {
+        width: fit-content !important;
+        max-width: 100% !important;
+        min-height: 42px !important;
+        align-self: flex-start !important;
+        padding: 10px 15px !important;
+        white-space: normal !important;
+    }
+
+    /* Summary cards */
+
+    html body .inv-page .inv-stats-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+        width: 100% !important;
+        margin-inline: 0 !important;
+    }
+
+    html body .inv-page .inv-stat-card {
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        padding: 14px 11px !important;
+        margin: 0 !important;
+        overflow-wrap: anywhere;
+    }
+
+    html body .inv-page .inv-stat-card h3 {
+        font-size: 12px !important;
+        line-height: 1.5 !important;
+    }
+
+    html body .inv-page .inv-stat-card .inv-stat-value {
+        font-size: 23px !important;
+        line-height: 1.3 !important;
+    }
+
+    /* Category cards */
+
+    html body .inv-page .inv-category-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+        width: 100% !important;
+        margin-inline: 0 !important;
+    }
+
+    html body .inv-page .inv-category-card {
+        min-width: 0 !important;
+        max-width: 100% !important;
+        padding: 13px 9px !important;
+        margin: 0 !important;
+        overflow-wrap: anywhere;
+    }
+
+    html body .inv-page .inv-category-card h3 {
+        font-size: 12px !important;
+        line-height: 1.5 !important;
+    }
+
+    /* Inventory section */
+
+    html body .inv-page .inv-table-section {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin-inline: 0 !important;
+    }
+
+    html body .inv-page .inv-table-header {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+
+    /* Filters */
+
+    html body .inv-page .inv-toolbar {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 10px !important;
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    html body .inv-page .inv-search-box {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+    }
+
+    html body .inv-page .inv-toolbar input,
+    html body .inv-page .inv-toolbar select,
+    html body .inv-page .inv-toolbar button {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        min-height: 43px !important;
+        margin-inline: 0 !important;
+    }
+
+    /* Table scrolls inside its own container */
+
+    html body .inv-page .inv-table-wrapper {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    html body .inv-page .inv-table {
+        width: 760px !important;
+        min-width: 760px !important;
+        max-width: none !important;
+        table-layout: auto !important;
+    }
+
+    html body .inv-page .inv-table th,
+    html body .inv-page .inv-table td {
+        white-space: nowrap !important;
+        padding: 11px 10px !important;
+        font-size: 12px !important;
+    }
+
+    /* RTL */
+
+    html[dir="rtl"] body .inv-page {
+        text-align: right !important;
+    }
+
+    html[dir="rtl"] body .inv-page .inv-page-header {
+        align-items: stretch !important;
+    }
+
+    html[dir="rtl"] body .inv-page .inv-page-header .inv-add-button {
+        align-self: flex-start !important;
+    }
+
+    html[dir="rtl"] body .inv-page .inv-toolbar {
+        direction: rtl !important;
+    }
+
+    html[dir="rtl"] body .inv-page .inv-table th,
+    html[dir="rtl"] body .inv-page .inv-table td {
+        text-align: right !important;
+    }
+}
+
+@media screen and (max-width: 380px) {
+
+    html body .inv-page {
+        padding-inline: 10px !important;
+    }
+
+    html body .inv-page .inv-stats-grid,
+    html body .inv-page .inv-category-grid {
+        gap: 8px !important;
+    }
+
+    html body .inv-page .inv-stat-card {
+        padding: 12px 8px !important;
+    }
+
+    html body .inv-page .inv-stat-card .inv-stat-value {
+        font-size: 20px !important;
+    }
+}
+
+/* Center the last category card on mobile */
+@media screen and (max-width: 767px) {
+    .inv-category-grid > .inv-category-card:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc((100% - 10px) / 2);
+        max-width: 100%;
+    }
+}
+
+/* =====================================================
+   MOBILE FIX — INVENTORY HEADING
+===================================================== */
+
+@media screen and (max-width: 767px) {
+
+    .inv-heading-section {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        overflow: visible;
+    }
+
+    /* Breadcrumb */
+    .inv-heading-section .inv-breadcrumb {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        margin-bottom: 24px;
+        font-size: 12px;
+    }
+
+    /* Stack intro and button vertically */
+    .inv-heading-section .inv-page-heading-row {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        gap: 18px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    /* Intro must occupy the available width */
+    .inv-heading-section .inv-page-intro {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        flex: none !important;
+    }
+
+    .inv-heading-section .inv-eyebrow {
+        display: block;
+        max-width: 100%;
+        margin-bottom: 12px;
+        font-size: 12px;
+        line-height: 1.5;
+        letter-spacing: 1px;
+    }
+
+    /* Prevent the title from becoming "Inventor / y" */
+    .inv-heading-section .inv-page-intro h2 {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 0 12px !important;
+        font-size: 28px !important;
+        line-height: 1.25 !important;
+        letter-spacing: -0.5px;
+        white-space: normal !important;
+        overflow-wrap: normal !important;
+        word-break: normal !important;
+        hyphens: none !important;
+    }
+
+    .inv-heading-section .inv-page-intro p {
+        width: 100% !important;
+        max-width: 340px !important;
+        margin: 0 !important;
+        font-size: 14px;
+        line-height: 1.8;
+        overflow-wrap: break-word;
+    }
+
+    /* Button on its own row */
+    .inv-heading-section .inv-primary-btn {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        align-self: flex-start !important;
+        flex: none !important;
+        width: auto !important;
+        max-width: 100% !important;
+        min-height: 44px;
+        margin: 0 !important;
+        padding: 12px 18px !important;
+        white-space: nowrap !important;
+    }
+}
+
+/* Extra-small mobile */
+@media screen and (max-width: 380px) {
+
+    .inv-heading-section .inv-page-intro h2 {
+        font-size: 25px !important;
+        letter-spacing: -0.3px;
+    }
+
+    .inv-heading-section .inv-page-intro p {
+        font-size: 13px;
+        line-height: 1.75;
+    }
+}
+
+/* Fix inventory search bar height on mobile */
+@media screen and (max-width: 767px) {
+
+    .inv-list-section .inv-toolbar {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 10px !important;
+        height: auto !important;
+        min-height: 0 !important;
+    }
+
+    .inv-list-section .inv-search-box {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+
+        width: 100% !important;
+        height: 52px !important;
+        min-height: 52px !important;
+        max-height: 52px !important;
+
+        padding: 0 14px !important;
+        margin: 0 !important;
+
+        border-radius: 12px !important;
+        box-sizing: border-box !important;
+        flex: 0 0 52px !important;
+        overflow: hidden !important;
+    }
+
+    .inv-list-section .inv-search-box input {
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        min-height: 0 !important;
+        max-height: 100% !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
+        outline: none !important;
+        box-sizing: border-box !important;
+
+        font-size: 13px !important;
+        line-height: normal !important;
+        flex: 1 1 auto !important;
+    }
+
+    .inv-list-section .inv-search-box i {
+        flex: 0 0 auto !important;
+        font-size: 15px !important;
+        line-height: 1 !important;
+    }
+
+    .inv-list-section .inv-filter-box {
+        min-height: 46px !important;
+        height: 46px !important;
+        box-sizing: border-box !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*******SIZING PAGE*******/
+
+/* =========================================================
+   UN IWEAR — SIZING MANAGEMENT RESPONSIVE STYLES
+   File: css/sizing-res.css
+
+   Breakpoints:
+   Desktop      : 1200px and above
+   iPad Pro     : 768px - 1199px
+   Mobile/iPad  : 767px and below
+========================================================= */
+
+
+/* =========================================================
+   1. LAPTOP & SMALL DESKTOP
+   1200px - 1399px
+========================================================= */
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+
+    .uw-dashboard-content.sizing-page {
+        padding-right: 24px;
+        padding-bottom: 30px;
+        padding-left: 24px;
+    }
+
+    .sizing-stats-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .sizing-stat-card {
+        gap: 11px;
+        padding: 17px;
+    }
+
+    .sizing-stat-icon {
+        flex-basis: 36px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .sizing-stat-info h3 {
+        font-size: 25px;
+    }
+
+    .sizing-distribution-grid {
+        gap: 11px;
+    }
+
+    .sizing-distribution-card {
+        padding: 14px;
+    }
+
+    .sizing-toolbar {
+        grid-template-columns: minmax(180px, 1fr) repeat(2, minmax(145px, 180px));
+        gap: 11px;
+    }
+}
+
+
+/* =========================================================
+   2. iPAD PRO & TABLETS
+   768px - 1199px
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 1199px) {
+
+    /* Page content */
+
+    .uw-dashboard-content.sizing-page {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 20px 22px 30px;
+        overflow-x: clip;
+    }
+
+    /* Heading */
+
+    .sizing-heading-section {
+        margin-bottom: 25px;
+    }
+
+    .sizing-breadcrumb {
+        margin-bottom: 18px;
+    }
+
+    .sizing-page-heading-row {
+        gap: 16px;
+    }
+
+    .sizing-page-intro h1 {
+        font-size: 26px;
+    }
+
+    .sizing-page-intro p {
+        max-width: 520px;
+    }
+
+    .sizing-primary-btn {
+        min-height: 42px;
+        padding: 0 14px;
+    }
+
+    /* Overview cards */
+
+    .sizing-overview-section {
+        margin-bottom: 26px;
+    }
+
+    .sizing-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .sizing-stat-card {
+        min-height: 125px;
+        padding: 18px;
+    }
+
+    .sizing-stat-info h3 {
+        font-size: 26px;
+    }
+
+    /* Distribution */
+
+    .sizing-distribution-section {
+        margin-bottom: 27px;
+    }
+
+    .sizing-distribution-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 13px;
+    }
+
+    .sizing-distribution-card {
+        min-height: 116px;
+        padding: 16px;
+    }
+
+    /* Records */
+
+    .sizing-records-section {
+        margin-bottom: 26px;
+        padding: 20px 18px 0;
+    }
+
+    .sizing-records-heading {
+        align-items: center;
+    }
+
+    .sizing-toolbar {
+        grid-template-columns: minmax(0, 1fr) repeat(2, minmax(130px, 165px));
+        gap: 10px;
+    }
+
+    .sizing-search-box,
+    .sizing-search-box input,
+    .sizing-filter-box select {
+        height: 42px;
+    }
+
+    .sizing-table-card {
+        max-width: 100%;
+    }
+
+    .sizing-table-scroll {
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .sizing-table {
+        min-width: 1050px;
+    }
+
+    /* Reminder */
+
+    .sizing-reminder-section {
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .sizing-reminder-content h3 {
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   3. MOBILE & SMALL TABLETS
+   481px - 767px
+========================================================= */
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+    .uw-dashboard-content.sizing-page {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 18px 18px 28px;
+        overflow-x: clip;
+    }
+
+    /* Heading */
+
+    .sizing-heading-section {
+        margin-bottom: 25px;
+    }
+
+    .sizing-breadcrumb {
+        gap: 8px;
+        margin-bottom: 17px;
+        font-size: 12px;
+    }
+
+    .sizing-page-heading-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .sizing-page-intro {
+        width: 100%;
+    }
+
+    .sizing-page-intro h1 {
+        font-size: 25px;
+    }
+
+    .sizing-page-intro p {
+        font-size: 13px;
+    }
+
+    .sizing-primary-btn {
+        align-self: flex-start;
+        min-height: 42px;
+    }
+
+    /* Section titles */
+
+    .sizing-section-heading {
+        gap: 12px;
+        margin-bottom: 15px;
+    }
+
+    .sizing-section-heading h2 {
+        font-size: 17px;
+    }
+
+    /* Statistics */
+
+    .sizing-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .sizing-stat-card {
+        min-height: 125px;
+        gap: 11px;
+        padding: 15px;
+    }
+
+    .sizing-stat-icon {
+        flex-basis: 34px;
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+
+    .sizing-stat-info > span {
+        font-size: 12px;
+    }
+
+    .sizing-stat-info h3 {
+        font-size: 24px;
+    }
+
+    .sizing-stat-info small {
+        font-size: 11px;
+    }
+
+    /* Size distribution */
+
+    .sizing-distribution-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 11px;
+    }
+
+    .sizing-distribution-card {
+        min-height: 110px;
+        padding: 14px;
+    }
+
+    .sizing-distribution-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc(50% - 6px);
+    }
+
+    .sizing-distribution-card strong {
+        font-size: 22px;
+    }
+
+    /* Records */
+
+    .sizing-records-section {
+        padding: 17px 14px 0;
+    }
+
+    .sizing-records-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 13px;
+    }
+
+    .sizing-export-btn {
+        min-height: 39px;
+    }
+
+    .sizing-toolbar {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+        margin-bottom: 15px;
+    }
+
+    .sizing-search-box,
+    .sizing-search-box input,
+    .sizing-filter-box select {
+        width: 100%;
+        height: 42px;
+    }
+
+    .sizing-filter-box {
+        gap: 5px;
+    }
+
+    .sizing-table-card {
+        max-width: 100%;
+    }
+
+    .sizing-table-scroll {
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .sizing-table {
+        min-width: 1050px;
+    }
+
+    .sizing-table-footer {
+        padding: 12px;
+    }
+
+    /* Reminder */
+
+    .sizing-reminder-section {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 13px;
+        padding: 17px;
+    }
+
+    .sizing-reminder-content {
+        flex: 1 1 calc(100% - 60px);
+    }
+
+    .sizing-reminder-content h3 {
+        font-size: 14px;
+    }
+
+    .sizing-reminder-content p {
+        font-size: 12px;
+    }
+
+    .sizing-reminder-section .sizing-secondary-btn {
+        margin-left: 55px;
+    }
+}
+
+
+/* =========================================================
+   4. MOBILE PHONES
+   480px and below
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .uw-dashboard-content.sizing-page {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 16px 14px 24px;
+        overflow-x: clip;
+    }
+
+    /* Page heading */
+
+    .sizing-heading-section {
+        margin-bottom: 23px;
+    }
+
+    .sizing-breadcrumb {
+        gap: 7px;
+        margin-bottom: 16px;
+        font-size: 12px;
+    }
+
+    .sizing-page-heading-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .sizing-page-intro {
+        width: 100%;
+    }
+
+    .sizing-eyebrow {
+        margin-bottom: 7px;
+        font-size: 11px;
+    }
+
+    .sizing-page-intro h1 {
+        margin-bottom: 8px;
+        font-size: 23px;
+        line-height: 1.35;
+        overflow-wrap: anywhere;
+    }
+
+    .sizing-page-intro p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .sizing-primary-btn {
+        width: 100%;
+        min-height: 42px;
+    }
+
+    /* Section headings */
+
+    .sizing-section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 14px;
+    }
+
+    .sizing-section-heading h2 {
+        margin-bottom: 5px;
+        font-size: 17px;
+    }
+
+    .sizing-section-heading p {
+        font-size: 12px;
+    }
+
+    /* Overview */
+
+    .sizing-overview-section {
+        margin-bottom: 24px;
+    }
+
+    .sizing-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .sizing-stat-card {
+        flex-direction: column;
+        gap: 11px;
+        min-height: 142px;
+        padding: 13px;
+        border-radius: 10px;
+    }
+
+    .sizing-stat-icon {
+        flex-basis: 34px;
+        width: 34px;
+        height: 34px;
+        font-size: 13px;
+    }
+
+    .sizing-stat-info {
+        width: 100%;
+    }
+
+    .sizing-stat-info > span {
+        margin-bottom: 5px;
+        font-size: 12px;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+    }
+
+    .sizing-stat-info h3 {
+        margin-bottom: 4px;
+        font-size: 23px;
+    }
+
+    .sizing-stat-info small {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    /* Size distribution */
+
+    .sizing-distribution-section {
+        margin-bottom: 24px;
+    }
+
+    .sizing-distribution-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .sizing-distribution-card {
+        min-height: 105px;
+        padding: 13px;
+        border-radius: 9px;
+    }
+
+    .sizing-distribution-label {
+        margin-bottom: 10px;
+        font-size: 12px;
+        overflow-wrap: anywhere;
+    }
+
+    .sizing-distribution-card strong {
+        font-size: 22px;
+    }
+
+    .sizing-distribution-card small {
+        font-size: 11px;
+    }
+
+    /* Records panel */
+
+    .sizing-records-section {
+        margin-bottom: 24px;
+        padding: 16px 11px 0;
+        border-radius: 10px;
+    }
+
+    .sizing-records-heading {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 17px;
+    }
+
+    .sizing-records-heading h2 {
+        font-size: 17px;
+    }
+
+    .sizing-export-btn {
+        align-self: flex-start;
+        min-height: 39px;
+        padding: 0 13px;
+        font-size: 12px;
+    }
+
+    /* Search and filters */
+
+    .sizing-toolbar {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+        margin-bottom: 14px;
+    }
+
+    .sizing-search-box {
+        width: 100%;
+        height: 42px;
+    }
+
+    .sizing-search-box input {
+        width: 100%;
+        height: 42px;
+        padding-right: 10px;
+        font-size: 12px;
+    }
+
+    .sizing-filter-box {
+        gap: 5px;
+    }
+
+    .sizing-filter-box > span {
+        font-size: 12px;
+    }
+
+    .sizing-filter-box select {
+        width: 100%;
+        height: 42px;
+        font-size: 12px;
+    }
+
+    /* Keep the wide table inside its scroll wrapper */
+
+    .sizing-table-card {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .sizing-table-scroll {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .sizing-table {
+        width: 1050px;
+        min-width: 1050px;
+    }
+
+    .sizing-table thead th {
+        height: 43px;
+        padding: 0 12px;
+        font-size: 11px;
+    }
+
+    .sizing-table tbody td {
+        height: 63px;
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+    .sizing-employee-cell {
+        gap: 8px;
+    }
+
+    .sizing-avatar {
+        flex-basis: 32px;
+        width: 32px;
+        height: 32px;
+        font-size: 11px;
+    }
+
+    .sizing-employee-cell strong {
+        font-size: 12px;
+    }
+
+    .sizing-size-badge,
+    .sizing-status {
+        font-size: 11px;
+    }
+
+    .sizing-action-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    .sizing-table-footer {
+        min-height: 48px;
+        padding: 10px;
+    }
+
+    #sizingResultsCount {
+        font-size: 11px;
+    }
+
+    /* Fitting reminder */
+
+    .sizing-reminder-section {
+        display: grid;
+        grid-template-columns: 38px minmax(0, 1fr);
+        align-items: start;
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .sizing-reminder-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 14px;
+    }
+
+    .sizing-reminder-content {
+        min-width: 0;
+    }
+
+    .sizing-reminder-content h3 {
+        margin-bottom: 6px;
+        font-size: 14px;
+    }
+
+    .sizing-reminder-content p {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .sizing-reminder-section .sizing-secondary-btn {
+        grid-column: 2;
+        justify-self: start;
+        min-height: 39px;
+        padding: 0 12px;
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   5. VERY SMALL PHONES
+   360px and below
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .uw-dashboard-content.sizing-page {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .sizing-stats-grid {
+        gap: 8px;
+    }
+
+    .sizing-stat-card {
+        padding: 10px;
+    }
+
+    .sizing-stat-info > span {
+        font-size: 11px;
+    }
+
+    .sizing-stat-info h3 {
+        font-size: 21px;
+    }
+
+    .sizing-stat-info small {
+        font-size: 10px;
+    }
+
+    .sizing-distribution-grid {
+        gap: 8px;
+    }
+
+    .sizing-distribution-card {
+        padding: 10px;
+    }
+
+    .sizing-records-section {
+        padding-right: 8px;
+        padding-left: 8px;
+    }
+
+    .sizing-page-intro h1 {
+        font-size: 21px;
+    }
+}
+
+
+/* =========================================================
+   6. RTL RESPONSIVE ADJUSTMENTS
+========================================================= */
+
+@media (max-width: 767px) {
+
+    html[dir="rtl"] .sizing-page-heading-row {
+        align-items: stretch;
+    }
+
+    html[dir="rtl"] .sizing-primary-btn {
+        align-self: stretch;
+    }
+
+    html[dir="rtl"] .sizing-search-box > i {
+        right: 13px;
+        left: auto;
+    }
+
+    html[dir="rtl"] .sizing-search-box input {
+        padding-right: 37px;
+        padding-left: 10px;
+    }
+
+    html[dir="rtl"] .sizing-reminder-section {
+        text-align: right;
+    }
+
+    html[dir="rtl"] .sizing-reminder-section .sizing-secondary-btn {
+        justify-self: start;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/***********REPLACEMENT PAGE**********/
+
+
+/* =========================================================
+   UN IWEAR — REPLACEMENT REQUESTS
+   File: css/replacements-res.css
+
+   Responsive breakpoints:
+   Desktop        : 1200px and above
+   iPad Pro       : 768px - 1199px
+   Mobile/Tablet  : 481px - 767px
+   Small Mobile   : 480px and below
+========================================================= */
+
+
+/* =========================================================
+   1. SMALL DESKTOP
+   1200px - 1399px
+========================================================= */
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+
+    .uw-dashboard-content.replacements-page {
+        padding-right: 24px;
+        padding-bottom: 30px;
+        padding-left: 24px;
+    }
+
+    .replacement-stats-grid {
+        gap: 14px;
+    }
+
+    .replacement-stat-card {
+        gap: 11px;
+        padding: 17px;
+    }
+
+    .replacement-stat-icon {
+        flex-basis: 36px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .replacement-stat-info h3 {
+        font-size: 25px;
+    }
+
+    .replacement-status-grid {
+        gap: 11px;
+    }
+
+    .replacement-status-card {
+        padding: 14px;
+    }
+
+    .replacement-toolbar {
+        grid-template-columns:
+            minmax(180px, 1fr)
+            repeat(2, minmax(145px, 180px));
+        gap: 11px;
+    }
+}
+
+
+/* =========================================================
+   2. iPAD PRO & TABLETS
+   768px - 1199px
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 1199px) {
+
+    /* Page container */
+
+    .uw-dashboard-content.replacements-page {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin-top: 0;
+        padding: 20px 22px 30px;
+        overflow-x: clip;
+    }
+
+    /* Page heading */
+
+    .replacement-heading-section {
+        margin-bottom: 26px;
+    }
+
+    .replacement-breadcrumb {
+        margin-bottom: 18px;
+    }
+
+    .replacement-page-heading-row {
+        align-items: center;
+        gap: 16px;
+    }
+
+    .replacement-page-intro h2 {
+        font-size: 26px;
+    }
+
+    .replacement-page-intro p {
+        max-width: 520px;
+    }
+
+    .replacement-primary-btn {
+        min-height: 42px;
+        padding: 0 14px;
+    }
+
+    /* Section headings */
+
+    .replacement-section-heading {
+        gap: 14px;
+    }
+
+    .replacement-section-heading h2 {
+        font-size: 17px;
+    }
+
+    /* Overview cards */
+
+    .replacement-overview-section {
+        margin-bottom: 27px;
+    }
+
+    .replacement-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .replacement-stat-card {
+        min-height: 125px;
+        padding: 18px;
+    }
+
+    .replacement-stat-info h3 {
+        font-size: 26px;
+    }
+
+    /* Status cards */
+
+    .replacement-status-section {
+        margin-bottom: 27px;
+    }
+
+    .replacement-status-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 13px;
+    }
+
+    .replacement-status-card {
+        min-height: 112px;
+        padding: 16px;
+    }
+
+    /* Records panel */
+
+    .replacement-records-section {
+        margin-bottom: 26px;
+        padding: 20px 18px 0;
+    }
+
+    .replacement-records-heading {
+        align-items: center;
+    }
+
+    /* Search and filters */
+
+    .replacement-toolbar {
+        grid-template-columns:
+            minmax(0, 1fr)
+            repeat(2, minmax(130px, 165px));
+        gap: 10px;
+    }
+
+    .replacement-search-box,
+    .replacement-search-box input,
+    .replacement-filter-box select {
+        height: 42px;
+    }
+
+    /* Table remains scrollable */
+
+    .replacement-table-card {
+        max-width: 100%;
+    }
+
+    .replacement-table-scroll {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .replacement-table {
+        min-width: 1000px;
+    }
+
+    /* Reminder */
+
+    .replacement-reminder-section {
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .replacement-reminder-content h3 {
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   3. MOBILE & SMALL TABLETS
+   481px - 767px
+========================================================= */
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+    .uw-dashboard-content.replacements-page {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin-top: 0;
+        padding: 18px 18px 28px;
+        overflow-x: clip;
+    }
+
+    /* Page heading */
+
+    .replacement-heading-section {
+        margin-bottom: 25px;
+    }
+
+    .replacement-breadcrumb {
+        gap: 8px;
+        margin-bottom: 17px;
+        font-size: 12px;
+    }
+
+    .replacement-page-heading-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .replacement-page-intro {
+        width: 100%;
+    }
+
+    .replacement-page-intro h2 {
+        font-size: 25px;
+    }
+
+    .replacement-page-intro p {
+        font-size: 13px;
+    }
+
+    .replacement-primary-btn {
+        align-self: flex-start;
+        min-height: 42px;
+    }
+
+    /* Overview */
+
+    .replacement-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .replacement-stat-card {
+        min-height: 125px;
+        gap: 11px;
+        padding: 15px;
+    }
+
+    .replacement-stat-icon {
+        flex-basis: 34px;
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+
+    .replacement-stat-info > span {
+        font-size: 12px;
+    }
+
+    .replacement-stat-info h3 {
+        font-size: 24px;
+    }
+
+    .replacement-stat-info small {
+        font-size: 11px;
+    }
+
+    /* Status cards */
+
+    .replacement-status-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 11px;
+    }
+
+    .replacement-status-card {
+        min-height: 108px;
+        padding: 14px;
+    }
+
+    .replacement-status-card strong {
+        font-size: 22px;
+    }
+
+    /* Records */
+
+    .replacement-records-section {
+        padding: 17px 14px 0;
+    }
+
+    .replacement-records-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 13px;
+    }
+
+    .replacement-export-btn {
+        min-height: 39px;
+    }
+
+    /* Toolbar stacks vertically */
+
+    .replacement-toolbar {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+        margin-bottom: 15px;
+    }
+
+    .replacement-search-box,
+    .replacement-search-box input,
+    .replacement-filter-box select {
+        width: 100%;
+        height: 42px;
+    }
+
+    .replacement-filter-box {
+        gap: 5px;
+    }
+
+    /* Table scroll */
+
+    .replacement-table-card {
+        max-width: 100%;
+    }
+
+    .replacement-table-scroll {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .replacement-table {
+        min-width: 1000px;
+    }
+
+    .replacement-table-footer {
+        padding: 12px;
+    }
+
+    /* Reminder */
+
+    .replacement-reminder-section {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 13px;
+        padding: 17px;
+    }
+
+    .replacement-reminder-content {
+        flex: 1 1 calc(100% - 60px);
+        min-width: 0;
+    }
+
+    .replacement-reminder-content h3 {
+        font-size: 14px;
+    }
+
+    .replacement-reminder-content p {
+        font-size: 12px;
+    }
+
+    .replacement-reminder-section .replacement-secondary-btn {
+        margin-left: 55px;
+    }
+}
+
+
+/* =========================================================
+   4. MOBILE PHONES
+   480px and below
+========================================================= */
+
+@media (max-width: 480px) {
+
+    /* Page container */
+
+    .uw-dashboard-content.replacements-page {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin-top: 0;
+        padding: 16px 14px 24px;
+        overflow-x: clip;
+    }
+
+    /* Heading */
+
+    .replacement-heading-section {
+        margin-bottom: 23px;
+    }
+
+    .replacement-breadcrumb {
+        gap: 7px;
+        margin-bottom: 16px;
+        font-size: 12px;
+    }
+
+    .replacement-page-heading-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .replacement-page-intro {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .replacement-eyebrow {
+        gap: 7px;
+        margin-bottom: 7px;
+        font-size: 11px;
+    }
+
+    .replacement-page-intro h2 {
+        margin-bottom: 8px;
+        font-size: 23px;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+    }
+
+    .replacement-page-intro p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .replacement-primary-btn {
+        width: 100%;
+        min-height: 42px;
+    }
+
+    /* Section headings */
+
+    .replacement-section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 14px;
+    }
+
+    .replacement-section-heading h2 {
+        margin-bottom: 5px;
+        font-size: 17px;
+    }
+
+    .replacement-section-heading p {
+        font-size: 12px;
+    }
+
+    /* Overview cards */
+
+    .replacement-overview-section {
+        margin-bottom: 24px;
+    }
+
+    .replacement-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .replacement-stat-card {
+        flex-direction: column;
+        gap: 11px;
+        min-height: 142px;
+        padding: 13px;
+        border-radius: 10px;
+    }
+
+    .replacement-stat-icon {
+        flex-basis: 34px;
+        width: 34px;
+        height: 34px;
+        font-size: 13px;
+    }
+
+    .replacement-stat-info {
+        width: 100%;
+    }
+
+    .replacement-stat-info > span {
+        margin-bottom: 5px;
+        font-size: 12px;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+    }
+
+    .replacement-stat-info h3 {
+        margin-bottom: 4px;
+        font-size: 23px;
+    }
+
+    .replacement-stat-info small {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    /* Status cards */
+
+    .replacement-status-section {
+        margin-bottom: 24px;
+    }
+
+    .replacement-status-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .replacement-status-card {
+        min-height: 105px;
+        padding: 13px;
+        border-radius: 9px;
+    }
+
+    .replacement-status-label {
+        margin-bottom: 10px;
+        font-size: 12px;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+    }
+
+    .replacement-status-card strong {
+        font-size: 22px;
+    }
+
+    .replacement-status-card small {
+        font-size: 11px;
+    }
+
+    /* Records panel */
+
+    .replacement-records-section {
+        margin-bottom: 24px;
+        padding: 16px 11px 0;
+        border-radius: 10px;
+    }
+
+    .replacement-records-heading {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 17px;
+    }
+
+    .replacement-records-heading h2 {
+        font-size: 17px;
+    }
+
+    .replacement-export-btn {
+        align-self: flex-start;
+        min-height: 39px;
+        padding: 0 13px;
+        font-size: 12px;
+    }
+
+    /* Search and filters */
+
+    .replacement-toolbar {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+        margin-bottom: 14px;
+    }
+
+    .replacement-search-box {
+        width: 100%;
+        height: 42px;
+    }
+
+    .replacement-search-box input {
+        width: 100%;
+        height: 42px;
+        padding-right: 10px;
+        font-size: 12px;
+    }
+
+    .replacement-filter-box {
+        gap: 5px;
+    }
+
+    .replacement-filter-box > span {
+        font-size: 12px;
+    }
+
+    .replacement-filter-box select {
+        width: 100%;
+        height: 42px;
+        font-size: 12px;
+    }
+
+    /* Keep the table inside its scroll wrapper */
+
+    .replacement-table-card {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .replacement-table-scroll {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .replacement-table {
+        width: 1000px;
+        min-width: 1000px;
+    }
+
+    .replacement-table thead th {
+        height: 43px;
+        padding: 0 12px;
+        font-size: 11px;
+    }
+
+    .replacement-table tbody td {
+        height: 63px;
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+    .replacement-employee-cell {
+        gap: 8px;
+    }
+
+    .replacement-avatar {
+        flex-basis: 32px;
+        width: 32px;
+        height: 32px;
+        font-size: 11px;
+    }
+
+    .replacement-employee-cell strong {
+        font-size: 12px;
+    }
+
+    .replacement-employee-cell small {
+        font-size: 11px;
+    }
+
+    .replacement-id {
+        font-size: 12px;
+    }
+
+    .replacement-badge {
+        font-size: 11px;
+    }
+
+    .replacement-action-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    .replacement-table-footer {
+        min-height: 48px;
+        padding: 10px;
+    }
+
+    #replacementResultsCount {
+        font-size: 11px;
+    }
+
+    /* Reminder panel */
+
+    .replacement-reminder-section {
+        display: grid;
+        grid-template-columns: 38px minmax(0, 1fr);
+        align-items: start;
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .replacement-reminder-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 14px;
+    }
+
+    .replacement-reminder-content {
+        min-width: 0;
+    }
+
+    .replacement-reminder-content h3 {
+        margin-bottom: 6px;
+        font-size: 14px;
+    }
+
+    .replacement-reminder-content p {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .replacement-reminder-section .replacement-secondary-btn {
+        grid-column: 2;
+        justify-self: start;
+        min-height: 39px;
+        padding: 0 12px;
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   5. VERY SMALL PHONES
+   360px and below
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .uw-dashboard-content.replacements-page {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .replacement-page-intro h2 {
+        font-size: 21px;
+    }
+
+    .replacement-stats-grid {
+        gap: 8px;
+    }
+
+    .replacement-stat-card {
+        padding: 10px;
+    }
+
+    .replacement-stat-info > span {
+        font-size: 11px;
+    }
+
+    .replacement-stat-info h3 {
+        font-size: 21px;
+    }
+
+    .replacement-stat-info small {
+        font-size: 10px;
+    }
+
+    .replacement-status-grid {
+        gap: 8px;
+    }
+
+    .replacement-status-card {
+        padding: 10px;
+    }
+
+    .replacement-status-label {
+        font-size: 11px;
+    }
+
+    .replacement-records-section {
+        padding-right: 8px;
+        padding-left: 8px;
+    }
+}
+
+
+/* =========================================================
+   6. RTL RESPONSIVE ADJUSTMENTS
+========================================================= */
+
+@media (max-width: 767px) {
+
+    html[dir="rtl"] .replacement-page-heading-row {
+        align-items: stretch;
+    }
+
+    html[dir="rtl"] .replacement-primary-btn {
+        align-self: stretch;
+    }
+
+    html[dir="rtl"] .replacement-search-box > i {
+        right: 13px;
+        left: auto;
+    }
+
+    html[dir="rtl"] .replacement-search-box input {
+        padding-right: 37px;
+        padding-left: 10px;
+    }
+
+    html[dir="rtl"] .replacement-reminder-section {
+        text-align: right;
+    }
+
+    html[dir="rtl"] .replacement-reminder-section .replacement-secondary-btn {
+        justify-self: start;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/******BILLING******/
+
+
+/* =====================================================
+   BILLING & VOICE — RESPONSIVE + RTL
+===================================================== */
+
+/* ---------- GLOBAL SAFETY ---------- */
+
+.billing-page,
+.billing-container,
+.billing-content,
+.billing-main {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.billing-page *,
+.billing-container *,
+.billing-content *,
+.billing-main * {
+    box-sizing: border-box;
+}
+
+.billing-page-header,
+.billing-header,
+.billing-overview {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.billing-page-header h1,
+.billing-header h1,
+.billing-overview h1 {
+    margin-top: 0;
+}
+
+/* ---------- TABLET / IPAD PRO: 1199px ---------- */
+
+@media (max-width: 1199px) {
+    .billing-page,
+    .billing-container,
+    .billing-content,
+    .billing-main {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .billing-stats,
+    .billing-stats-grid,
+    .billing-summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .billing-page-header,
+    .billing-header,
+    .billing-overview {
+        align-items: flex-start;
+    }
+
+    .billing-header-actions,
+    .billing-page-actions,
+    .billing-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .billing-activity-panel,
+    .billing-table-container,
+    .billing-table-wrapper {
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .billing-table-wrapper,
+    .billing-table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .billing-table,
+    .billing-activity-table,
+    .billing-table-wrapper table {
+        min-width: 760px;
+    }
+}
+
+/* ---------- IPAD MINI / SMALL TABLETS ---------- */
+
+@media (max-width: 991px) {
+    .billing-page,
+    .billing-container,
+    .billing-content,
+    .billing-main {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .billing-page-header,
+    .billing-header,
+    .billing-overview {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .billing-header-actions,
+    .billing-page-actions,
+    .billing-actions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .billing-search-filters,
+    .billing-toolbar,
+    .billing-filters {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .billing-search,
+    .billing-search-box {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+
+    .billing-search input,
+    .billing-search-box input,
+    .billing-filters input,
+    .billing-filters select,
+    .billing-toolbar input,
+    .billing-toolbar select {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 767px) {
+    .billing-page,
+    .billing-container,
+    .billing-content,
+    .billing-main {
+        padding: 12px;
+        margin-top: 0;
+    }
+
+    .billing-page-header,
+    .billing-header,
+    .billing-overview {
+        margin-bottom: 22px;
+        gap: 12px;
+    }
+
+    .billing-page-header h1,
+    .billing-header h1,
+    .billing-overview h1 {
+        font-size: clamp(23px, 5vw, 30px);
+        line-height: 1.25;
+    }
+
+    .billing-page-header p,
+    .billing-header p,
+    .billing-overview p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .billing-header-actions,
+    .billing-page-actions,
+    .billing-actions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        width: 100%;
+    }
+
+    .billing-header-actions button,
+    .billing-page-actions button,
+    .billing-actions button,
+    .billing-header-actions a,
+    .billing-page-actions a,
+    .billing-actions a {
+        width: 100%;
+        min-width: 0;
+        justify-content: center;
+        font-size: 13px;
+        padding: 11px 10px;
+    }
+
+    .billing-stats,
+    .billing-stats-grid,
+    .billing-summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .billing-stat-card,
+    .billing-summary-card,
+    .billing-stats .card {
+        min-width: 0;
+        padding: 15px;
+    }
+
+    .billing-stat-card h3,
+    .billing-summary-card h3 {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .billing-stat-card strong,
+    .billing-summary-card strong,
+    .billing-stat-value {
+        font-size: 22px;
+        overflow-wrap: anywhere;
+    }
+
+    .billing-stat-card p,
+    .billing-summary-card p {
+        font-size: 11px;
+    }
+
+    .billing-search-filters,
+    .billing-toolbar,
+    .billing-filters {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .billing-search,
+    .billing-search-box {
+        grid-column: auto;
+    }
+
+    .billing-search input,
+    .billing-search-box input,
+    .billing-filters input,
+    .billing-filters select,
+    .billing-toolbar input,
+    .billing-toolbar select {
+        width: 100%;
+        min-height: 42px;
+        font-size: 14px;
+    }
+
+    .billing-activity-panel,
+    .billing-table-container,
+    .billing-table-wrapper {
+        border-radius: 12px;
+    }
+
+    .billing-table-wrapper,
+    .billing-table-container {
+        overflow-x: auto;
+        max-width: 100%;
+    }
+
+    .billing-table,
+    .billing-activity-table,
+    .billing-table-wrapper table {
+        min-width: 700px;
+    }
+
+    .billing-empty-state {
+        padding: 24px 14px;
+        text-align: center;
+    }
+
+    .billing-modal,
+    .billing-modal-content,
+    .billing-invoice-modal {
+        width: calc(100% - 24px);
+        max-width: 480px;
+        max-height: 88vh;
+        overflow-y: auto;
+        padding: 20px;
+    }
+
+    .billing-form-grid,
+    .billing-modal .form-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+}
+
+/* ---------- SMALL MOBILE ---------- */
+
+@media (max-width: 480px) {
+    .billing-page,
+    .billing-container,
+    .billing-content,
+    .billing-main {
+        padding: 10px;
+    }
+
+    .billing-stats,
+    .billing-stats-grid,
+    .billing-summary-grid {
+        gap: 9px;
+    }
+
+    .billing-stat-card,
+    .billing-summary-card,
+    .billing-stats .card {
+        padding: 12px;
+    }
+
+    .billing-stat-card strong,
+    .billing-summary-card strong,
+    .billing-stat-value {
+        font-size: 19px;
+    }
+
+    .billing-header-actions,
+    .billing-page-actions,
+    .billing-actions {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .billing-header-actions button,
+    .billing-page-actions button,
+    .billing-actions button {
+        width: 100%;
+    }
+}
+
+/* ---------- EXTRA SMALL MOBILE ---------- */
+
+@media (max-width: 360px) {
+    .billing-page-header h1,
+    .billing-header h1,
+    .billing-overview h1 {
+        font-size: 22px;
+    }
+
+    .billing-stats,
+    .billing-stats-grid,
+    .billing-summary-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .billing-stat-card,
+    .billing-summary-card {
+        width: 100%;
+    }
+}
+
+/* =====================================================
+   RTL — RIGHT TO LEFT
+===================================================== */
+
+html[dir="rtl"] .billing-page,
+html[dir="rtl"] .billing-container,
+html[dir="rtl"] .billing-content,
+html[dir="rtl"] .billing-main {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .billing-page-header,
+html[dir="rtl"] .billing-header,
+html[dir="rtl"] .billing-overview {
+    direction: rtl;
+}
+
+html[dir="rtl"] .billing-header-actions,
+html[dir="rtl"] .billing-page-actions,
+html[dir="rtl"] .billing-actions {
+    direction: rtl;
+    justify-content: flex-start;
+}
+
+html[dir="rtl"] .billing-stat-card,
+html[dir="rtl"] .billing-summary-card,
+html[dir="rtl"] .billing-activity-panel {
+    text-align: right;
+}
+
+html[dir="rtl"] .billing-search-filters,
+html[dir="rtl"] .billing-toolbar,
+html[dir="rtl"] .billing-filters {
+    direction: rtl;
+}
+
+html[dir="rtl"] .billing-search input,
+html[dir="rtl"] .billing-search-box input,
+html[dir="rtl"] .billing-filters input,
+html[dir="rtl"] .billing-filters select,
+html[dir="rtl"] .billing-toolbar input,
+html[dir="rtl"] .billing-toolbar select {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .billing-table,
+html[dir="rtl"] .billing-activity-table,
+html[dir="rtl"] .billing-table-wrapper table {
+    direction: rtl;
+}
+
+html[dir="rtl"] .billing-table th,
+html[dir="rtl"] .billing-table td,
+html[dir="rtl"] .billing-activity-table th,
+html[dir="rtl"] .billing-activity-table td,
+html[dir="rtl"] .billing-table-wrapper th,
+html[dir="rtl"] .billing-table-wrapper td {
+    text-align: right;
+}
+
+html[dir="rtl"] .billing-modal,
+html[dir="rtl"] .billing-modal-content,
+html[dir="rtl"] .billing-invoice-modal {
+    direction: rtl;
+    text-align: right;
+}
+
+/* ---------- RTL RESPONSIVE ---------- */
+
+@media (max-width: 1199px) {
+    html[dir="rtl"] .billing-page,
+    html[dir="rtl"] .billing-container,
+    html[dir="rtl"] .billing-content,
+    html[dir="rtl"] .billing-main {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+@media (max-width: 991px) {
+    html[dir="rtl"] .billing-page,
+    html[dir="rtl"] .billing-container,
+    html[dir="rtl"] .billing-content,
+    html[dir="rtl"] .billing-main {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    html[dir="rtl"] .billing-header-actions,
+    html[dir="rtl"] .billing-page-actions,
+    html[dir="rtl"] .billing-actions {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 767px) {
+    html[dir="rtl"] .billing-page,
+    html[dir="rtl"] .billing-container,
+    html[dir="rtl"] .billing-content,
+    html[dir="rtl"] .billing-main {
+        padding: 12px;
+    }
+
+    html[dir="rtl"] .billing-page-header,
+    html[dir="rtl"] .billing-header,
+    html[dir="rtl"] .billing-overview {
+        align-items: stretch;
+    }
+
+    html[dir="rtl"] .billing-header-actions,
+    html[dir="rtl"] .billing-page-actions,
+    html[dir="rtl"] .billing-actions {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    html[dir="rtl"] .billing-page,
+    html[dir="rtl"] .billing-container,
+    html[dir="rtl"] .billing-content,
+    html[dir="rtl"] .billing-main {
+        padding: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+/* =====================================================
+   UNIWEAR DELIVERY DASHBOARD
+   MOBILE + TABLET RESPONSIVE OVERRIDES
+   Fixed Topbar | No Horizontal Page Overflow
+===================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: clip;
+}
+
+.uw-dashboard-layout {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: clip;
+}
+
+.uw-main-area {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* =========================================
+   FIXED TOPBAR
+========================================= */
+
+.uw-topbar {
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    left: 260px; /* Desktop sidebar width */
+    z-index: 1000;
+
+    width: auto;
+    min-width: 0;
+    max-width: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    padding: 12px 20px;
+    min-height: 72px;
+
+    background: var(--dashboard-card, #ffffff);
+    border-bottom: 1px solid var(--dashboard-border, #dce6ea);
+}
+
+/* Reserve space below the fixed topbar */
+.uw-dashboard-content {
+    width: 100%;
+    min-width: 0;
+    padding-top: 92px !important;
+}
+
+/* Topbar left and right groups */
+.uw-topbar-left,
+.uw-topbar-actions {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+}
+
+.uw-topbar-left {
+    gap: 12px;
+    flex: 1 1 auto;
+}
+
+.uw-topbar-actions {
+    flex: 0 1 auto;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.uw-page-heading {
+    min-width: 0;
+}
+
+.uw-page-heading h1 {
+    margin: 0;
+    font-size: clamp(14px, 1.5vw, 20px);
+    line-height: 1.3;
+}
+
+/* Keep all dashboard sections within the screen */
+.deliveries-page,
+.delivery-heading-section,
+.delivery-overview-section,
+.delivery-status-section,
+.delivery-records-section,
+.delivery-reminder-section {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.delivery-page-heading-row,
+.delivery-section-heading,
+.delivery-toolbar,
+.delivery-reminder-section {
+    min-width: 0;
+    max-width: 100%;
+}
+
+/* =========================================
+   DELIVERY OVERVIEW CARDS
+========================================= */
+
+.delivery-stats-grid,
+.delivery-status-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    width: 100%;
+    min-width: 0;
+}
+
+.delivery-stat-card,
+.delivery-status-card {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.delivery-stat-info {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.delivery-stat-info h3 {
+    overflow-wrap: anywhere;
+}
+
+/* =========================================
+   TABLE RESPONSIVENESS
+========================================= */
+
+.delivery-table-card {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.delivery-table-scroll {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.delivery-table {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: collapse;
+}
+
+/* =========================================
+   TABLET — 768px TO 1199px
+========================================= */
+
+@media (max-width: 1199px) {
+
+    .uw-topbar {
+        left: 0;
+        right: 0;
+        padding: 12px 16px;
+    }
+
+    .uw-dashboard-content {
+        padding: 92px 20px 28px !important;
+    }
+
+    .delivery-stats-grid,
+    .delivery-status-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .delivery-page-heading-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .delivery-page-intro {
+        flex: 1 1 260px;
+        min-width: 0;
+    }
+
+    .delivery-primary-btn {
+        max-width: 100%;
+        white-space: normal;
+    }
+
+    .delivery-toolbar {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .delivery-search-box {
+        grid-column: 1 / -1;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .delivery-filter-box {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+/* =========================================
+   MOBILE — 767px AND BELOW
+========================================= */
+
+@media (max-width: 767px) {
+
+    .uw-topbar {
+        left: 0 !important;
+        right: 0 !important;
+        width: 100%;
+        min-height: 64px;
+        padding: 10px 12px;
+        gap: 8px;
+    }
+
+    .uw-topbar-left {
+        flex: 1 1 auto;
+        gap: 8px;
+    }
+
+    .uw-page-heading h1 {
+        font-size: 14px;
+        line-height: 1.25;
+        white-space: normal;
+    }
+
+    .uw-topbar-greeting {
+        display: none;
+    }
+
+    .uw-topbar-actions {
+        flex: 0 0 auto;
+        gap: 5px;
+    }
+
+    .uw-topbar-icon-btn,
+    .uw-menu-toggle {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        padding: 0;
+        flex-shrink: 0;
+    }
+
+    .uw-profile-info,
+    .uw-profile-chevron {
+        display: none;
+    }
+
+    .uw-profile-btn {
+        min-width: 36px;
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    /* Content starts below fixed topbar */
+    .uw-dashboard-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 82px 14px 24px !important;
+    }
+
+    .delivery-breadcrumb {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 7px;
+        font-size: 12px;
+    }
+
+    .delivery-page-heading-row {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+
+    .delivery-page-intro {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .delivery-page-intro h2 {
+        font-size: clamp(22px, 6vw, 29px);
+        line-height: 1.25;
+        overflow-wrap: anywhere;
+    }
+
+    .delivery-page-intro p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .delivery-primary-btn,
+    .delivery-export-btn {
+        width: 100%;
+        min-height: 44px;
+        justify-content: center;
+    }
+
+    .delivery-section-heading {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .delivery-section-heading h2 {
+        font-size: 19px;
+        line-height: 1.35;
+    }
+
+    .delivery-section-heading p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    /* Two-column cards on mobile */
+    .delivery-stats-grid,
+    .delivery-status-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .delivery-stat-card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 14px;
+        min-height: 150px;
+    }
+
+    .delivery-stat-info {
+        width: 100%;
+    }
+
+    .delivery-stat-info span {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .delivery-stat-info h3 {
+        font-size: 24px;
+        line-height: 1.3;
+        margin: 5px 0;
+    }
+
+    .delivery-stat-info small {
+        font-size: 11px;
+        line-height: 1.5;
+        white-space: normal;
+    }
+
+    .delivery-status-card {
+        padding: 14px 12px;
+        text-align: left;
+        overflow-wrap: anywhere;
+    }
+
+    .delivery-status-label {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .delivery-status-card strong {
+        font-size: 23px;
+    }
+
+    .delivery-status-card small {
+        font-size: 11px;
+        line-height: 1.5;
+        white-space: normal;
+    }
+
+    /* Search and filters */
+    .delivery-toolbar {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+        width: 100%;
+    }
+
+    .delivery-search-box,
+    .delivery-filter-box {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .delivery-search-box input,
+    .delivery-filter-box select {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .delivery-records-heading {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .delivery-table-card {
+        border-radius: 12px;
+    }
+
+    .delivery-table {
+        min-width: 850px;
+    }
+
+    .delivery-table-footer {
+        padding: 12px;
+        font-size: 12px;
+    }
+
+    /* Bottom reminder */
+    .delivery-reminder-section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 18px;
+    }
+
+    .delivery-reminder-content {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .delivery-secondary-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE — 380px AND BELOW
+========================================= */
+
+@media (max-width: 380px) {
+
+    .uw-topbar {
+        padding-inline: 8px;
+        gap: 5px;
+    }
+
+    .uw-topbar-left {
+        gap: 5px;
+    }
+
+    .uw-page-heading h1 {
+        font-size: 12px;
+    }
+
+    .uw-topbar-actions {
+        gap: 3px;
+    }
+
+    .uw-topbar-icon-btn,
+    .uw-menu-toggle {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+    }
+
+    .uw-profile-btn {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+    }
+
+    .uw-dashboard-content {
+        padding-inline: 10px !important;
+    }
+
+    .delivery-stats-grid,
+    .delivery-status-grid {
+        gap: 8px;
+    }
+
+    .delivery-stat-card {
+        padding: 11px;
+    }
+}
+
+/* =========================================
+   RTL SUPPORT
+========================================= */
+
+html[dir="rtl"] .uw-topbar {
+    left: 0;
+    right: 260px;
+}
+
+@media (max-width: 1199px) {
+    html[dir="rtl"] .uw-topbar {
+        left: 0;
+        right: 0;
+    }
+}
+
+@media (max-width: 767px) {
+
+    html[dir="rtl"] .uw-topbar-left,
+    html[dir="rtl"] .uw-topbar-actions {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .delivery-page-intro,
+    html[dir="rtl"] .delivery-section-heading,
+    html[dir="rtl"] .delivery-status-card,
+    html[dir="rtl"] .delivery-reminder-content {
+        text-align: right;
+    }
+}
+
+
+
+
+/* Reduce gap above Schedule Delivery button on mobile */
+@media (max-width: 767px) {
+
+    .delivery-page-heading-row {
+        gap: 10px !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .delivery-page-intro {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .delivery-primary-btn {
+        margin-top: 0 !important;
+        align-self: stretch;
+    }
+
+    .delivery-heading-section {
+        padding-bottom: 12px !important;
+        margin-bottom: 0 !important;
+    }
+}
+
+/* Fix excessive space in Delivery Heading — Mobile */
+@media (max-width: 767px) {
+
+    .delivery-heading-section {
+        height: auto !important;
+        min-height: 0 !important;
+        padding-bottom: 12px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .delivery-page-heading-row {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: stretch !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+        gap: 12px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .delivery-page-intro {
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .delivery-page-intro h2 {
+        margin: 0 0 8px !important;
+    }
+
+    .delivery-page-intro p {
+        margin: 0 !important;
+    }
+
+    .delivery-primary-btn {
+        position: static !important;
+        transform: none !important;
+
+        width: 100% !important;
+        margin: 0 !important;
+        align-self: stretch !important;
+    }
+
+    .delivery-overview-section {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+}
+
+/* =========================================
+   DELIVERY HEADING — MOBILE GAP FIX
+========================================= */
+
+@media (max-width: 767px) {
+
+    .delivery-heading-section {
+        height: auto !important;
+        min-height: 0 !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 16px !important;
+    }
+
+    .delivery-page-heading-row {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: stretch !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+        gap: 12px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .delivery-page-intro {
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .delivery-eyebrow {
+        display: inline-flex;
+        margin-bottom: 8px;
+    }
+
+    .delivery-page-intro h2 {
+        margin: 0 0 8px !important;
+        line-height: 1.3;
+    }
+
+    .delivery-page-intro p {
+        margin: 0 !important;
+        line-height: 1.6;
+    }
+
+    .delivery-primary-btn {
+        position: static !important;
+        transform: none !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+
+        width: 100% !important;
+        min-height: 46px;
+        margin: 0 !important;
+        padding: 12px 16px;
+    }
+
+    .delivery-overview-section {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+}
+
+
+
+
+
+/* FIX: Remove excessive space above Schedule Delivery */
+@media (max-width: 767px) {
+
+    .delivery-heading-section,
+    .delivery-page-heading-row,
+    .delivery-page-intro {
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+    }
+
+    .delivery-heading-section {
+        display: block !important;
+        padding-top: 0 !important;
+        padding-bottom: 12px !important;
+        margin: 0 !important;
+    }
+
+    .delivery-page-heading-row {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: stretch !important;
+        gap: 12px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .delivery-page-intro {
+        display: block !important;
+        flex: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .delivery-page-intro h2 {
+        margin: 0 0 8px !important;
+    }
+
+    .delivery-page-intro p {
+        margin: 0 !important;
+    }
+
+    .delivery-primary-btn {
+        position: static !important;
+        inset: auto !important;
+        transform: none !important;
+        float: none !important;
+
+        display: flex !important;
+        flex: none !important;
+        width: 100% !important;
+        min-height: 46px !important;
+
+        margin: 0 !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* =========================================
+   REPLACEMENT OVERVIEW — ICON TOP RIGHT
+========================================= */
+
+@media (max-width: 767px) {
+
+    .replacement-stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .replacement-stat-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        min-width: 0;
+        padding: 14px 12px !important;
+        min-height: 150px;
+        box-sizing: border-box;
+    }
+
+    .replacement-stat-icon {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        margin: 0 !important;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+    }
+
+    .replacement-stat-info {
+        width: 100%;
+        min-width: 0;
+        margin-top: 46px;
+        text-align: left;
+    }
+
+    .replacement-stat-info span {
+        display: block;
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .replacement-stat-info h3 {
+        margin: 6px 0;
+        font-size: 23px;
+        line-height: 1.2;
+    }
+
+    .replacement-stat-info small {
+        display: block;
+        font-size: 11px;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+    }
+}
+
+
+
+
+
+
+
+
+/* =========================================
+   BILLING PAGE — FULL WIDTH ON MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+    /* Billing content wrapper */
+    .uw-dashboard-content:has(.billing-content) {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+        box-sizing: border-box;
+    }
+
+    .billing-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box;
+    }
+
+    /* Page heading and action buttons */
+    .billing-page-header {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box;
+    }
+
+    .billing-header-actions {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px;
+    }
+
+    .billing-header-actions .billing-btn {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+        justify-content: center;
+    }
+
+    /* Summary cards */
+    .billing-stats-grid {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        gap: 10px;
+        box-sizing: border-box;
+    }
+
+    .billing-stat-card {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* Activity panel and filters */
+    .billing-panel,
+    .billing-invoices-panel,
+    .billing-toolbar {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box;
+    }
+
+    .billing-toolbar {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 10px;
+    }
+
+    .billing-search,
+    .billing-filter {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* Keep wide tables inside their own scroll area */
+    .billing-table-scroll {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .billing-table {
+        min-width: 760px;
+    }
+}
+
+
+
+
+
+
+/* =========================================
+   INVENTORY CATEGORIES
+   CENTER LAST TWO CARDS
+   iPad Mini + iPad Pro (1199px)
+========================================= */
+
+@media (min-width: 768px) and (max-width: 1199px) {
+
+    .inv-category-grid {
+        display: grid !important;
+        grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+    }
+
+    .inv-category-card {
+        grid-column: span 2;
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    /* Center the fourth card */
+    .inv-category-card:nth-child(4) {
+        grid-column: 2 / span 2 !important;
+    }
+
+    /* Center the fifth card */
+    .inv-category-card:nth-child(5) {
+        grid-column: 4 / span 2 !important;
+    }
+}
+
+
+
+
+
+
+/* =========================================
+   UNIWEAR — FIX FULL WIDTH ON ALL DASHBOARD
+   MOBILE + IPAD MINI + IPAD PRO
+========================================= */
+
+@media (max-width: 1199px) {
+
+    html,
+    body {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        overflow-x: hidden !important;
+    }
+
+    /* Reset parent layout */
+    #uwDashboardLayout,
+    .uw-dashboard-layout {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-x: clip !important;
+    }
+
+    /* Sidebar must not occupy a permanent column */
+    #uwSidebar,
+    .uw-sidebar {
+        position: fixed !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        z-index: 1200 !important;
+    }
+
+    /* Main content takes the entire viewport */
+    .uw-main-area {
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none;
+        box-sizing: border-box !important;
+    }
+
+    /* Fixed topbar */
+    .uw-topbar {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+        z-index: 1100 !important;
+    }
+
+    /* Every dashboard page */
+    main.uw-dashboard-content,
+    #uwDashboardContent,
+    .uw-dashboard-content {
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Every direct section inside main */
+    .uw-dashboard-content > section,
+    .uw-dashboard-content > div {
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Nested panels and cards */
+    .uw-dashboard-content [class*="-section"],
+    .uw-dashboard-content [class*="-panel"],
+    .uw-dashboard-content [class*="-card"] {
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    /* Tables scroll inside their own containers */
+    .uw-dashboard-content [class*="table-scroll"],
+    .uw-dashboard-content [class*="table-wrapper"] {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* =========================================
+   MOBILE CONTENT SPACING
+========================================= */
+
+@media (max-width: 767px) {
+
+    main.uw-dashboard-content,
+    #uwDashboardContent,
+    .uw-dashboard-content {
+        padding: 82px 12px 24px !important;
+    }
+}
+
+/* =========================================
+   RTL
+========================================= */
+
+@media (max-width: 1199px) {
+
+    html[dir="rtl"] .uw-topbar {
+        left: 0 !important;
+        right: 0 !important;
+    }
+
+    html[dir="rtl"] .uw-main-area {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+
+
+
+
+
+
+
+/* =========================================
+   TOPBAR SPACING — MOBILE + TABLETS
+========================================= */
+
+@media (max-width: 1199px) {
+
+    .uw-main-area {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .uw-topbar {
+        position: fixed !important;
+        top: 8px !important;
+        left: 8px !important;
+        right: 8px !important;
+
+        width: auto !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+        padding: 10px 12px !important;
+
+        box-sizing: border-box !important;
+        border-radius: 16px !important;
+        z-index: 1100 !important;
+    }
+
+    .uw-topbar-left {
+        min-width: 0 !important;
+        flex: 1 1 auto !important;
+        gap: 10px !important;
+    }
+
+    .uw-page-heading {
+        min-width: 0 !important;
+    }
+
+    .uw-page-heading h1 {
+        overflow-wrap: anywhere;
+    }
+
+    .uw-topbar-actions {
+        flex: 0 0 auto !important;
+        gap: 6px !important;
+    }
+
+    /* Keep page content below the fixed topbar */
+    .uw-dashboard-content {
+        padding-top: 90px !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* Smaller mobile screens */
+@media (max-width: 767px) {
+
+    .uw-topbar {
+        top: 6px !important;
+        left: 6px !important;
+        right: 6px !important;
+        padding: 9px 10px !important;
+        gap: 8px !important;
+    }
+
+    .uw-topbar-left {
+        gap: 8px !important;
+    }
+
+    .uw-topbar-actions {
+        gap: 4px !important;
+    }
+
+    .uw-dashboard-content {
+        padding: 82px 12px 24px !important;
+    }
+}
+
+/* RTL layout */
+@media (max-width: 1199px) {
+
+    html[dir="rtl"] .uw-topbar {
+        left: 8px !important;
+        right: 8px !important;
+    }
+}
+
+@media (max-width: 767px) {
+
+    html[dir="rtl"] .uw-topbar {
+        left: 6px !important;
+        right: 6px !important;
+    }
+}
