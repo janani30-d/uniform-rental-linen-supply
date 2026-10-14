@@ -6435,3 +6435,122 @@ html[dir="rtl"] .uw-topbar {
         width: 100px !important;
     }
 }
+
+
+
+
+
+
+/* =========================================
+   SIZING TOOLBAR — MATCH REPLACEMENT STYLE
+========================================= */
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+
+    .sizing-toolbar {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 238px 238px !important;
+        align-items: end !important;
+        gap: 16px !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .sizing-search-box,
+    .sizing-filter-box {
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .sizing-search-box input,
+    .sizing-filter-box select {
+        width: 100% !important;
+        min-width: 0 !important;
+        height: 54px !important;
+        box-sizing: border-box !important;
+    }
+
+    .sizing-filter-box {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+
+    .sizing-toolbar {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        align-items: end !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+
+    .sizing-search-box {
+        grid-column: 1 / -1 !important;
+    }
+
+    .sizing-search-box,
+    .sizing-filter-box {
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+    }
+
+    .sizing-search-box input,
+    .sizing-filter-box select {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 48px !important;
+        box-sizing: border-box !important;
+    }
+
+    .sizing-filter-box {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+    }
+}
+
+/* =========================================
+   SIZING TOOLBAR — DESKTOP LAYOUT
+========================================= */
+
+@media screen and (min-width: 1200px) {
+
+    .sizing-toolbar {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 238px 238px !important;
+        align-items: end !important;
+        gap: 16px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .sizing-search-box,
+    .sizing-filter-box {
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .sizing-search-box input,
+    .sizing-filter-box select {
+        width: 100% !important;
+        min-width: 0 !important;
+        height: 48px !important;
+        box-sizing: border-box !important;
+    }
+
+    .sizing-filter-box {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+    }
+}
