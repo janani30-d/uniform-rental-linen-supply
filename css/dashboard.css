@@ -12746,3 +12746,89 @@ html[data-theme="dark"] .replacement-filter-box select option {
 .replacement-table-card {
     margin-bottom: 20px;
 }
+
+
+
+
+
+
+
+
+
+
+
+/* Review Pending — hover text color */
+
+.sizing-secondary-btn {
+    transition: color 0.3s ease;
+}
+
+.sizing-secondary-btn:hover {
+    color: #FFFFFF !important;
+}
+
+.sizing-secondary-btn:hover i {
+    color: #FFFFFF !important;
+}
+
+
+
+
+
+
+
+
+
+/* =========================================
+   DELIVERY TOOLBAR — ALIGN FILTERS IN ONE LINE
+========================================= */
+
+.delivery-toolbar {
+    display: grid !important;
+    grid-template-columns: minmax(0, 2fr) minmax(150px, 0.8fr) minmax(150px, 0.8fr) !important;
+    align-items: end !important;
+    gap: 12px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.delivery-search-box,
+.delivery-filter-box {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.delivery-search-box {
+    align-self: end !important;
+}
+
+.delivery-filter-box {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+}
+
+.delivery-search-box input,
+.delivery-filter-box select {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Tablet: keep all three controls on one line */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .delivery-toolbar {
+        grid-template-columns: minmax(0, 1.6fr) minmax(125px, 1fr) minmax(125px, 1fr) !important;
+        gap: 10px !important;
+    }
+}
+
+/* Mobile: stack controls when space is limited */
+@media (max-width: 767px) {
+    .delivery-toolbar {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 12px !important;
+    }
+}

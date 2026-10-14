@@ -5725,107 +5725,143 @@ html[dir="rtl"] .uw-topbar {
     }
 }
 
-
-
-
-
-
-
-/* =========================================
-   TOPBAR SPACING — MOBILE + TABLETS
-========================================= */
-
+/* iPad Pro, iPad mini, and mobile: add space around fixed topbar */
 @media (max-width: 1199px) {
 
-    .uw-main-area {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        box-sizing: border-box !important;
-    }
-
-    .uw-topbar {
-        position: fixed !important;
-        top: 8px !important;
-        left: 8px !important;
-        right: 8px !important;
-
+    .uw-topbar,
+    html[dir="rtl"] .uw-topbar {
+        top: 16px !important;
+        left: 24px !important;
+        right: 24px !important;
         width: auto !important;
         max-width: none !important;
-
-        margin: 0 !important;
-        padding: 10px 12px !important;
-
-        box-sizing: border-box !important;
         border-radius: 16px !important;
-        z-index: 1100 !important;
     }
 
-    .uw-topbar-left {
-        min-width: 0 !important;
-        flex: 1 1 auto !important;
-        gap: 10px !important;
-    }
-
-    .uw-page-heading {
-        min-width: 0 !important;
-    }
-
-    .uw-page-heading h1 {
-        overflow-wrap: anywhere;
-    }
-
-    .uw-topbar-actions {
-        flex: 0 0 auto !important;
-        gap: 6px !important;
-    }
-
-    /* Keep page content below the fixed topbar */
+    main.uw-dashboard-content,
+    #uwDashboardContent,
     .uw-dashboard-content {
-        padding-top: 90px !important;
-        box-sizing: border-box !important;
+        padding-top: 110px !important;
+        padding-right: 24px !important;
+        padding-left: 24px !important;
     }
 }
 
-/* Smaller mobile screens */
 @media (max-width: 767px) {
 
-    .uw-topbar {
-        top: 6px !important;
-        left: 6px !important;
-        right: 6px !important;
-        padding: 9px 10px !important;
-        gap: 8px !important;
+    .uw-topbar,
+    html[dir="rtl"] .uw-topbar {
+        top: 12px !important;
+        left: 10px !important;
+        right: 10px !important;
     }
 
-    .uw-topbar-left {
-        gap: 8px !important;
-    }
-
-    .uw-topbar-actions {
-        gap: 4px !important;
-    }
-
+    main.uw-dashboard-content,
+    #uwDashboardContent,
     .uw-dashboard-content {
-        padding: 82px 12px 24px !important;
+        padding-top: 96px !important;
+        padding-right: 10px !important;
+        padding-left: 10px !important;
     }
 }
 
-/* RTL layout */
+/* Responsive billing page spacing */
 @media (max-width: 1199px) {
 
-    html[dir="rtl"] .uw-topbar {
-        left: 8px !important;
-        right: 8px !important;
+    .uw-dashboard-content:has(.billing-content) {
+        padding-top: 92px !important;
+        padding-right: 24px !important;
+        padding-left: 24px !important;
+    }
+
+    .billing-content,
+    .billing-page,
+    .billing-container,
+    .billing-main {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+}
+
+@media (max-width: 991px) {
+
+    .uw-dashboard-content:has(.billing-content) {
+        padding-top: 88px !important;
+        padding-right: 18px !important;
+        padding-left: 18px !important;
     }
 }
 
 @media (max-width: 767px) {
 
-    html[dir="rtl"] .uw-topbar {
-        left: 6px !important;
-        right: 6px !important;
+    .uw-dashboard-content:has(.billing-content) {
+        padding-top: 84px !important;
+        padding-right: 12px !important;
+        padding-left: 12px !important;
     }
 }
+
+/* Desktop only: reduce left/right dashboard width */
+@media (min-width: 1200px) {
+
+    .uw-topbar {
+        left: calc(260px + 28px) !important;
+        right: 16px !important;
+        width: auto !important;
+    }
+
+    .uw-dashboard-content {
+        width: 100% !important;
+        max-width: none !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        padding-right: 36px !important;
+        padding-left: 48px !important;
+        box-sizing: border-box !important;
+    }
+
+    .uw-dashboard-content > section,
+    .uw-dashboard-content > div,
+    .uw-dashboard-content [class*="-section"] {
+        width: 100% !important;
+        max-width: none !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .uw-dashboard-content.sizing-page {
+        padding-left: 24px !important;
+    }
+
+    .uw-dashboard-content:has(.billing-content) {
+        padding-top: 96px !important;
+        padding-left: 24px !important;
+    }
+
+    .billing-content,
+    .billing-page,
+    .billing-container,
+    .billing-main {
+        margin-top: 0 !important;
+        margin-left: 0 !important;
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    html[dir="rtl"] .uw-topbar {
+        right: calc(260px + 28px) !important;
+        left: 16px !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -25454,3 +25454,223 @@ html[dir="rtl"] .about-mv-decoration {
         box-sizing: border-box !important;
     }
 }
+
+
+
+
+/* =========================================
+   ABOUT WHY CHOOSE — REDUCE H2 FONT WEIGHT
+========================================= */
+
+.about-why-main-content h2 {
+    font-weight: 600 !important;
+}
+
+.about-why-main-content h2 span {
+    font-weight: 600 !important;
+}
+
+/* Optional: slightly lighter on tablet and mobile */
+@media (max-width: 1199px) {
+    .about-why-main-content h2,
+    .about-why-main-content h2 span {
+        font-weight: 500 !important;
+    }
+}
+
+
+/* =========================================
+   ABOUT WHY CHOOSE — PUSH CONTENT DOWN
+========================================= */
+
+@media (max-width: 767px) {
+
+    .about-why-main-content {
+        padding-top: 0 !important;
+        transform: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        position: relative !important;
+        top: 35px !important;
+        margin-bottom: 35px !important;
+    }
+
+    .about-why-main {
+        overflow: hidden;
+    }
+}
+
+
+
+/* Move eyebrow down on mobile */
+@media (max-width: 767px) {
+    .about-why-eyebrow {
+        position: relative !important;
+        top: 20px !important;
+        margin-bottom: 20px !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+   WORKPLACE CARDS — CATEGORY LABEL VISIBILITY
+========================================= */
+
+.h2-workplace-category {
+    display: inline-flex !important;
+    align-items: center;
+    width: fit-content;
+    padding: 7px 12px !important;
+
+    background: rgba(16, 44, 61, 0.88) !important;
+    color: #ffffff !important;
+
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.5px !important;
+    line-height: 1.4 !important;
+    text-transform: uppercase;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 4px;
+
+    position: relative;
+    z-index: 3;
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-shadow: none !important;
+}
+
+/* Ensure the image overlay doesn't cover the label */
+.h2-workplace-image-content {
+    position: absolute;
+    z-index: 2;
+}
+
+.h2-workplace-image-overlay {
+    z-index: 1;
+}
+
+/* Mobile readability */
+@media (max-width: 767px) {
+    .h2-workplace-category {
+        padding: 6px 10px !important;
+        font-size: 10px !important;
+        letter-spacing: 1.2px !important;
+    }
+}
+
+
+
+
+
+
+
+
+/* =========================================
+   DARK MODE — OPENING HOURS
+   Match the Google Maps row
+========================================= */
+
+html[data-theme="dark"] .contact-info-hours,
+body.dark-mode .contact-info-hours,
+body.login-dark-mode .contact-info-hours {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+html[data-theme="dark"] .contact-info-hours i,
+html[data-theme="dark"] .contact-info-hours span,
+body.dark-mode .contact-info-hours i,
+body.dark-mode .contact-info-hours span {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+html[data-theme="dark"] .contact-info-hours i,
+body.dark-mode .contact-info-hours i {
+    color: #83c5ed !important;
+}
+
+html[data-theme="dark"] .contact-info-hours span,
+body.dark-mode .contact-info-hours span {
+    color: #b8d8f0 !important;
+}
+
+
+
+
+/* =========================================
+   DARK MODE — OPENING HOURS DIVIDER
+========================================= */
+
+html[data-theme="dark"] .contact-info-hours {
+    position: relative !important;
+    padding-top: 28px !important;
+    margin-top: 18px !important;
+}
+
+html[data-theme="dark"] .contact-info-hours::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+
+    height: 1px !important;
+    background: rgba(255, 255, 255, 0.45) !important;
+    display: block !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* =========================================
+   DARK MODE — ALIGN DIVIDER LINES
+========================================= */
+
+html[data-theme="dark"] .contact-info-hours {
+    position: relative !important;
+    box-sizing: border-box !important;
+    padding: 28px 0 0 !important;
+    margin: 18px 0 0 !important;
+}
+
+html[data-theme="dark"] .contact-info-hours::before {
+    content: "" !important;
+    position: absolute !important;
+
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+
+    width: 100% !important;
+    height: 1px !important;
+
+    background: rgba(255, 255, 255, 0.45) !important;
+    border: none !important;
+    transform: none !important;
+}
