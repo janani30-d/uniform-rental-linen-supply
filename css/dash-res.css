@@ -5865,3 +5865,573 @@ html[dir="rtl"] .uw-topbar {
 
 
 
+/* =========================================
+   FORCE GAP BETWEEN DASHBOARD SECTIONS
+   Mobile + iPad Mini + iPad Pro
+========================================= */
+
+@media screen and (max-width: 1199px) {
+
+    /* Main dashboard content spacing */
+    .uw-dashboard-content {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 28px !important;
+        row-gap: 28px !important;
+    }
+
+    /* Add space between each direct content block */
+    .uw-dashboard-content > *,
+    .uw-dashboard-content .db-section {
+        margin-bottom: 28px !important;
+    }
+
+    /* Prevent extra spacing after the final section */
+    .uw-dashboard-content > *:last-child {
+        margin-bottom: 0 !important;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+    .uw-dashboard-content {
+        gap: 24px !important;
+        row-gap: 24px !important;
+    }
+
+    .uw-dashboard-content > *,
+    .uw-dashboard-content .db-section {
+        margin-bottom: 24px !important;
+    }
+}
+
+
+
+
+/* =========================================
+   BILLING PAGE — SECTION GAP
+   Mobile + iPad Mini + iPad Pro
+========================================= */
+
+@media (max-width: 1199px) {
+
+    /* Main page content */
+    .uw-dashboard-content {
+        display: block !important;
+        padding-bottom: 28px !important;
+    }
+
+    /* Billing content wrapper */
+    .uw-dashboard-content > .billing-content {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 24px !important;
+        height: auto !important;
+        min-height: 0 !important;
+    }
+
+    /* Billing heading and summary cards */
+    .billing-page-header {
+        margin-bottom: 0 !important;
+    }
+
+    .billing-stats-grid {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* Recent billing and call activity panel */
+    .billing-invoices-panel {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .uw-dashboard-content > .billing-content {
+        gap: 20px !important;
+    }
+
+    .uw-dashboard-content {
+        padding-bottom: 24px !important;
+    }
+}
+
+
+
+
+
+/* =========================================
+   FORCE EQUAL SPACE BETWEEN INVENTORY SECTIONS
+   Mobile + iPad Mini + iPad Pro
+========================================= */
+
+@media screen and (max-width: 1199px) {
+
+    html body main#uwDashboardContent.inv-page {
+        display: block !important;
+        height: auto !important;
+        min-height: 0 !important;
+        padding-bottom: 28px !important;
+    }
+
+    html body main#uwDashboardContent.inv-page
+    > section.inv-heading-section,
+    html body main#uwDashboardContent.inv-page
+    > section.inv-overview-section,
+    html body main#uwDashboardContent.inv-page
+    > section.inv-categories-section,
+    html body main#uwDashboardContent.inv-page
+    > section.inv-list-section {
+        display: flow-root !important;
+        position: relative !important;
+        float: none !important;
+        clear: both !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 28px !important;
+        padding-bottom: 0 !important;
+        transform: none !important;
+        box-sizing: border-box !important;
+    }
+
+    html body main#uwDashboardContent.inv-page
+    > section.inv-list-section {
+        margin-bottom: 0 !important;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+
+    html body main#uwDashboardContent.inv-page
+    > section.inv-heading-section,
+    html body main#uwDashboardContent.inv-page
+    > section.inv-overview-section,
+    html body main#uwDashboardContent.inv-page
+    > section.inv-categories-section,
+    html body main#uwDashboardContent.inv-page
+    > section.inv-list-section {
+        margin-bottom: 24px !important;
+    }
+
+    html body main#uwDashboardContent.inv-page
+    > section.inv-list-section {
+        margin-bottom: 0 !important;
+    }
+}
+
+
+
+
+
+
+
+
+/* =========================================
+   SIZING PAGE — RESPONSIVE SECTION SPACING
+========================================= */
+
+@media screen and (max-width: 1199px) {
+
+    .uw-dashboard-content.sizing-page {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 28px !important;
+    }
+
+    .uw-dashboard-content.sizing-page
+    > section.sizing-heading-section,
+    .uw-dashboard-content.sizing-page
+    > section.sizing-overview-section,
+    .uw-dashboard-content.sizing-page
+    > section.sizing-distribution-section,
+    .uw-dashboard-content.sizing-page
+    > section.sizing-records-section,
+    .uw-dashboard-content.sizing-page
+    > section.sizing-reminder-section {
+        width: 100% !important;
+        margin-block: 0 !important;
+        flex: 0 0 auto !important;
+        box-sizing: border-box !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .uw-dashboard-content.sizing-page {
+        gap: 22px !important;
+    }
+}
+
+
+
+
+/* ==========================================
+   DELIVERY PAGE - SECTION SPACING
+   Mobile, iPad Mini & iPad Pro
+========================================== */
+
+@media screen and (max-width: 1199px) {
+
+    main.uw-dashboard-content.deliveries-page {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 28px !important;
+    }
+
+    main.uw-dashboard-content.deliveries-page
+    > section.delivery-heading-section,
+    main.uw-dashboard-content.deliveries-page
+    > section.delivery-overview-section,
+    main.uw-dashboard-content.deliveries-page
+    > section.delivery-status-section,
+    main.uw-dashboard-content.deliveries-page
+    > section.delivery-records-section,
+    main.uw-dashboard-content.deliveries-page
+    > section.delivery-reminder-section {
+        width: 100% !important;
+        margin: 0 !important;
+        padding-top: 0 !important;
+        flex: 0 0 auto !important;
+        box-sizing: border-box !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    main.uw-dashboard-content.deliveries-page {
+        gap: 22px !important;
+    }
+}
+
+
+
+
+
+/* Space above the delivery table */
+@media screen and (max-width: 1199px) {
+    .delivery-records-section .delivery-table-card {
+        margin-top: 24px !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .delivery-records-section .delivery-table-card {
+        margin-top: 18px !important;
+    }
+}
+
+/* Add space above Delivery Schedule heading */
+@media screen and (max-width: 1199px) {
+    .delivery-records-section .delivery-records-heading {
+        margin-top: 24px !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .delivery-records-section .delivery-records-heading {
+        margin-top: 18px !important;
+    }
+}
+
+/* Space above reminder heading */
+@media screen and (max-width: 1199px) {
+    .delivery-reminder-content h3 {
+        margin-top: 12px !important;
+    }
+}
+
+
+
+
+
+
+/* =========================================
+   REPLACEMENT PAGE — SECTION SPACING
+========================================= */
+
+@media screen and (max-width: 1199px) {
+    main.uw-dashboard-content.replacements-page {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 28px !important;
+    }
+
+    main.uw-dashboard-content.replacements-page
+    > section.replacement-heading-section,
+    main.uw-dashboard-content.replacements-page
+    > section.replacement-overview-section,
+    main.uw-dashboard-content.replacements-page
+    > section.replacement-status-section,
+    main.uw-dashboard-content.replacements-page
+    > section.replacement-records-section,
+    main.uw-dashboard-content.replacements-page
+    > section.replacement-reminder-section {
+        width: 100% !important;
+        margin: 0 !important;
+        flex: 0 0 auto !important;
+        box-sizing: border-box !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    main.uw-dashboard-content.replacements-page {
+        gap: 22px !important;
+    }
+}
+
+
+
+
+
+
+
+/* =========================================
+   INVENTORY TABLE — PREVENT LAST COLUMN CUT
+========================================= */
+
+@media screen and (max-width: 1199px) {
+
+    .inv-list-section,
+    .inv-table-card {
+        min-width: 0 !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .inv-table-card {
+        overflow: hidden !important;
+    }
+
+    .inv-table-scroll {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+    }
+
+    .inv-table {
+        width: max-content !important;
+        min-width: 850px !important;
+        table-layout: auto !important;
+        border-collapse: collapse;
+    }
+
+    .inv-table th,
+    .inv-table td {
+        white-space: nowrap !important;
+    }
+}
+
+
+
+
+
+
+/* IPAD MINI — DELIVERY TABLE LEFT ALIGNMENT */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .delivery-table-card {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+    }
+
+    .delivery-table-scroll {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        direction: ltr !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        scroll-padding-left: 0 !important;
+    }
+
+    .delivery-table {
+        position: relative !important;
+        inset: auto !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
+        margin: 0 !important;
+        width: 1120px !important;
+        min-width: 1120px !important;
+        max-width: none !important;
+        direction: ltr !important;
+    }
+
+    html[dir="rtl"] .delivery-table {
+        text-align: right !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .delivery-table-scroll {
+        direction: ltr !important;
+        overflow-x: auto !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+
+
+
+/* iPad Mini — align delivery table to the left edge */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .delivery-table-card,
+    .delivery-table-scroll {
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+        inset-inline-start: 0 !important;
+    }
+
+    .delivery-table-scroll {
+        direction: ltr !important;
+        scroll-padding-inline-start: 0 !important;
+    }
+
+    .delivery-table {
+        margin-left: 0 !important;
+        transform: none !important;
+    }
+}
+
+
+
+
+
+
+/* =========================================
+   IPAD MINI - DELIVERY TYPE COLUMN SPACING
+========================================= */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+    /* Client / Location - reserve enough space */
+    .delivery-table th:nth-child(2),
+    .delivery-table td:nth-child(2) {
+        width: 210px !important;
+        min-width: 210px !important;
+        padding-right: 16px !important;
+    }
+
+    /* Delivery Type - slight spacing from client */
+    .delivery-table th:nth-child(3),
+    .delivery-table td:nth-child(3) {
+        width: 115px !important;
+        min-width: 115px !important;
+        padding-left: 14px !important;
+        padding-right: 10px !important;
+    }
+
+    /* Items */
+    .delivery-table th:nth-child(4),
+    .delivery-table td:nth-child(4) {
+        width: 85px !important;
+        min-width: 85px !important;
+    }
+
+    /* Scheduled Date - keep fully visible */
+    .delivery-table th:nth-child(5),
+    .delivery-table td:nth-child(5) {
+        width: 125px !important;
+        min-width: 125px !important;
+        white-space: nowrap !important;
+    }
+}
+
+
+
+
+/* =========================================
+   REPLACEMENT TABLE — IPAD MINI / IPAD PRO
+========================================= */
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+
+    .replacement-records-section,
+    .replacement-table-card {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .replacement-table-card {
+        overflow: hidden !important;
+    }
+
+    .replacement-table-scroll {
+        display: block !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        direction: ltr !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .replacement-table {
+        width: 900px !important;
+        min-width: 900px !important;
+        max-width: none !important;
+        table-layout: fixed !important;
+        margin: 0 !important;
+        transform: none !important;
+    }
+
+    /* Request ID */
+    .replacement-table th:nth-child(1),
+    .replacement-table td:nth-child(1) {
+        width: 100px !important;
+    }
+
+    /* Employee */
+    .replacement-table th:nth-child(2),
+    .replacement-table td:nth-child(2) {
+        width: 190px !important;
+    }
+
+    /* Uniform Item */
+    .replacement-table th:nth-child(3),
+    .replacement-table td:nth-child(3) {
+        width: 145px !important;
+    }
+
+    /* Reason */
+    .replacement-table th:nth-child(4),
+    .replacement-table td:nth-child(4) {
+        width: 125px !important;
+    }
+
+    /* Requested Date — fully visible */
+    .replacement-table th:nth-child(5),
+    .replacement-table td:nth-child(5) {
+        width: 130px !important;
+        min-width: 130px !important;
+        white-space: nowrap !important;
+    }
+
+    /* Status */
+    .replacement-table th:nth-child(6),
+    .replacement-table td:nth-child(6) {
+        width: 110px !important;
+    }
+
+    /* Actions */
+    .replacement-table th:nth-child(7),
+    .replacement-table td:nth-child(7) {
+        width: 100px !important;
+    }
+}

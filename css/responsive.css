@@ -25795,3 +25795,408 @@ html[dir="rtl"] .register-login-prompt p {
     text-align: center !important;
     margin: 0 auto !important;
 }
+
+
+
+/* =========================================
+   SERVICES PROCESS — MOBILE VIEW FIX
+========================================= */
+
+@media (max-width: 767px) {
+
+    .services-process-timeline {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important;
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 0 !important;
+        margin-bottom: 24px !important;
+    }
+
+    .services-process-step {
+        display: grid !important;
+        grid-template-columns: 64px minmax(0, 1fr) !important;
+        align-items: start !important;
+        column-gap: 14px !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 24px 16px !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .services-process-step-top {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+        margin: 0 !important;
+    }
+
+    .services-process-step-number {
+        position: static !important;
+        margin: 0 !important;
+        line-height: 1.2 !important;
+    }
+
+    .services-process-step-icon {
+        margin: 0 !important;
+    }
+
+    .services-process-step-content {
+        min-width: 0 !important;
+        padding: 8px 0 0 !important;
+        margin: 0 !important;
+    }
+
+    .services-process-step-content h3 {
+        margin: 0 0 12px !important;
+        line-height: 1.4 !important;
+    }
+
+    .services-process-step-content p {
+        margin: 0 !important;
+        line-height: 1.65 !important;
+    }
+
+    .services-process-cta {
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 20px 16px !important;
+        box-sizing: border-box !important;
+    }
+
+    .services-process-section {
+        height: auto !important;
+        min-height: 0 !important;
+        padding-bottom: 24px !important;
+        margin-bottom: 0 !important;
+        overflow: visible !important;
+    }
+
+    .services-process-container {
+        height: auto !important;
+        min-height: 0 !important;
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
+    }
+}
+
+
+
+
+
+
+/* =========================================
+   SERVICES PROCESS — REDUCE MOBILE BOTTOM SPACE
+========================================= */
+
+@media (max-width: 767px) {
+
+    .services-process-section {
+        padding-bottom: 20px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .services-process-container {
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .services-process-timeline {
+        margin-bottom: 20px !important;
+        padding-bottom: 0 !important;
+    }
+
+    .services-process-step:last-child {
+        margin-bottom: 0 !important;
+        padding-bottom: 24px !important;
+    }
+
+    .services-process-cta {
+        margin-bottom: 0 !important;
+        padding-bottom: 20px !important;
+    }
+}
+
+
+
+
+
+
+
+/* =========================================
+   FOOTER BOTTOM — MOBILE ALIGNMENT FIX
+========================================= */
+
+@media (max-width: 767px) {
+
+    .footer-bottom {
+        padding: 16px 20px !important;
+    }
+
+    .Footer-bottom-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 14px !important;
+        text-align: center !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .Footer-bottom-container p {
+        margin: 0 !important;
+        text-align: center !important;
+        line-height: 1.6 !important;
+    }
+
+    .footer-legal-links {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
+        gap: 16px !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .footer-legal-links a {
+        margin: 0 !important;
+        white-space: nowrap !important;
+    }
+}
+
+
+
+
+
+
+
+
+/* Footer bottom — stack items one by one on mobile */
+
+@media (max-width: 767px) {
+
+    .Footer-bottom-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 12px !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+
+    .Footer-bottom-container p {
+        width: 100% !important;
+        margin: 0 !important;
+        text-align: center !important;
+    }
+
+    .footer-legal-links {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .footer-legal-links a {
+        display: block !important;
+        margin: 0 !important;
+        text-align: center !important;
+    }
+}
+
+
+
+
+
+
+
+
+/* =========================================
+   UN IWEAR - MOBILE MENU THEME FIX
+   Mobile only | Keep tablet styling unchanged
+========================================= */
+
+@media screen and (max-width: 767px) {
+
+    /* Mobile navigation background */
+    .main-navigation {
+        background: #1B3444 !important;
+        border: 1px solid #29495B !important;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22) !important;
+    }
+
+    /* Menu list */
+    .nav-list {
+        background: transparent !important;
+        border-bottom: 1px solid #355364 !important;
+    }
+
+    /* Normal menu links */
+    .nav-list .nav-item > a,
+    .home-dropdown-toggle {
+        color: #EAF4F5 !important;
+        background: transparent !important;
+        font-family: inherit !important;
+        font-weight: 500 !important;
+        transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    /* Hover and active menu */
+    .nav-list .nav-item > a:hover,
+    .nav-list .nav-item > a:focus-visible,
+    .home-dropdown-toggle:hover,
+    .home-item.open > .home-dropdown-toggle,
+    .home-item.dropdown-open > .home-dropdown-toggle {
+        color: #69C0CE !important;
+        background: #263F50 !important;
+    }
+
+    /* Dropdown */
+    .home-dropdown {
+        background: #172D3B !important;
+        border: 1px solid #29495B !important;
+        border-radius: 8px !important;
+    }
+
+    .home-dropdown a {
+        color: #EAF4F5 !important;
+        background: transparent !important;
+    }
+
+    .home-dropdown a:hover,
+    .home-dropdown a:focus-visible {
+        color: #69C0CE !important;
+        background: #263F50 !important;
+    }
+
+    /* RTL and Dark Mode controls */
+    .nav-actions .header-control-btn {
+        color: #69C0CE !important;
+        background: #263F50 !important;
+        border: 1px solid #426476 !important;
+        border-radius: 7px !important;
+    }
+
+    .nav-actions .header-control-btn:hover,
+    .nav-actions .header-control-btn[aria-pressed="true"] {
+        color: #FFFFFF !important;
+        background: #287C8E !important;
+        border-color: #287C8E !important;
+    }
+
+    /* Client Login */
+    .nav-actions .login-btn {
+        color: #EAF4F5 !important;
+        background: transparent !important;
+        border: 1px solid #69C0CE !important;
+    }
+
+    .nav-actions .login-btn:hover {
+        color: #FFFFFF !important;
+        background: #287C8E !important;
+        border-color: #287C8E !important;
+    }
+
+    /* Dashboard - actual Uniwear theme color */
+    .nav-actions .dashboard-btn {
+        color: #FFFFFF !important;
+        background: #287C8E !important;
+        border: 1px solid #287C8E !important;
+        box-shadow: none !important;
+    }
+
+    .nav-actions .dashboard-btn:hover,
+    .nav-actions .dashboard-btn:focus-visible {
+        color: #FFFFFF !important;
+        background: #1F6878 !important;
+        border-color: #1F6878 !important;
+    }
+
+    /* Hamburger close button */
+    .menu-toggle {
+        color: #69C0CE !important;
+        background: #1B3444 !important;
+        border-color: #426476 !important;
+    }
+
+    .menu-toggle span {
+        background: #EAF4F5 !important;
+    }
+}
+
+/* Mobile dark mode - retain the same dark navy theme */
+@media screen and (max-width: 767px) {
+
+    html[data-theme="dark"] .main-navigation {
+        background: #1B3444 !important;
+        border-color: #29495B !important;
+    }
+
+    html[data-theme="dark"] .nav-list .nav-item > a,
+    html[data-theme="dark"] .home-dropdown-toggle,
+    html[data-theme="dark"] .home-dropdown a {
+        color: #EAF4F5 !important;
+    }
+
+    html[data-theme="dark"] .nav-actions .dashboard-btn {
+        background: #287C8E !important;
+        border-color: #287C8E !important;
+        color: #FFFFFF !important;
+    }
+}
+
+
+
+/* =========================================
+   MOBILE MENU - ACTIVE LINK COLOR
+========================================= */
+
+@media screen and (max-width: 767px) {
+
+    /* Active/current page */
+    .main-navigation .nav-list .nav-item > a.active,
+    .main-navigation .nav-list .nav-item > a[aria-current="page"],
+    .main-navigation .nav-list .nav-item.active > a {
+        color: #69C0CE !important;
+        background: #263F50 !important;
+  
+        font-weight: 700 !important;
+    }
+
+    /* Active Home dropdown toggle */
+    .main-navigation .home-item.active > .home-dropdown-toggle,
+    .main-navigation .home-dropdown-toggle.active {
+        color: #69C0CE !important;
+        background: #263F50 !important;
+        
+        font-weight: 700 !important;
+    }
+
+    /* Active Home 1 / Home 2 link */
+    .main-navigation .home-dropdown a.active,
+    .main-navigation .home-dropdown a[aria-current="page"] {
+        color: #69C0CE !important;
+        background: #263F50 !important;
+        
+        font-weight: 700 !important;
+    }
+
+    /* Keep active color while menu is open */
+    .main-navigation .nav-list .nav-item > a.active:hover,
+    .main-navigation .home-dropdown a.active:hover {
+        color: #FFFFFF !important;
+        background: #287C8E !important;
+    }
+}
