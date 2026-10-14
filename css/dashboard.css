@@ -12832,3 +12832,51 @@ html[data-theme="dark"] .replacement-filter-box select option {
         gap: 12px !important;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+   REPLACEMENT EXPORT BUTTON — DARK MODE
+========================================= */
+
+html[data-theme="dark"] .replacement-export-btn,
+body.dark-mode .replacement-export-btn {
+    background: #287C8E !important;
+    color: #FFFFFF !important;
+    border: 1px solid #3A96A8 !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+}
+
+html[data-theme="dark"] .replacement-export-btn i,
+body.dark-mode .replacement-export-btn i {
+    color: #FFFFFF !important;
+}
+
+/* Hover */
+html[data-theme="dark"] .replacement-export-btn:hover,
+body.dark-mode .replacement-export-btn:hover {
+    background: #3595A6 !important;
+    color: #FFFFFF !important;
+    border-color: #3595A6 !important;
+}
+
+html[data-theme="dark"] .replacement-export-btn:hover i,
+body.dark-mode .replacement-export-btn:hover i {
+    color: #FFFFFF !important;
+}
+
+/* Keyboard focus */
+html[data-theme="dark"] .replacement-export-btn:focus-visible,
+body.dark-mode .replacement-export-btn:focus-visible {
+    outline: 2px solid #69C0CE !important;
+    outline-offset: 3px !important;
+}

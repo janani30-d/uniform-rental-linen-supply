@@ -25674,3 +25674,124 @@ html[data-theme="dark"] .contact-info-hours::before {
     border: none !important;
     transform: none !important;
 }
+
+
+
+
+
+/* =========================================
+   CONTACT FORM — RTL MODE
+========================================= */
+
+[dir="rtl"] .contact-form-row {
+    direction: rtl;
+}
+
+[dir="rtl"] .contact-form-group {
+    direction: rtl;
+    text-align: right;
+    min-width: 0;
+}
+
+[dir="rtl"] .contact-form-group label {
+    display: block;
+    width: 100%;
+    text-align: right;
+    direction: rtl;
+}
+
+[dir="rtl"] .contact-form-group input,
+[dir="rtl"] .contact-form-group select,
+[dir="rtl"] .contact-form-group textarea {
+    direction: rtl;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+/* Placeholder alignment */
+[dir="rtl"] .contact-form-group input::placeholder,
+[dir="rtl"] .contact-form-group textarea::placeholder {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Select dropdown alignment */
+[dir="rtl"] .contact-form-group select {
+    text-align-last: right;
+}
+
+/* Keep required asterisk next to the label */
+[dir="rtl"] .contact-form-group label span {
+    direction: rtl;
+}
+
+/* Two-column form layout */
+[dir="rtl"] .contact-form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+/* Full-width requirements field */
+[dir="rtl"] .contact-form-group:has(textarea) {
+    grid-column: 1 / -1;
+}
+
+/* Mobile responsive */
+@media (max-width: 767px) {
+    [dir="rtl"] .contact-form-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    [dir="rtl"] .contact-form-group:has(textarea) {
+        grid-column: auto;
+    }
+}
+
+
+
+
+
+
+
+
+/* Center register prompt in RTL mode */
+
+html[dir="rtl"] .login-register-prompt {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    direction: rtl !important;
+    margin-inline: auto !important;
+}
+
+html[dir="rtl"] .login-register-prompt p {
+    width: 100% !important;
+    text-align: center !important;
+    margin-inline: auto !important;
+}
+
+
+
+
+
+
+/* Center register login prompt in RTL mode */
+
+html[dir="rtl"] .register-login-prompt {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin: 24px auto 0 !important;
+}
+
+html[dir="rtl"] .register-login-prompt p {
+    width: 100% !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+}
