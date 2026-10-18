@@ -22801,3 +22801,484 @@ body.dark-mode .services-linen-image-wrap {
         gap: 20px;
     }
 }
+
+
+
+
+
+/* =========================================
+   HOME 2 — SPLIT HERO SLIDER
+========================================= */
+
+.h2-hero-slide {
+    position: absolute;
+    inset: 0;
+    background-color: #EAF4F5;
+    background-image: none !important;
+    overflow: hidden;
+}
+
+.h2-hero-overlay {
+    display: none !important;
+}
+
+.h2-hero-container {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 1240px !important;
+    height: 100% !important;
+    margin: 0 auto !important;
+    padding: 50px 30px !important;
+    box-sizing: border-box !important;
+}
+
+.h2-hero-content {
+    width: 50% !important;
+    max-width: 570px !important;
+    padding: 30px 40px 30px 0 !important;
+    text-align: left !important;
+    color: #173A50 !important;
+}
+
+.h2-hero-content h1 {
+    color: #173A50 !important;
+}
+
+.h2-hero-content h1 span {
+    display: block;
+    color: #287C8E !important;
+}
+
+.h2-hero-content p {
+    color: #526B79 !important;
+}
+
+/* Reserve right side for the slide image */
+.h2-hero-slide::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 46%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+/* Different image for each slide */
+.h2-hero-slide-one::after {
+    background-image: url("../images/h2-hero-uniforms.jpg");
+}
+
+.h2-hero-slide-two::after {
+    background-image: url("../images/h2-hero-linen.jpg");
+}
+
+/* Keep text above decorative layers */
+.h2-hero-container {
+    position: relative;
+    z-index: 1;
+}
+
+.h2-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Primary button */
+.h2-hero-btn-primary {
+    background: #287C8E !important;
+    border-color: #287C8E !important;
+    color: #FFFFFF !important;
+}
+
+/* Outline button */
+.h2-hero-btn-outline {
+    color: #173A50 !important;
+    border-color: #287C8E !important;
+    background: transparent !important;
+}
+
+/* Mobile and tablet */
+@media (max-width: 767px) {
+    .h2-hero-container {
+        align-items: flex-start !important;
+        padding: 35px 22px 250px !important;
+    }
+
+    .h2-hero-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .h2-hero-slide::after {
+        top: auto;
+        bottom: 0;
+        width: 100%;
+        height: 230px;
+    }
+}
+/* =========================================
+   HOME 2 — HERO SLIDER CONTROLS ALIGNMENT
+========================================= */
+
+.h2-hero {
+    position: relative !important;
+}
+
+.h2-hero-controls {
+    position: absolute !important;
+    right: 6% !important;
+    bottom: 24px !important;
+    z-index: 20 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 28px !important;
+    width: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Pagination dots */
+.h2-hero-pagination {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.h2-hero-dot {
+    display: block !important;
+    width: 10px !important;
+    height: 10px !important;
+    min-width: 10px !important;
+    padding: 0 !important;
+    border: 1px solid #FFFFFF !important;
+    border-radius: 50% !important;
+    background: transparent !important;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.h2-hero-dot.active {
+    width: 14px !important;
+    height: 14px !important;
+    min-width: 14px !important;
+    background: #287C8E !important;
+    border-color: #287C8E !important;
+    opacity: 1;
+}
+
+/* Slide counter: 01 — line — 02 */
+.h2-hero-counter {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    white-space: nowrap !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+}
+
+.h2-hero-current {
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+}
+
+.h2-hero-total {
+    color: #DCE6EA !important;
+    font-weight: 500 !important;
+}
+
+.h2-hero-counter-line {
+    display: block !important;
+    width: 32px !important;
+    height: 1px !important;
+    background: #FFFFFF !important;
+    opacity: 0.7;
+}
+
+/* Tablet */
+@media (max-width: 1199px) {
+    .h2-hero-controls {
+        right: 24px !important;
+        bottom: 20px !important;
+        gap: 20px !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .h2-hero-controls {
+        right: 20px !important;
+        bottom: 16px !important;
+        gap: 16px !important;
+    }
+
+    .h2-hero-pagination {
+        gap: 8px !important;
+    }
+
+    .h2-hero-counter {
+        gap: 7px !important;
+    }
+
+    .h2-hero-counter-line {
+        width: 20px !important;
+    }
+}
+
+
+/* Center hero slider dots and counter */
+.h2-hero-controls {
+    left: 50% !important;
+    right: auto !important;
+    bottom: 24px !important;
+    transform: translateX(-50%) !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: max-content !important;
+    gap: 24px !important;
+    margin: 0 !important;
+}
+
+/* Keep dots centered and evenly spaced */
+.h2-hero-pagination {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+}
+
+/* Tablet and mobile */
+@media (max-width: 1199px) {
+    .h2-hero-controls {
+        left: 50% !important;
+        right: auto !important;
+        bottom: 18px !important;
+        transform: translateX(-50%) !important;
+    }
+}
+
+
+
+
+
+/* Hero slider counter colors */
+.h2-hero-current {
+    color: #287C8E !important; /* Uniwear teal */
+    font-weight: 700 !important;
+}
+
+.h2-hero-total {
+    color: #173A50 !important; /* Dark navy */
+    font-weight: 600 !important;
+}
+
+.h2-hero-counter-line {
+    background: #287C8E !important;
+    opacity: 0.65 !important;
+}
+
+/* Active pagination dot */
+.h2-hero-dot.active {
+    background: #287C8E !important;
+    border-color: #287C8E !important;
+}
+
+/* Inactive pagination dot */
+.h2-hero-dot:not(.active) {
+    background: transparent !important;
+    border-color: #287C8E !important;
+}
+
+
+
+
+/* Services Hero - Reduce Description Font Size */
+
+.services-hero-description {
+    font-size: 18px !important;
+    line-height: 1.7 !important;
+}
+
+/* Tablet */
+@media (max-width: 1199px) {
+    .services-hero-description {
+        font-size: 16px !important;
+        line-height: 1.65 !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .services-hero-description {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+   ABOUT PAGE — TEAM SECTION
+========================================= */
+
+.about-team-section {
+    padding: 90px 24px;
+    background: #EAF4F5;
+}
+
+.about-team-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-team-heading {
+    max-width: 680px;
+    margin: 0 auto 46px;
+    text-align: center;
+}
+
+.about-team-eyebrow {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #287C8E;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.about-team-heading h2 {
+    margin: 0 0 16px;
+    color: #173A50;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.2;
+}
+
+.about-team-heading h2 span {
+    color: #287C8E;
+}
+
+.about-team-heading p {
+    margin: 0;
+    color: #526B79;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.about-team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+}
+
+.about-team-card {
+    overflow: hidden;
+    background: #FFFFFF;
+    border: 1px solid #DCE6EA;
+    border-radius: 12px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(23, 58, 80, 0.12);
+}
+
+.about-team-image {
+    height: 290px;
+    overflow: hidden;
+    background: #DCE6EA;
+}
+
+.about-team-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.about-team-info {
+    padding: 24px;
+}
+
+.about-team-info h3 {
+    margin: 0 0 8px;
+    color: #173A50;
+    font-size: 20px;
+}
+
+.about-team-info > span {
+    color: #287C8E;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.about-team-info p {
+    margin: 14px 0 0;
+    color: #647784;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Tablet */
+@media (max-width: 1199px) {
+    .about-team-section {
+        padding: 70px 24px;
+    }
+
+    .about-team-grid {
+        gap: 18px;
+    }
+
+    .about-team-image {
+        height: 240px;
+    }
+
+    .about-team-info {
+        padding: 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .about-team-section {
+        padding: 52px 18px;
+    }
+
+    .about-team-heading {
+        margin-bottom: 30px;
+    }
+
+    .about-team-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .about-team-image {
+        height: 280px;
+    }
+}
